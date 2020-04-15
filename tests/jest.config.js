@@ -3,6 +3,9 @@
 module.exports = {
 	preset: 'jest-preset-angular',
 	setupFilesAfterEnv: ['<rootDir>/tests/setupJest.ts'],
+	moduleNameMapper: {
+		'shared/(.*)': '<rootDir>src/app/shared/$1'
+	},
 	globals: {
 		'ts-jest': {
 			diagnostics: false
