@@ -12,6 +12,7 @@ const types = [
 	'chore'
 ];
 const scopes = [
+	'generate-code',
 	'shared',
 	'toolchain'
 ];

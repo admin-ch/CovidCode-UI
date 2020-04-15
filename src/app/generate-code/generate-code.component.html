@@ -1,0 +1,21 @@
+<form [formGroup]="test" (submit)="save(test.valid, test.value)">
+	<mat-form-field obErrorMessages>
+		<mat-label>{{ "generate-code.exposed" | translate }}</mat-label>
+		<input matInput formControlName="exposed" #dateControl [matDatepicker]="start" [max]="today" />
+		<mat-datepicker-toggle matSuffix [for]="start"></mat-datepicker-toggle>
+		<mat-datepicker #start></mat-datepicker>
+		<mat-error></mat-error>
+		<button type="button" role="button" [obInputClear]="dateControl">
+			<span class="fa fa-times-circle"></span>
+			<span class="sr-only">{{ "i18n.common.clear" | translate }}</span>
+		</button>
+	</mat-form-field>
+	<div class="form-actions">
+		<button mat-stroked-button color="primary" type="reset">
+			<span class="fas fa-times"></span> {{ "i18n.common.reset" | translate }}
+		</button>
+		<button mat-flat-button color="primary" type="submit">
+			<span class="fas fa-paper-plane"></span> {{ "generate-code.generate" | translate }}
+		</button>
+	</div>
+</form>

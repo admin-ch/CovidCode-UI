@@ -6,5 +6,5 @@ import {ObINavigationLink} from '@oblique/oblique';
 	templateUrl: './app.component.html'
 })
 export class AppComponent {
-	navigation: ObINavigationLink[] = [];
+	navigation: ObINavigationLink[] = [{url: 'generate-code', label: 'generate-code.slug'}];
 }
