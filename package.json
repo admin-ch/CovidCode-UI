@@ -6,7 +6,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "format": "npm run lint -- --fix"
+    "format": "npm run lint -- --fix && node_modules/prettier/bin-prettier.js --write 'src/**/{*.ts,*.html}'"
   },
   "private": true,
   "jestSonar": {
@@ -14,6 +14,12 @@
     "reportFile": "sqr.xml",
     "indent": 4,
     "sonar56x": true
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "node scripts/hook.commit-rules",
+      "pre-push": "node scripts/hook.push-clean"
+    }
   },
   "dependencies": {
     "@angular/animations": "~9.1.1",
@@ -40,10 +46,14 @@
     "@types/jest": "^25.2.1",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
+    "husky": "^4.2.5",
     "jest": "^25.3.0",
     "jest-sonar-reporter": "^2.0.0",
+    "prettier": "^2.0.4",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.3.0",
     "typescript": "~3.8.3"
   }
 }
