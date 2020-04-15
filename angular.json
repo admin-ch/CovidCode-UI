@@ -7,7 +7,11 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
+          "prefix": "ha",
           "style": "scss"
+        },
+        "@schematics/angular:directive": {
+          "prefix": "ha"
         }
       },
       "root": "",
@@ -24,11 +28,17 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/@oblique/oblique/styles",
+                "output": "assets/styles"
+              }
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/@oblique/oblique/styles/css/oblique-core.css",
+              "node_modules/@oblique/oblique/styles/css/oblique-material.css",
+              "src/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -104,6 +114,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ha-ui"
 }

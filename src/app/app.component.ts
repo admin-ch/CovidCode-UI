@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {ObINavigationLink} from '@oblique/oblique';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+	selector: 'ha-root',
+	templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'ha-ui';
+	navigation: ObINavigationLink[] = [];
 }

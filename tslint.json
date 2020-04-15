@@ -19,13 +19,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "ha",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      "ha",
       "kebab-case"
     ],
     "eofline": true,
@@ -36,7 +36,7 @@
     "import-spacing": true,
     "indent": {
       "options": [
-        "spaces"
+        "tabs"
       ]
     },
     "max-classes-per-file": false,
