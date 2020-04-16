@@ -6,6 +6,7 @@ import {ObliqueTestingModule} from '@oblique/oblique';
 import {of} from 'rxjs';
 import {GenerateCodeComponent} from './generate-code.component';
 import {GenerateCodeService} from './generate-code.service';
+import * as moment from 'moment';
 
 describe('GenerateCodeComponent', () => {
 	let component: GenerateCodeComponent;
@@ -44,7 +45,7 @@ describe('GenerateCodeComponent', () => {
 		let service: GenerateCodeService;
 		let dialog: MatDialog;
 		let spy;
-		const data = {symptomDate: new Date()};
+		const data = {symptomDate: moment()};
 		beforeEach(() => {
 			service = TestBed.inject(GenerateCodeService);
 			dialog = TestBed.inject(MatDialog);

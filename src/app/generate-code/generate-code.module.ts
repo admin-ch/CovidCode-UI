@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {MatNativeDateModule} from '@angular/material/core';
+import {MatMomentDateModule} from '@angular/material-moment-adapter';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatButtonModule} from '@angular/material/button';
-import {SharedModule} from 'shared/shared.module';
-import {GenerateCodeComponent} from './generate-code.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import {ObErrorMessagesModule, ObInputClearModule} from '@oblique/oblique';
+import {SharedModule} from 'shared/shared.module';
+import {GenerateCodeComponent} from './generate-code.component';
 import {CodeComponent} from './code/code.component';
 
 @NgModule({
@@ -21,7 +21,7 @@ import {CodeComponent} from './code/code.component';
 		MatDialogModule,
 		MatFormFieldModule,
 		MatInputModule,
-		MatNativeDateModule,
+		MatMomentDateModule,
 		ObErrorMessagesModule,
 		ObInputClearModule
 	]

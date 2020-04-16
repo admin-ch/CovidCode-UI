@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, FormGroupDirective, Validators} from '@angular/f
 import {MatDialog} from '@angular/material/dialog';
 import {GenerateCodeService} from './generate-code.service';
 import {CodeComponent} from './code/code.component';
+import {Moment} from 'moment';
+import * as moment from 'moment';
 
 @Component({
 	selector: 'ha-generate-code',
@@ -10,7 +12,7 @@ import {CodeComponent} from './code/code.component';
 })
 export class GenerateCodeComponent implements OnInit {
 	test: FormGroup;
-	today = new Date();
+	today = moment();
 	@ViewChild(FormGroupDirective) form: FormGroupDirective;
 
 	constructor(private fb: FormBuilder, private dialog: MatDialog, private service: GenerateCodeService) {}
@@ -21,11 +23,11 @@ export class GenerateCodeComponent implements OnInit {
 		});
 	}
 
-	save(isValid: boolean, value: {symptomDate: Date}): void {
+	save(isValid: boolean, value: {symptomDate: Moment}): void {
 		if (isValid) {
 			this.service
 				.sendData({
-					symptomDate: GenerateCodeComponent.formatDate(value.symptomDate),
+					onsetDate: value.symptomDate.format('YYYY-MM-DD'),
 					physicianCommonName: 'physicianCommonName',
 					physicianEmail: 'physicianEmail',
 					physicianLoginName: 'physicianLoginName'
@@ -33,9 +35,5 @@ export class GenerateCodeComponent implements OnInit {
 				.subscribe(authorisationCode => this.dialog.open(CodeComponent, {data: authorisationCode}));
 			this.form.resetForm();
 		}
-	}
-
-	private static formatDate(date: Date): string {
-		return date.toISOString().split('T')[0];
 	}
 }
