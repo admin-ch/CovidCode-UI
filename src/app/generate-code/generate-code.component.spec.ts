@@ -45,7 +45,7 @@ describe('GenerateCodeComponent', () => {
 		let service: GenerateCodeService;
 		let dialog: MatDialog;
 		let spy;
-		const data = {symptomDate: moment()};
+		const data = {onsetDate: moment()};
 		beforeEach(() => {
 			service = TestBed.inject(GenerateCodeService);
 			dialog = TestBed.inject(MatDialog);

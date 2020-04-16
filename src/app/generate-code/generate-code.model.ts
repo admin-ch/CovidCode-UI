@@ -1,5 +1,5 @@
 export interface AuthorizationCodeCreateDto {
-	symptomDate: string;
+	onsetDate: string;
 	physicianLoginName: string;
 	physicianCommonName: string;
 	physicianEmail: string;

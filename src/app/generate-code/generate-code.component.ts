@@ -19,15 +19,15 @@ export class GenerateCodeComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.test = this.fb.group({
-			symptomDate: [undefined, [Validators.required]]
+			onsetDate: [undefined, [Validators.required]]
 		});
 	}
 
-	save(isValid: boolean, value: {symptomDate: Moment}): void {
+	save(isValid: boolean, value: {onsetDate: Moment}): void {
 		if (isValid) {
 			this.service
 				.sendData({
-					onsetDate: value.symptomDate.format('YYYY-MM-DD'),
+					onsetDate: value.onsetDate.format('YYYY-MM-DD'),
 					physicianCommonName: 'physicianCommonName',
 					physicianEmail: 'physicianEmail',
 					physicianLoginName: 'physicianLoginName'

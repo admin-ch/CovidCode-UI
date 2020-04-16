@@ -1,7 +1,7 @@
 <form [formGroup]="test" (submit)="save(test.valid, test.value)">
 	<mat-form-field obErrorMessages>
 		<mat-label>{{ "generate-code.exposed" | translate }}</mat-label>
-		<input matInput formControlName="symptomDate" #dateControl [matDatepicker]="start" [max]="today" />
+		<input matInput formControlName="onsetDate" #dateControl [matDatepicker]="start" [max]="today" />
 		<mat-datepicker-toggle matSuffix [for]="start"></mat-datepicker-toggle>
 		<mat-datepicker #start></mat-datepicker>
 		<mat-error></mat-error>
