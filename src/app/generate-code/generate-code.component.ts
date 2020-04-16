@@ -1,9 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
-import {ObNotificationService} from '@oblique/oblique';
+import {MatDialog} from '@angular/material/dialog';
 import {GenerateCodeService} from './generate-code.service';
-import {GenerateCodeModel} from './generate-code.model';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {CodeComponent} from './code/code.component';
 
 @Component({
@@ -19,16 +17,25 @@ export class GenerateCodeComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.test = this.fb.group({
-			exposed: [undefined, [Validators.required]]
+			symptomDate: [undefined, [Validators.required]]
 		});
 	}
 
-	save(isValid: boolean, value: GenerateCodeModel): void {
+	save(isValid: boolean, value: {symptomDate: Date}): void {
 		if (isValid) {
 			this.service
-				.sendData(value)
+				.sendData({
+					symptomDate: GenerateCodeComponent.formatDate(value.symptomDate),
+					physicianCommonName: 'physicianCommonName',
+					physicianEmail: 'physicianEmail',
+					physicianLoginName: 'physicianLoginName'
+				})
 				.subscribe(authorisationCode => this.dialog.open(CodeComponent, {data: authorisationCode}));
 			this.form.resetForm();
 		}
+	}
+
+	private static formatDate(date: Date): string {
+		return date.toISOString().split('T')[0];
 	}
 }

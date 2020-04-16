@@ -1,14 +1,20 @@
 import {TestBed} from '@angular/core/testing';
-
+import {EMPTY} from 'rxjs';
+import {ApiService} from 'shared/api.service';
 import {GenerateCodeService} from './generate-code.service';
-import {GenerateCodeModel} from './generate-code.model';
 
 describe('GenerateCodeService', () => {
 	let service: GenerateCodeService;
+	let api: ApiService;
 
 	beforeEach(() => {
-		TestBed.configureTestingModule({});
+		const mock = {post: jest.fn()};
+		mock.post.mockImplementation(() => EMPTY);
+		TestBed.configureTestingModule({
+			providers: [{provide: ApiService, useValue: mock}]
+		});
 		service = TestBed.inject(GenerateCodeService);
+		api = TestBed.inject(ApiService);
 	});
 
 	it('should be created', () => {
@@ -16,11 +22,9 @@ describe('GenerateCodeService', () => {
 	});
 
 	describe('sendData', () => {
-		it('should return a number', done => {
-			service.sendData({} as GenerateCodeModel).subscribe(nbr => {
-				expect(nbr).toBeDefined();
-				done();
-			});
+		it('should call POST on api service', () => {
+			service.sendData(undefined);
+			expect(api.post).toHaveBeenCalled();
 		});
 	});
 });

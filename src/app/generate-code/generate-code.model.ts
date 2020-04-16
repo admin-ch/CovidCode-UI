@@ -1,7 +1,10 @@
-export interface GenerateCodeModel {
-	exposed: Date;
+export interface AuthorizationCodeCreateDto {
+	symptomDate: string;
+	physicianLoginName: string;
+	physicianCommonName: string;
+	physicianEmail: string;
 }
 
-export interface GenerateCodeDTO {
-	authorizationCode: number;
+export interface AuthorizationCodeResponseDto {
+	authorizationCode: string;
 }

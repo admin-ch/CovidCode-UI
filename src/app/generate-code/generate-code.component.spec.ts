@@ -3,8 +3,8 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {ObliqueTestingModule} from '@oblique/oblique';
+import {of} from 'rxjs';
 import {GenerateCodeComponent} from './generate-code.component';
-import {GenerateCodeModel} from './generate-code.model';
 import {GenerateCodeService} from './generate-code.service';
 
 describe('GenerateCodeComponent', () => {
@@ -13,11 +13,16 @@ describe('GenerateCodeComponent', () => {
 
 	beforeEach(async(() => {
 		const mockDialog = {open: jest.fn()};
+		const mock = {sendData: jest.fn()};
+		mock.sendData.mockImplementation(() => of({}));
 		TestBed.configureTestingModule({
 			imports: [ReactiveFormsModule, ObliqueTestingModule],
 			declarations: [GenerateCodeComponent],
 			schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-			providers: [{provide: MatDialog, useValue: mockDialog}]
+			providers: [
+				{provide: MatDialog, useValue: mockDialog},
+				{provide: GenerateCodeService, useValue: mock}
+			]
 		}).compileComponents();
 	}));
 
@@ -38,42 +43,38 @@ describe('GenerateCodeComponent', () => {
 	describe('save with valid data', () => {
 		let service: GenerateCodeService;
 		let dialog: MatDialog;
-		const data: GenerateCodeModel = {} as GenerateCodeModel;
+		let spy;
+		const data = {symptomDate: new Date()};
 		beforeEach(() => {
 			service = TestBed.inject(GenerateCodeService);
 			dialog = TestBed.inject(MatDialog);
+			spy = jest.spyOn(component.form, 'resetForm');
 		});
 
 		describe('with invalid data', () => {
 			it('should not call the back-end', () => {
-				const spy = jest.spyOn(service, 'sendData');
 				component.save(false, data);
-				expect(spy).not.toHaveBeenCalled();
+				expect(service.sendData).not.toHaveBeenCalled();
 			});
 			it('should not open a dialog', () => {
-				const spy = jest.spyOn(dialog, 'open');
 				component.save(false, data);
-				expect(spy).not.toHaveBeenCalled();
+				expect(dialog.open).not.toHaveBeenCalled();
 			});
 			it('should not reset the form', () => {
-				const spy = jest.spyOn(component.form, 'resetForm');
 				component.save(false, data);
 				expect(spy).not.toHaveBeenCalled();
 			});
 		});
 		describe('with valid data', () => {
 			it('should call the back-end', () => {
-				const spy = jest.spyOn(service, 'sendData');
 				component.save(true, data);
-				expect(spy).toHaveBeenCalledWith(data);
+				expect(service.sendData).toHaveBeenCalled();
 			});
 			it('should open a dialog', () => {
-				const spy = jest.spyOn(dialog, 'open');
 				component.save(true, data);
-				expect(spy).toHaveBeenCalled();
+				expect(dialog.open).toHaveBeenCalled();
 			});
 			it('should reset the form', () => {
-				const spy = jest.spyOn(component.form, 'resetForm');
 				component.save(true, data);
 				expect(spy).toHaveBeenCalled();
 			});

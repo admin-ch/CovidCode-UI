@@ -1,17 +1,20 @@
 import {Injectable} from '@angular/core';
-import {GenerateCodeDTO, GenerateCodeModel} from './generate-code.model';
-import {Observable, of} from 'rxjs';
+import {AuthorizationCodeCreateDto, AuthorizationCodeResponseDto} from './generate-code.model';
+import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
+import {ApiService} from 'shared/api.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class GenerateCodeService {
-	sendData(data: GenerateCodeModel): Observable<number> {
-		return GenerateCodeService.mockHttp().pipe(map(result => result.authorizationCode));
-	}
+	private readonly api = 'authorizationCode';
 
-	private static mockHttp(): Observable<GenerateCodeDTO> {
-		return of({authorizationCode: 123456});
+	constructor(private http: ApiService) {}
+
+	sendData(data: AuthorizationCodeCreateDto): Observable<string> {
+		return this.http
+			.post<AuthorizationCodeResponseDto>(this.api, data)
+			.pipe(map(result => result.authorizationCode));
 	}
 }
