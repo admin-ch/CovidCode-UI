@@ -8,7 +8,8 @@ import * as moment from 'moment';
 
 @Component({
 	selector: 'ha-generate-code',
-	templateUrl: './generate-code.component.html'
+	templateUrl: './generate-code.component.html',
+	styleUrls: ['./generate-code.component.scss']
 })
 export class GenerateCodeComponent implements OnInit {
 	test: FormGroup;

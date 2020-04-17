@@ -1,0 +1,10 @@
+@import "~@oblique/oblique/styles/scss/core/variables";
+
+:host {
+	display: flex;
+	justify-content: center;
+}
+
+form {
+	margin-top: $spacing-lg;
+}
