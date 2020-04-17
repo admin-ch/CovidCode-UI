@@ -13,8 +13,9 @@ export class GenerateCodeService {
 	constructor(private http: ApiService) {}
 
 	sendData(data: AuthorizationCodeCreateDto): Observable<string> {
-		return this.http
-			.post<AuthorizationCodeResponseDto>(this.api, data)
-			.pipe(map(result => result.authorizationCode));
+		return this.http.post<AuthorizationCodeResponseDto>(this.api, data).pipe(
+			map(result => result.authorizationCode),
+			map(authCode => authCode.match(/(.{3})/g).join(' '))
+		);
 	}
 }
