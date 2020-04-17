@@ -5,6 +5,7 @@
   "generate-code.generate": "Generate code",
   "generate-code.exposed": "Exposed date",
   "code.title": "This is the authorisation code to be sent to the patient",
+  "code.sent": "I have sent the code to the patient",
   "i18n.validation.matDatepickerParse": "Invalid date format, please use \"d.m.y\"",
   "i18n.validation.matDatepickerMax": "Date cannot be after today"
 }

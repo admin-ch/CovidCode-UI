@@ -32,7 +32,9 @@ export class GenerateCodeComponent implements OnInit {
 					physicianEmail: 'physicianEmail',
 					physicianLoginName: 'physicianLoginName'
 				})
-				.subscribe(authorisationCode => this.dialog.open(CodeComponent, {data: authorisationCode}));
+				.subscribe(authorisationCode =>
+					this.dialog.open(CodeComponent, {data: authorisationCode, disableClose: true})
+				);
 			this.form.resetForm();
 		}
 	}

@@ -2,3 +2,8 @@
 <div mat-dialog-content>
 	<div class="highlight">{{ data }}</div>
 </div>
+<div mat-dialog-actions>
+	<button mat-flat-button color="primary" type="button" (click)="close()">
+		<span class="fas fa-paper-plane"></span> {{ "code.sent" | translate }}
+	</button>
+</div>

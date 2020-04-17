@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
 	selector: 'ha-code',
@@ -7,5 +7,9 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 	styleUrls: ['./code.component.scss']
 })
 export class CodeComponent {
-	constructor(@Inject(MAT_DIALOG_DATA) public data: number) {}
+	constructor(@Inject(MAT_DIALOG_DATA) public data: number, private dialog: MatDialogRef<CodeComponent>) {}
+
+	close(): void {
+		this.dialog.close();
+	}
 }

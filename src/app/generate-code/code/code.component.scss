@@ -1,6 +1,12 @@
 @import "~@oblique/oblique/styles/scss/core/mixins/typography";
+@import "~@oblique/oblique/styles/scss/core/variables";
 
 .highlight {
 	@include h1;
 	text-align: center;
+	margin: $spacing-lg 0;
+}
+
+.mat-dialog-actions {
+	justify-content: flex-end;
 }
