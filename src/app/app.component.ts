@@ -1,10 +1,7 @@
 import {Component} from '@angular/core';
-import {ObINavigationLink} from '@oblique/oblique';
 
 @Component({
 	selector: 'ha-root',
 	templateUrl: './app.component.html'
 })
-export class AppComponent {
-	navigation: ObINavigationLink[] = [{url: 'generate-code', label: 'generate-code.slug'}];
-}
+export class AppComponent {}
