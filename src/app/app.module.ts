@@ -34,5 +34,6 @@ registerLocaleData(localeITCH);
 export class AppModule {
 	constructor(config: ObMasterLayoutConfig) {
 		config.layout.hasMainNavigation = false;
+		config.locale.locales = ['de', 'fr', 'it', 'en'];
 	}
 }
