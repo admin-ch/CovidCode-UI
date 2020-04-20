@@ -16,5 +16,9 @@ module.exports = {
 	collectCoverage: true,
 	forceCoverageMatch: [
 		'**/src/app/**/*.spec.ts'
-	]
+	],
+	transform: {
+		'^.+\\.js$': 'babel-jest'
+	},
+	transformIgnorePatterns: ['<rootDir>/node_modules/?!jsrsasign-reduced/']
 };

@@ -13,12 +13,13 @@ import {ObErrorMessagesModule, ObInputClearModule} from '@oblique/oblique';
 import {SharedModule} from 'shared/shared.module';
 import {GenerateCodeComponent} from './generate-code.component';
 import {CodeComponent} from './code/code.component';
+import {AuthGuardService} from '../authglobal/auth-guard.service';
 
 @NgModule({
 	declarations: [GenerateCodeComponent, CodeComponent],
 	imports: [
 		SharedModule,
-		RouterModule.forChild([{path: '', component: GenerateCodeComponent}]),
+		RouterModule.forChild([{path: '', component: GenerateCodeComponent, canActivate: [AuthGuardService]}]),
 		MatButtonModule,
 		MatDatepickerModule,
 		MatDialogModule,

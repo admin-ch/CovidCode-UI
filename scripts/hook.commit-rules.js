@@ -14,6 +14,7 @@ const types = [
 const scopes = [
 	'generate-code',
 	'home',
+	'security',
 	'shared',
 	'toolchain'
 ];

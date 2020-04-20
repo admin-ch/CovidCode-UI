@@ -57,6 +57,7 @@ The scope is optional and should be the name of the Oblique feature affected:
 * **generate-code**
 * **home**
 * **shared**
+* **security**
 * **toolchain** (for configuration, build, releases, schematics,...)
 
 ##### Subject

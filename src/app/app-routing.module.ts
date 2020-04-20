@@ -1,14 +1,21 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {AuthGuardService} from './authglobal/auth-guard.service';
 
 const routes: Routes = [
+	{
+		path: 'autologin',
+		loadChildren: () => import('./authglobal/authglobal.module').then(m => m.AuthglobalModule)
+	},
 	{
 		path: 'home',
 		loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
 	},
 	{
 		path: 'generate-code',
-		loadChildren: () => import('./generate-code/generate-code.module').then(m => m.GenerateCodeModule)
+		loadChildren: () => import('./generate-code/generate-code.module').then(m => m.GenerateCodeModule),
+		canLoad: [AuthGuardService],
+		canActivate: [AuthGuardService]
 	},
 	{path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];

@@ -18,6 +18,9 @@
   "home.login": "Connexion pour le personnel médical",
   "home.download": "Vous voulez télécharger l’app mobile de proximity tracing ? Vous pouvez le faire via les pages officielles :",
   "notification.401": "Vous n'êtes pas autorisé.",
+  "security.no.access.part1": "Vous n'êtes pas autorisé à accéder au site web des autorités sanitaires",
+  "security.no.access.part2": "Veuillez contacter l'OFIT pour obtenir un soutien : ",
+  "logout": "Logout",
   "i18n.validation.matDatepickerParse": "Format de date non valide, veuillez utiliser \"jj.mm.aaaa\"",
   "i18n.validation.matDatepickerMax": "La date ne peut pas être dans le futur"
 }
