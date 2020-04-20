@@ -1,11 +1,10 @@
 {
-  "application.title": "Health Authority",
+  "application.title": "Gesundheitsbehörde",
   "application.organization.name": "Bundesamt für Informatik und Telekommunikation BIT",
-  "generate-code.slug": "Generate code",
-  "generate-code.generate": "Generate code",
-  "generate-code.exposed": "Exposed date",
-  "code.title": "This is the authorisation code to be sent to the patient",
-  "code.sent": "I have sent the code to the patient",
-  "i18n.validation.matDatepickerParse": "Invalid date format, please use \"d.m.y\"",
-  "i18n.validation.matDatepickerMax": "Date cannot be after today"
+  "generate-code.generate": "Code erzeugen",
+  "generate-code.exposed": "Exponiertes Datum",
+  "code.title": "Bitte senden Sie diesen Autorisierungscode an den Patienten",
+  "code.sent": "Ich habe den Code an den Patienten gesendet",
+  "i18n.validation.matDatepickerParse": "Ungültiges Datumsformat, bitte verwenden Sie \"tt.mm.jjjjj\"",
+  "i18n.validation.matDatepickerMax": "Datum kann nicht in der Zukunft liegen"
 }

@@ -1,4 +1,10 @@
 {
-    "application.title": "Health Authority",
-    "application.organization.name": "Office fédéral de l'informatique et de la télécommunication OFIT"
+  "application.title": "Autorité de santé",
+  "application.organization.name": "Office fédéral de l'informatique et de la télécommunication OFIT",
+  "generate-code.generate": "Générer code",
+  "generate-code.exposed": "Date d'exposition",
+  "code.title": "Veuillez envoyer ce code d'autorisation au patient",
+  "code.sent": "J'ai envoyé le code au patient",
+  "i18n.validation.matDatepickerParse": "Format de date non valide, veuillez utiliser \"jj.mm.aaaa\"",
+  "i18n.validation.matDatepickerMax": "La date ne peut pas être dans le futur"
 }

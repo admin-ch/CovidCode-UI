@@ -1,4 +1,10 @@
 {
-    "application.title": "Health Authority",
-    "application.organization.name": "Ufficio federale dell'informatica e della telecomunicazione UFIT"
+  "application.title": "Autorità sanitaria",
+  "application.organization.name": "Ufficio federale dell'informatica e della telecomunicazione UFIT",
+  "generate-code.generate": "Genera codice",
+  "generate-code.exposed": "Data esposta",
+  "code.title": "Si prega di inviare questo codice di autorizzazione al paziente",
+  "code.sent": "Ho inviato il codice al paziente",
+  "i18n.validation.matDatepickerParse": "Formato data non valido, si prega di utilizzare \"gg.mm.yyyyy\"",
+  "i18n.validation.matDatepickerMax": "La data non può essere nel futuro"
 }
