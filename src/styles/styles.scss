@@ -1,6 +1,8 @@
 @import "~@oblique/oblique/styles/scss/core/variables";
 
 .form-actions {
+	margin-top: $spacing-default;
+
 	button + button {
 		margin-left: $spacing-default;
 	}
