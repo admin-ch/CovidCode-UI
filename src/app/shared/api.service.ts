@@ -23,41 +23,45 @@ interface HttpOptions {
 	providedIn: 'root'
 })
 export class ApiService {
-	constructor(@Inject('HOST') private host: string, private http: HttpClient) {}
+	private readonly path: string;
+
+	constructor(@Inject('HOST') host: string, private http: HttpClient) {
+		this.path = `${host}/v1`;
+	}
 
 	get<T>(url: string, options?: HttpOptions): Observable<T> {
-		return this.http.get<T>(`${this.host}/api/${url}`, options);
+		return this.http.get<T>(`${this.path}/${url}`, options);
 	}
 
 	post<T>(url: string, data: any, options?: HttpOptions): Observable<T> {
-		return this.http.post<T>(`${this.host}/api/${url}`, data, options);
+		return this.http.post<T>(`${this.path}/${url}`, data, options);
 	}
 
 	delete<T>(url: string, options?: HttpOptions): Observable<T> {
-		return this.http.delete<T>(`${this.host}/api/${url}`, options);
+		return this.http.delete<T>(`${this.path}/${url}`, options);
 	}
 
 	head<T>(url: string, options?: HttpOptions): Observable<T> {
-		return this.http.head<T>(`${this.host}/api/${url}`, options);
+		return this.http.head<T>(`${this.path}/${url}`, options);
 	}
 
 	options<T>(url: string, options?: HttpOptions): Observable<T> {
-		return this.http.options<T>(`${this.host}/api/${url}`, options);
+		return this.http.options<T>(`${this.path}/${url}`, options);
 	}
 
 	put<T>(url: string, data: any, options?: HttpOptions): Observable<T> {
-		return this.http.put<T>(`${this.host}/api/${url}`, data, options);
+		return this.http.put<T>(`${this.path}/${url}`, data, options);
 	}
 
 	patch<T>(url: string, data: any, options?: HttpOptions): Observable<T> {
-		return this.http.patch<T>(`${this.host}/api/${url}`, data, options);
+		return this.http.patch<T>(`${this.path}/${url}`, data, options);
 	}
 
 	jsonp<T>(url: string, callbackParam: string): Observable<T> {
-		return this.http.jsonp<T>(`${this.host}/api/${url}`, callbackParam);
+		return this.http.jsonp<T>(`${this.path}/${url}`, callbackParam);
 	}
 
 	request<T>(method: string, url: string, options?: HttpOptions): Observable<T> {
-		return this.http.request<T>(method, `${this.host}/api/${url}`, options);
+		return this.http.request<T>(method, `${this.path}/${url}`, options);
 	}
 }

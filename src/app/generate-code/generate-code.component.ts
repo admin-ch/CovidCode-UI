@@ -28,10 +28,7 @@ export class GenerateCodeComponent implements OnInit {
 		if (isValid) {
 			this.service
 				.sendData({
-					onsetDate: value.onsetDate.format('YYYY-MM-DD'),
-					physicianCommonName: 'physicianCommonName',
-					physicianEmail: 'physicianEmail',
-					physicianLoginName: 'physicianLoginName'
+					onsetDate: value.onsetDate.format('YYYY-MM-DD')
 				})
 				.subscribe(authorisationCode =>
 					this.dialog.open(CodeComponent, {data: authorisationCode, disableClose: true})

@@ -8,7 +8,7 @@ import {ApiService} from 'shared/api.service';
 	providedIn: 'root'
 })
 export class GenerateCodeService {
-	private readonly api = 'authorizationCode';
+	private readonly api = 'authcode';
 
 	constructor(private http: ApiService) {}
 

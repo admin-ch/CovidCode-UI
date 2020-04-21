@@ -25,7 +25,7 @@ describe('ApiService', () => {
 			jest.spyOn(http, 'get');
 			// @ts-ignore
 			service.get('get');
-			expect(http.get).toHaveBeenCalledWith('host/api/get', undefined);
+			expect(http.get).toHaveBeenCalledWith('host/v1/get', undefined);
 		});
 	});
 
@@ -34,7 +34,7 @@ describe('ApiService', () => {
 			jest.spyOn(http, 'post');
 			// @ts-ignore
 			service.post('post', {});
-			expect(http.post).toHaveBeenCalledWith('host/api/post', {}, undefined);
+			expect(http.post).toHaveBeenCalledWith('host/v1/post', {}, undefined);
 		});
 	});
 
@@ -43,7 +43,7 @@ describe('ApiService', () => {
 			jest.spyOn(http, 'delete');
 			// @ts-ignore
 			service.delete('delete');
-			expect(http.delete).toHaveBeenCalledWith('host/api/delete', undefined);
+			expect(http.delete).toHaveBeenCalledWith('host/v1/delete', undefined);
 		});
 	});
 
@@ -52,7 +52,7 @@ describe('ApiService', () => {
 			jest.spyOn(http, 'head');
 			// @ts-ignore
 			service.head('head');
-			expect(http.head).toHaveBeenCalledWith('host/api/head', undefined);
+			expect(http.head).toHaveBeenCalledWith('host/v1/head', undefined);
 		});
 	});
 
@@ -61,7 +61,7 @@ describe('ApiService', () => {
 			jest.spyOn(http, 'options');
 			// @ts-ignore
 			service.options('options');
-			expect(http.options).toHaveBeenCalledWith('host/api/options', undefined);
+			expect(http.options).toHaveBeenCalledWith('host/v1/options', undefined);
 		});
 	});
 
@@ -70,7 +70,7 @@ describe('ApiService', () => {
 			jest.spyOn(http, 'put');
 			// @ts-ignore
 			service.put('put', {});
-			expect(http.put).toHaveBeenCalledWith('host/api/put', {}, undefined);
+			expect(http.put).toHaveBeenCalledWith('host/v1/put', {}, undefined);
 		});
 	});
 
@@ -79,7 +79,7 @@ describe('ApiService', () => {
 			jest.spyOn(http, 'patch');
 			// @ts-ignore
 			service.patch('patch', {});
-			expect(http.patch).toHaveBeenCalledWith('host/api/patch', {}, undefined);
+			expect(http.patch).toHaveBeenCalledWith('host/v1/patch', {}, undefined);
 		});
 	});
 
@@ -88,7 +88,7 @@ describe('ApiService', () => {
 			jest.spyOn(http, 'jsonp');
 			// @ts-ignore
 			service.jsonp('jsonp', 'callback');
-			expect(http.jsonp).toHaveBeenCalledWith('host/api/jsonp', 'callback');
+			expect(http.jsonp).toHaveBeenCalledWith('host/v1/jsonp', 'callback');
 		});
 	});
 
@@ -97,7 +97,7 @@ describe('ApiService', () => {
 			jest.spyOn(http, 'request');
 			// @ts-ignore
 			service.request('post', 'request');
-			expect(http.request).toHaveBeenCalledWith('post', 'host/api/request', undefined);
+			expect(http.request).toHaveBeenCalledWith('post', 'host/v1/request', undefined);
 		});
 	});
 });
