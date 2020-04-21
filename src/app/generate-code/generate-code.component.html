@@ -1,7 +1,14 @@
 <form [formGroup]="test" (submit)="save(test.valid, test.value)">
 	<mat-form-field obErrorMessages>
 		<mat-label>{{ "generate-code.onset" | translate }}</mat-label>
-		<input matInput formControlName="onsetDate" #dateControl [matDatepicker]="start" [max]="today" />
+		<input
+			matInput
+			formControlName="onsetDate"
+			#dateControl
+			[matDatepicker]="start"
+			[max]="today"
+			id="onset-date_field"
+		/>
 		<mat-datepicker-toggle matSuffix [for]="start"></mat-datepicker-toggle>
 		<mat-datepicker #start></mat-datepicker>
 		<mat-error></mat-error>
@@ -12,10 +19,10 @@
 		</button>
 	</mat-form-field>
 	<div class="form-actions">
-		<button mat-stroked-button color="primary" type="reset">
+		<button mat-stroked-button color="primary" type="reset" id="reset_button">
 			<span class="fas fa-times"></span> {{ "i18n.common.reset" | translate }}
 		</button>
-		<button mat-flat-button color="primary" type="submit">
+		<button mat-flat-button color="primary" type="submit" id="submit_button">
 			<span class="fas fa-paper-plane"></span> {{ "generate-code.generate" | translate }}
 		</button>
 	</div>

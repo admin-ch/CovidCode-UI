@@ -8,7 +8,7 @@
 		<p>{{ "help.text3" | translate }}</p>
 	</ng-container>
 	<ng-template #obHeaderControl>
-		<button obOffCanvasToggle [matTooltip]="opened$ | async | translate">
+		<button obOffCanvasToggle [matTooltip]="opened$ | async | translate" id="help-toggle_button">
 			<span class="fa fa-question-circle"></span>
 		</button>
 	</ng-template>
