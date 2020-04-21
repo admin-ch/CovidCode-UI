@@ -1,10 +1,11 @@
 <form [formGroup]="test" (submit)="save(test.valid, test.value)">
 	<mat-form-field obErrorMessages>
-		<mat-label>{{ "generate-code.exposed" | translate }}</mat-label>
+		<mat-label>{{ "generate-code.onset" | translate }}</mat-label>
 		<input matInput formControlName="onsetDate" #dateControl [matDatepicker]="start" [max]="today" />
 		<mat-datepicker-toggle matSuffix [for]="start"></mat-datepicker-toggle>
 		<mat-datepicker #start></mat-datepicker>
 		<mat-error></mat-error>
+		<mat-hint>{{ "generate-code.hint" | translate }}</mat-hint>
 		<button type="button" role="button" [obInputClear]="dateControl">
 			<span class="fa fa-times-circle"></span>
 			<span class="sr-only">{{ "i18n.common.clear" | translate }}</span>
