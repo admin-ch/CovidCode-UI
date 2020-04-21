@@ -6,6 +6,12 @@
   "generate-code.hint": "Data di inizio del contagio",
   "code.title": "Si prega di inviare questo codice di autorizzazione al paziente",
   "code.sent": "Ho inviato il codice al paziente",
+  "help.tooltip": "Aiuto con la levetta",
+  "help.tooltip.in": "Nascondere l'aiuto",
+  "help.tooltip.out": "Mostra aiuto",
+  "help.text1": "La \"data del contagio\" è la data in cui il paziente diventa contagioso. La finestra del contagio sarà quindi calcolata automaticamente.",
+  "help.text2": "In base alla data del contagio, verrà generato un codice di autenticazione monouso, si prega di comunicarlo al paziente, senza i caratteri bianchi, in modo che possa inserirlo nell'applicazione di tracciamento",
+  "help.text3": "I codici di autenticazione non vengono salvati localmente, il che significa che deve essere generato un nuovo codice di autenticazione, qualora il paziente lo richieda nuovamente",
   "i18n.validation.matDatepickerParse": "Formato data non valido, si prega di utilizzare \"gg.mm.yyyyy\"",
   "i18n.validation.matDatepickerMax": "La data non può essere nel futuro"
 }

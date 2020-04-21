@@ -1,5 +1,6 @@
 import {async, TestBed} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {ObliqueTestingModule} from '@oblique/oblique';
 import {AppComponent} from './app.component';
 
@@ -7,7 +8,8 @@ describe('AppComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			imports: [RouterTestingModule, ObliqueTestingModule],
-			declarations: [AppComponent]
+			declarations: [AppComponent],
+			schemas: [NO_ERRORS_SCHEMA]
 		}).compileComponents();
 	}));
 

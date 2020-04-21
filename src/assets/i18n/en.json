@@ -6,6 +6,12 @@
   "generate-code.hint": "Contagion onset date",
   "code.title": "Please send this authorisation code to the patient",
   "code.sent": "I have sent the code to the patient",
+  "help.tooltip.in": "Hide help",
+  "help.tooltip.out": "Show help",
+  "help.title": "Help",
+  "help.text1": "The \"Contagion date\" is the date when the patient becomes contagious. The contagion window will then be automatically computed.",
+  "help.text2": "Based on the contagion date, a single use authentication code will be generated, please communicate it to your patient, without the whitespaces, so that he can enter it in the tracking app.",
+  "help.text3": "Authentication codes are not locally saved, meaning a new one have to be generated, should the patient require it anew.",
   "i18n.validation.matDatepickerParse": "Invalid date format, please use \"dd.mm.yyyy\"",
   "i18n.validation.matDatepickerMax": "Date cannot be in the future"
 }

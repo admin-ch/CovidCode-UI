@@ -1,4 +1,15 @@
 <ob-master-layout>
 	<ng-container obHeaderTitle>{{ "application.title" | translate }}</ng-container>
 	<ng-container obFooterInfo> &copy; 2020 {{ "application.organization.name" | translate }} </ng-container>
+	<ng-container obOffCanvasTitle>{{ "help.title" | translate }}</ng-container>
+	<ng-container obOffCanvasContent>
+		<p>{{ "help.text1" | translate }}</p>
+		<p>{{ "help.text2" | translate }}</p>
+		<p>{{ "help.text3" | translate }}</p>
+	</ng-container>
+	<ng-template #obHeaderControl>
+		<button obOffCanvasToggle [matTooltip]="opened$ | async | translate">
+			<span class="fa fa-question-circle"></span>
+		</button>
+	</ng-template>
 </ob-master-layout>

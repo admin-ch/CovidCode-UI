@@ -6,6 +6,12 @@
   "generate-code.hint": "Datum des Ausbruchs der Ansteckung",
   "code.title": "Bitte senden Sie diesen Autorisierungscode an den Patienten",
   "code.sent": "Ich habe den Code an den Patienten gesendet",
+  "help.tooltip.in": "Hilfe ausblenden",
+  "help.tooltip.out": "Hilfe einblenden",
+  "help.title": "Hilfe",
+  "help.text1": "Das \"Ansteckungsdatum\" ist das Datum, an dem der Patient ansteckend wird. Das Ansteckungsfenster wird dann automatisch berechnet.",
+  "help.text2": "Basierend auf dem Ansteckungsdatum wird ein Einmal-Authentifizierungscode generiert. Bitte teilen Sie ihn Ihrem Patienten ohne die Leerzeichen mit, damit er ihn in die Tracking-App eingeben kann.",
+  "help.text3": "Authentifizierungscodes werden nicht lokal gespeichert, d.h. es muss ein neuer generiert werden, falls der Patient ihn erneut benötigt.",
   "i18n.validation.matDatepickerParse": "Ungültiges Datumsformat, bitte verwenden Sie \"tt.mm.jjjjj\"",
   "i18n.validation.matDatepickerMax": "Datum kann nicht in der Zukunft liegen"
 }

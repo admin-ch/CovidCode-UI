@@ -7,3 +7,7 @@
 		margin-left: $spacing-default;
 	}
 }
+
+.cdk-overlay-container {
+	z-index: 10000;
+}

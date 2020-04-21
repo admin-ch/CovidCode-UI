@@ -6,6 +6,12 @@
   "generate-code.hint": "Date du début de la contagion",
   "code.title": "Veuillez envoyer ce code d'autorisation au patient",
   "code.sent": "J'ai envoyé le code au patient",
+  "help.tooltip.in": "Cacher l'aide",
+  "help.tooltip.out": "Montrer l'aide",
+  "help.title": "Aide",
+  "help.text1": "La date de contagion\" est la date à laquelle le patient devient contagieux. La fenêtre de contagion sera alors automatiquement calculée.",
+  "help.text2": "En fonction de la date de contagion, un code d'authentification à usage unique sera généré, veuillez le communiquer à votre patient, sans les espaces, afin qu'il puisse l'entrer dans l'application de suivi.",
+  "help.text3": "Les codes d'authentification ne sont pas sauvegardés localement, ce qui signifie qu'un nouveau code doit être généré si le patient en a besoin à nouveau.",
   "i18n.validation.matDatepickerParse": "Format de date non valide, veuillez utiliser \"jj.mm.aaaa\"",
   "i18n.validation.matDatepickerMax": "La date ne peut pas être dans le futur"
 }
