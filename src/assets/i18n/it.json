@@ -12,6 +12,11 @@
   "help.text1": "La \"data del contagio\" è la data in cui il paziente diventa contagioso. La finestra del contagio sarà quindi calcolata automaticamente.",
   "help.text2": "In base alla data del contagio, verrà generato un codice di autenticazione monouso, si prega di comunicarlo al paziente, senza i caratteri bianchi, in modo che possa inserirlo nell'applicazione di tracciamento",
   "help.text3": "I codici di autenticazione non vengono salvati localmente, il che significa che deve essere generato un nuovo codice di autenticazione, qualora il paziente lo richieda nuovamente",
+  "home.text1": "Ciao",
+  "home.text2": "Siete ora sul sito web dove il personale medico può accedere al covid tracing.",
+  "home.info": "Ulteriori informazioni sul covid-tracing",
+  "home.login": "Accesso per il personale medico",
+  "home.download": "Vuoi scaricare la Tracing-App? Potete farlo tramite le pagine ufficiali:",
   "i18n.validation.matDatepickerParse": "Formato data non valido, si prega di utilizzare \"gg.mm.yyyyy\"",
   "i18n.validation.matDatepickerMax": "La data non può essere nel futuro"
 }

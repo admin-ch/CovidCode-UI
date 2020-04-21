@@ -13,6 +13,7 @@ const types = [
 ];
 const scopes = [
 	'generate-code',
+	'home',
 	'shared',
 	'toolchain'
 ];

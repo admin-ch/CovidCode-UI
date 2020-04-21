@@ -12,6 +12,11 @@
   "help.text1": "La date de contagion\" est la date à laquelle le patient devient contagieux. La fenêtre de contagion sera alors automatiquement calculée.",
   "help.text2": "En fonction de la date de contagion, un code d'authentification à usage unique sera généré, veuillez le communiquer à votre patient, sans les espaces, afin qu'il puisse l'entrer dans l'application de suivi.",
   "help.text3": "Les codes d'authentification ne sont pas sauvegardés localement, ce qui signifie qu'un nouveau code doit être généré si le patient en a besoin à nouveau.",
+  "home.text1": "Bonjour",
+  "home.text2": "Vous êtes maintenant sur le site web où le personnel médical peut accéder au traçage des covidés.",
+  "home.info": "Plus d'informations sur le traçage des covidés",
+  "home.login": "Connexion pour le personnel médical",
+  "home.download": "Vous voulez télécharger le programme de recherche ? Vous pouvez le faire via les pages officielles :",
   "i18n.validation.matDatepickerParse": "Format de date non valide, veuillez utiliser \"jj.mm.aaaa\"",
   "i18n.validation.matDatepickerMax": "La date ne peut pas être dans le futur"
 }

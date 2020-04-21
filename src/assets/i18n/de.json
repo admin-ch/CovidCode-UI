@@ -12,6 +12,11 @@
   "help.text1": "Das \"Ansteckungsdatum\" ist das Datum, an dem der Patient ansteckend wird. Das Ansteckungsfenster wird dann automatisch berechnet.",
   "help.text2": "Basierend auf dem Ansteckungsdatum wird ein Einmal-Authentifizierungscode generiert. Bitte teilen Sie ihn Ihrem Patienten ohne die Leerzeichen mit, damit er ihn in die Tracking-App eingeben kann.",
   "help.text3": "Authentifizierungscodes werden nicht lokal gespeichert, d.h. es muss ein neuer generiert werden, falls der Patient ihn erneut benötigt.",
+  "home.text1": "Guten Tag",
+  "home.text2": "Sie befinden sich auf der Internetseite, mit deren Hilfe medizinisches Personal Zugang zum Covid-Tracing erhält.",
+  "home.info": "Weitere Infos zum Covid tracing",
+  "home.login": "Login für medizinsches Personal",
+  "home.download": "Sie möchten die Tracing-App herunterladen? Das können sie über die offiziellen Seiten:",
   "i18n.validation.matDatepickerParse": "Ungültiges Datumsformat, bitte verwenden Sie \"tt.mm.jjjjj\"",
   "i18n.validation.matDatepickerMax": "Datum kann nicht in der Zukunft liegen"
 }

@@ -1,0 +1,44 @@
+@import "~@oblique/oblique/styles/scss/core/variables";
+@import "~@oblique/oblique/styles/scss/core/mixins/typography";
+
+:host {
+	display: flex;
+	justify-content: center;
+}
+
+.wrapper {
+	margin-top: $spacing-lg;
+}
+
+p.lead {
+	@include h4;
+}
+
+.actions {
+	text-align: center;
+	margin-top: $spacing-default;
+}
+
+.mat-button-base {
+	display: block;
+	width: 100%;
+
+	+ .mat-button-base {
+		margin-top: $spacing-lg;
+	}
+}
+
+section + section {
+	margin-top: 3 * $spacing-lg;
+}
+
+.apps {
+	display: flex;
+	justify-content: space-around;
+	justify-content: space-evenly; // not supported by IE
+	margin-top: $spacing-default;
+
+	img {
+		height: 3 * $spacing-default;
+	}
+}
