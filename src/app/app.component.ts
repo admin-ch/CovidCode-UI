@@ -1,4 +1,4 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {AfterViewInit, Component, Inject} from '@angular/core';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {ObOffCanvasService} from '@oblique/oblique';
@@ -13,7 +13,11 @@ export class AppComponent implements AfterViewInit {
 	opened$: Observable<string>;
 	name$: Observable<string>;
 
-	constructor(offCanvas: ObOffCanvasService, private readonly oauthService: OauthService) {
+	constructor(
+		offCanvas: ObOffCanvasService,
+		private readonly oauthService: OauthService,
+		@Inject('EIAM_SELF_ADMIN') public eIAMSelfAdmin: string
+	) {
 		this.opened$ = offCanvas.opened.pipe(
 			startWith(false),
 			map(opened => (opened ? 'help.tooltip.in' : 'help.tooltip.out'))

@@ -5,6 +5,7 @@
 export const environment = {
 	production: false,
 	host: 'http://localhost:8113',
+	eiamSelfAdmin: 'https://eiam.ch',
 	oidc: {
 		// The clientID as used in keycloak or mock server
 		clientId: 'ha-ui-web-client',

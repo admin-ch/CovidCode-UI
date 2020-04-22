@@ -5,7 +5,7 @@
 export const environment = {
 	production: false,
 	host: 'https://ha-authcode-generation-service.dev.app.cfap01.atlantica.admin.ch',
-
+	eiamSelfAdmin: 'https://sts-r.pts.admin.ch/_pep/myaccount?returnURL=https%3A%2F%2Fwww.codegen-d.bag.admin.ch',
 	oidc: {
 		clientId: 'ha-ui',
 		afterLoginPath: '/generate-code',

@@ -7,6 +7,9 @@ if (environment.production) {
 	enableProdMode();
 }
 
-platformBrowserDynamic([{provide: 'HOST', useValue: environment.host}])
+platformBrowserDynamic([
+	{provide: 'HOST', useValue: environment.host},
+	{provide: 'EIAM_SELF_ADMIN', useValue: environment.eiamSelfAdmin}
+])
 	.bootstrapModule(AppModule)
 	.catch(err => console.error(err));

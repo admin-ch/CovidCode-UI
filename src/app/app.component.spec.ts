@@ -11,7 +11,10 @@ describe('AppComponent', () => {
 			imports: [RouterTestingModule, ObliqueTestingModule],
 			declarations: [AppComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			providers: [{provide: OidcSecurityService, useValue: {}}]
+			providers: [
+				{provide: 'EIAM_SELF_ADMIN', useValue: ''},
+				{provide: OidcSecurityService, useValue: {}}
+			]
 		}).compileComponents();
 	}));
 
