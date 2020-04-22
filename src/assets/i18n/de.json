@@ -17,6 +17,7 @@
   "home.info": "Weitere Infos zum Covid tracing",
   "home.login": "Login für medizinsches Personal",
   "home.download": "Sie möchten die Tracing-App herunterladen? Das können sie über die offiziellen Seiten:",
+  "notification.401": "Sie sind nicht autorisiert.",
   "i18n.validation.matDatepickerParse": "Ungültiges Datumsformat, bitte verwenden Sie \"tt.mm.jjjjj\"",
   "i18n.validation.matDatepickerMax": "Datum kann nicht in der Zukunft liegen"
 }

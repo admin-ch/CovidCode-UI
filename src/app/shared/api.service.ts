@@ -1,6 +1,7 @@
 import {Inject, Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {Observable, of} from 'rxjs';
+import {Observable} from 'rxjs';
+import {ObHttpApiInterceptorEvents, ObNotificationService} from '@oblique/oblique';
 
 interface HttpOptions {
 	headers?:
@@ -25,8 +26,14 @@ interface HttpOptions {
 export class ApiService {
 	private readonly path: string;
 
-	constructor(@Inject('HOST') host: string, private http: HttpClient) {
+	constructor(
+		@Inject('HOST') host: string,
+		private http: HttpClient,
+		interceptor: ObHttpApiInterceptorEvents,
+		notification: ObNotificationService
+	) {
 		this.path = `${host}/v1`;
+		interceptor.sessionExpired.subscribe(() => notification.error('notification.401'));
 	}
 
 	get<T>(url: string, options?: HttpOptions): Observable<T> {

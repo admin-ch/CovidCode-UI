@@ -17,6 +17,7 @@
   "home.info": "Plus d'informations sur le traçage des covidés",
   "home.login": "Connexion pour le personnel médical",
   "home.download": "Vous voulez télécharger le programme de recherche ? Vous pouvez le faire via les pages officielles :",
+  "notification.401": "Vous n'êtes pas autorisé.",
   "i18n.validation.matDatepickerParse": "Format de date non valide, veuillez utiliser \"jj.mm.aaaa\"",
   "i18n.validation.matDatepickerMax": "La date ne peut pas être dans le futur"
 }

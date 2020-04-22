@@ -17,6 +17,7 @@
   "home.info": "Further information about covid tracing",
   "home.login": "Login for medical personnel",
   "home.download": "You want to download the Tracing-App? You can do so via the official pages:",
+  "notification.401": "You're not authorized.",
   "i18n.validation.matDatepickerParse": "Invalid date format, please use \"dd.mm.yyyy\"",
   "i18n.validation.matDatepickerMax": "Date cannot be in the future"
 }
