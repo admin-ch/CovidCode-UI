@@ -97,7 +97,7 @@ export class OauthService {
 				}
 				this.oidcSecurityService.getIsAuthorized().subscribe(login => {
 					// tslint:disable-next-line:no-console
-					console.log('Authentiation Status is', result);
+					console.log('Authentication Status is', result);
 					this.isAuthenticated$.next(login);
 				});
 				this.oidcSecurityService.getUserData().subscribe(claims => {
