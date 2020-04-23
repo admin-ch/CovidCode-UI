@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import {
 	ActivatedRouteSnapshot,
 	CanActivate,
@@ -10,6 +10,7 @@ import {
 } from '@angular/router';
 import {Observable} from 'rxjs';
 import {map, take} from 'rxjs/operators';
+import {WINDOW} from '@oblique/oblique';
 import {Claims, OauthService} from './oauth.service';
 
 export enum Role {
@@ -20,7 +21,7 @@ export enum Role {
 	providedIn: 'root'
 })
 export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad {
-	constructor(private readonly oauthService: OauthService, private readonly router: Router) {}
+	constructor(private readonly oauthService: OauthService, private readonly router: Router, @Inject(WINDOW) private readonly window) {}
 
 	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
 		return this.checkExpectedRole(route, true);
@@ -52,7 +53,7 @@ export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad 
 		const hasAccess = this.oauthService.hasUserRole(Role.HaUI, claims);
 		if (!hasAccess) {
 			if (redirect) {
-				this.router.navigate(['autologin/forbidden']);
+				this.window.href = 'https://www.eiam.admin.ch/403pts';
 			}
 		}
 		return hasAccess;
