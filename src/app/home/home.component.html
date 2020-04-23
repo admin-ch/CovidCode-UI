@@ -2,10 +2,10 @@
 	<section>
 		<p class="lead">{{ "home.text1" | translate }}</p>
 		<p>{{ "home.text2" | translate }}</p>
-		<button mat-flat-button color="primary" id="more-info_button">
+		<a [href]="bagURL$ | async" mat-flat-button color="primary" target="_blank" id="more-info_button">
 			<span class="fa fa-info"></span>
 			{{ "home.info" | translate }}
-		</button>
+		</a>
 		<a [routerLink]="['..', 'generate-code']" mat-flat-button color="primary" id="login_button">
 			<span class="fa fa-sign-in-alt"></span>
 			{{ "home.login" | translate }}
