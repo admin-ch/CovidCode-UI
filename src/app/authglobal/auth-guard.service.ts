@@ -57,7 +57,7 @@ export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad 
 		const hasAccess = this.oauthService.hasUserRole(Role.HaUI, claims);
 		if (!hasAccess) {
 			if (redirect) {
-				this.window.href = 'https://www.eiam.admin.ch/403pts';
+				this.window.location.href = 'https://www.eiam.admin.ch/403pts';
 			}
 		}
 		return hasAccess;
