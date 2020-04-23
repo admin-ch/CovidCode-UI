@@ -23,9 +23,7 @@ export interface Claims {
 	sub: string;
 	typ: string;
 	allowedOrigins: string[];
-	realmAccess: {
-		roles: string[];
-	};
+	roles: string[];
 	resourceAccess: {
 		account: {
 			roles: string[];
@@ -113,7 +111,7 @@ export class OauthService {
 	}
 
 	hasUserRole(role: string, claims: any): boolean {
-		return claims && claims.realmAccess && claims.realmAccess.roles && claims.realmAccess.roles.includes(role);
+		return claims && claims.roles && claims.roles.includes(role);
 	}
 
 	private authenticationSetup() {
