@@ -13,7 +13,7 @@ import {map, take} from 'rxjs/operators';
 import {Claims, OauthService} from './oauth.service';
 
 export enum Role {
-	HaUI = 'bag-pts-backend'
+	HaUI = 'bag-pts-allow'
 }
 
 @Injectable({
@@ -49,8 +49,7 @@ export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad 
 			return false;
 		}
 
-		// TODO
-		const hasAccess = true; // this.oauthService.hasRoleForAnyBusinesspartner(Role.HaUI, claims);
+		const hasAccess = this.oauthService.hasUserRole(Role.HaUI, claims);
 		if (!hasAccess) {
 			if (redirect) {
 				this.router.navigate(['autologin/forbidden']);

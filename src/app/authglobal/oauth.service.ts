@@ -6,43 +6,45 @@ import {environment} from '../../environments/environment';
 
 export interface Claims {
 	acr: string;
-	at_hash: string;
 	aud: string;
 	auth_time: number;
 	azp: string;
 	email_verified: boolean;
 	exp: number;
-	family_name: string;
-	given_name: string;
+	displayName?: string;
+	name?: string;
 	iat: number;
 	iss: string;
 	jti: string;
-	name: string;
 	nbf: number;
 	nonce: string;
 	preferred_username: string;
-	userroles: string[];
-	bproles: any;
-	s_hash: string;
 	session_state: string;
 	sub: string;
 	typ: string;
+	allowedOrigins: string[];
+	realmAccess: {
+		roles: string[];
+	};
+	resourceAccess: {
+		account: {
+			roles: string[];
+		};
+	};
+	scope: string;
+	ctx: string;
 }
 
 @Injectable({
 	providedIn: 'root'
 })
 export class OauthService {
-	givenName$: Observable<string>;
-	familyName$: Observable<string>;
 	name$: Observable<string>;
 	claims$ = new ReplaySubject<Claims>(1);
 	isAuthenticated$ = new ReplaySubject<boolean>(1);
 
 	protected constructor(private readonly oidcSecurityService: OidcSecurityService) {
-		this.givenName$ = this.claims$.pipe(map(result => result.given_name));
-		this.familyName$ = this.claims$.pipe(map(result => result.family_name));
-		this.name$ = this.claims$.pipe(map(result => result.name));
+		this.name$ = this.claims$.pipe(map(result => result.displayName || result.name));
 	}
 
 	logout() {
@@ -87,7 +89,7 @@ export class OauthService {
 					console.log('Authentication Status is', result);
 					this.isAuthenticated$.next(login);
 				});
-				this.oidcSecurityService.getUserData().subscribe(claims => {
+				this.oidcSecurityService.getUserData<Claims>().subscribe(claims => {
 					this.oidcSecurityService
 						.getIsAuthorized()
 						.pipe(take(1))
@@ -110,38 +112,8 @@ export class OauthService {
 			});
 	}
 
-	hasRoleForBusinesspartner(businesspartnerId: string, role: string, claims: any): boolean {
-		if (this.hasUserRole(role, claims)) {
-			return true;
-		}
-		if (!claims || !claims.bproles) {
-			return false;
-		}
-		const businessPartnerRoles = claims.bproles[businesspartnerId];
-		if (!businessPartnerRoles) {
-			return false;
-		}
-		return businessPartnerRoles.includes(role);
-	}
-
-	hasRoleForAnyBusinesspartner(role: string, claims: Claims): boolean {
-		if (this.hasUserRole(role, claims)) {
-			return true;
-		}
-		if (!claims || !claims.bproles) {
-			return false;
-		}
-		return (
-			Object.getOwnPropertyNames(claims.bproles).find(v => this.hasRoleForBusinesspartner(v, role, claims)) !==
-			undefined
-		);
-	}
-
-	private hasUserRole(role: string, claims: any): boolean {
-		if (!claims || !claims.userroles) {
-			return false;
-		}
-		return claims.userroles.includes(role);
+	hasUserRole(role: string, claims: any): boolean {
+		return claims && claims.realmAccess && claims.realmAccess.roles && claims.realmAccess.roles.includes(role);
 	}
 
 	private authenticationSetup() {
