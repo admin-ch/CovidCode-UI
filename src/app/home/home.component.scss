@@ -22,10 +22,7 @@ p.lead {
 .mat-button-base {
 	display: block;
 	width: 100%;
-
-	+ .mat-button-base {
-		margin-top: $spacing-lg;
-	}
+	margin-bottom: $spacing-lg;
 }
 
 section + section {

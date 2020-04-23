@@ -16,6 +16,7 @@
   "home.text2": "You are now on the website where medical staff can generate an authorization code to allow tracking of people with covid-19",
   "home.info": " More information about tracing people with covid-19",
   "home.login": "Login for medical personnel",
+  "home.physician": "Further information for cantonal physicians on the onboarding process",
   "home.download": "You want to download the mobile proximity tracing app? You can do so via the official pages:",
   "notification.401": "You're not authorized.",
   "security.no.access.part1": "You're not authorized to access the health authority website",
