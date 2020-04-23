@@ -19,8 +19,6 @@
   "home.physician": "Further information for cantonal physicians on the onboarding process",
   "home.download": "You want to download the mobile proximity tracing app? You can do so via the official pages:",
   "notification.401": "You're not authorized.",
-  "security.no.access.part1": "You're not authorized to access the health authority website",
-  "security.no.access.part2": "Please contact the FOITT for support: ",
   "logout": "Logout",
   "i18n.validation.matDatepickerParse": "Invalid date format, please use \"dd.mm.yyyy\"",
   "i18n.validation.matDatepickerMax": "Date cannot be in the future"

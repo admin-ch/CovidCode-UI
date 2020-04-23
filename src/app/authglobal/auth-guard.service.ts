@@ -21,7 +21,11 @@ export enum Role {
 	providedIn: 'root'
 })
 export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad {
-	constructor(private readonly oauthService: OauthService, private readonly router: Router, @Inject(WINDOW) private readonly window) {}
+	constructor(
+		private readonly oauthService: OauthService,
+		private readonly router: Router,
+		@Inject(WINDOW) private readonly window
+	) {}
 
 	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
 		return this.checkExpectedRole(route, true);

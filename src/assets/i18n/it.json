@@ -19,8 +19,6 @@
   "home.physician": "Ulteriori informazioni per i medici cantonali sul processo di imbarco",
   "home.download": "Vuoi scaricare la Tracing-App? Potete farlo tramite le pagine ufficiali:",
   "notification.401": "Non sei autorizzato.",
-  "security.no.access.part1": "Non sei autorizzato ad accedere al sito web dell'autorità sanitaria",
-  "security.no.access.part2": "Si prega di contattare il UFIT per assistenza: ",
   "logout": "Logout",
   "i18n.validation.matDatepickerParse": "Formato data non valido, si prega di utilizzare \"gg.mm.aaaa\"",
   "i18n.validation.matDatepickerMax": "La data non può essere nel futuro"
