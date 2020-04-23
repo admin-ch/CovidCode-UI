@@ -5,7 +5,8 @@
 export const environment = {
 	production: false,
 	host: 'https://codegen-service-a.bag.admin.ch',
-	eiamSelfAdmin: 'https://sts-a.pts.admin.ch/_pep/myaccount?returnURL=https%3A%2F%2Fwww.covidcode-a.admin.ch',
+	eiamSelfAdmin:
+		'https://sts-a.pts.admin.ch/_pep/myaccount?returnURL=https%3A%2F%2Fwww.codegen-a.bag.admin.ch/generate-code',
 	oidc: {
 		clientId: 'ha-ui',
 		afterLoginPath: '/generate-code',

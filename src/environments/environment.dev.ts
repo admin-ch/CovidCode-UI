@@ -4,14 +4,15 @@
 
 export const environment = {
 	production: false,
-	host: 'https://ha-authcode-generation-service.dev.app.cfap01.atlantica.admin.ch',
-	eiamSelfAdmin: 'https://sts-r.pts.admin.ch/_pep/myaccount?returnURL=https%3A%2F%2Fwww.codegen-d.bag.admin.ch',
+	host: 'https://codegen-service-d.bag.admin.ch',
+	eiamSelfAdmin:
+		'https://sts-r.pts.admin.ch/_pep/myaccount?returnURL=https%3A%2F%2Fwww.covidcode-d.admin.ch/generate-code',
 	oidc: {
 		clientId: 'ha-ui',
 		afterLoginPath: '/generate-code',
 		stsServer: 'https://identity-r.bit.admin.ch/realms/bag-pts',
-		applicationUrl: 'https://www.codegen-d.bag.admin.ch/',
-		post_logout_redirect_uri: 'https://www.codegen-d.bag.admin.ch/',
+		applicationUrl: 'https://www.covidcode-d.admin.ch/',
+		post_logout_redirect_uri: 'https://www.covidcode-d.admin.ch/',
 		silentRenew: false,
 		useAutoLogin: false,
 		debug: true,
