@@ -39,3 +39,17 @@ section + section {
 		height: 3 * $spacing-default;
 	}
 }
+
+aside {
+	@include h2;
+	position: fixed;
+	top: $spacing-default;
+	background-color: $brand-error-light;
+	color: $brand-error;
+	border: 1px solid $brand-error;
+	border-radius: $spacing-xs;
+	padding: $spacing-default;
+	text-align: center;
+	z-index: 100000;
+}
+
