@@ -1,4 +1,5 @@
 @import "~@oblique/oblique/styles/scss/core/variables";
+@import "~@oblique/oblique/styles/scss/core/mixins/layout";
 
 .form-actions {
 	margin-top: $spacing-default;
@@ -11,3 +12,21 @@
 .cdk-overlay-container {
 	z-index: 10000;
 }
+
+main {
+	display: flex;
+	justify-content: center;
+
+	.content {
+		flex-basis: 100%;
+
+		@include media-breakpoint-up('sm') {
+			flex-basis: 80%;
+		}
+
+		@include media-breakpoint-up('md') {
+			flex-basis: 66%;
+		}
+	}
+}
+

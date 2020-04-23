@@ -11,7 +11,9 @@ import {OauthService} from '../authglobal/oauth.service';
 @Component({
 	selector: 'ha-generate-code',
 	templateUrl: './generate-code.component.html',
-	styleUrls: ['./generate-code.component.scss']
+	styleUrls: ['./generate-code.component.scss'],
+	// tslint:disable-next-line:no-host-metadata-property
+	host: {class: 'content'}
 })
 export class GenerateCodeComponent implements OnInit {
 	test: FormGroup;
