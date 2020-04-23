@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {OidcSecurityService} from 'angular-auth-oidc-client';
 import {Observable, ReplaySubject} from 'rxjs';
 import {map, take} from 'rxjs/operators';
-import {OpenIdConfigService} from './open-id-config-service';
 import {environment} from '../../environments/environment';
 
 export interface Claims {
@@ -40,10 +39,7 @@ export class OauthService {
 	claims$ = new ReplaySubject<Claims>(1);
 	isAuthenticated$ = new ReplaySubject<boolean>(1);
 
-	protected constructor(
-		private readonly oidcSecurityService: OidcSecurityService,
-		private readonly oidConfigService: OpenIdConfigService
-	) {
+	protected constructor(private readonly oidcSecurityService: OidcSecurityService) {
 		this.givenName$ = this.claims$.pipe(map(result => result.given_name));
 		this.familyName$ = this.claims$.pipe(map(result => result.family_name));
 		this.name$ = this.claims$.pipe(map(result => result.name));
@@ -63,13 +59,9 @@ export class OauthService {
 		} else {
 			this.oidcSecurityService.onModuleSetup.subscribe(() => this.authenticationSetup());
 		}
-		// this.mockPamsLogin();
-		// this.login();
-		// this.pamsLoginStatus();
 	}
 
 	public pamsLoginStatus() {
-		// const pamsLogin = true; // $event.detail !== 'SA';
 		// In case of each login event your authentication status has to be checked
 		this.oidcSecurityService
 			.getIsAuthorized()
@@ -83,12 +75,7 @@ export class OauthService {
 					this.oidcSecurityService.logoff();
 					return;
 				}
-				// if (!result) {
-				// 	// tslint:disable-next-line:no-console
-				// 	console.log('You are logged-in in PAMS, so do an autologin');
-				// 	this.oidcSecurityService.authorize();
-				// 	return;
-				// }
+
 				if (!result && environment.oidc.useAutoLogin) {
 					// tslint:disable-next-line:no-console
 					console.log('You are not logged in but this site required login');
@@ -120,7 +107,6 @@ export class OauthService {
 							this.claims$.next(claims as Claims);
 						});
 				});
-				// callback();
 			});
 	}
 
@@ -161,33 +147,4 @@ export class OauthService {
 	private authenticationSetup() {
 		this.oidcSecurityService.authorizedCallbackWithCode(window.location.toString());
 	}
-
-	// private mockPamsLogin() {
-	// 	if (!this.oidConfigService.mockPams()) {
-	// 		return;
-	// 	}
-	//
-	// 	const securityService = this.oidcSecurityService;
-	//
-	// 	function mockLogin($event) {
-	// 		securityService.authorize();
-	// 		return false;
-	// 	}
-	//
-	// 	function observerCallback(mutationsList, observer2) {
-	// 		mutationsList.forEach(m => m.addedNodes.forEach(n => {
-	// 			n.addEventListener('click', mockLogin.bind(this), false);
-	// 		}));
-	// 	}
-	//
-	// 	const config = {childList: true, subtree: true};
-	// 	const observer = new MutationObserver(observerCallback);
-	//
-	// 	window.onload = () => {
-	// 		const elements = document.getElementById('profile');
-	// 		observer.observe(elements, config);
-	// 		const elements2 = document.getElementById('pams-widget-mobile');
-	// 		observer.observe(elements2, config);
-	// 	};
-	// }
 }

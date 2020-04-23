@@ -37,11 +37,11 @@ export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad 
 	private checkExpectedRole(route, redirect: boolean): Observable<boolean> {
 		return this.oauthService.claims$.pipe(
 			take(1),
-			map(result => this.checkExpectedRoleAfterAuthentication(route, result, redirect))
+			map(result => this.checkExpectedRoleAfterAuthentication(result, redirect))
 		);
 	}
 
-	private checkExpectedRoleAfterAuthentication(route, claims: Claims, redirect: boolean): boolean {
+	private checkExpectedRoleAfterAuthentication(claims: Claims, redirect: boolean): boolean {
 		if (!claims) {
 			if (redirect) {
 				this.router.navigate(['autologin']);
