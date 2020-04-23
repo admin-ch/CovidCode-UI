@@ -16,10 +16,10 @@
   "home.text2": "Vous êtes maintenant sur le site web où le personnel médical peut générer un code d’autorisation pour permettre le suivi des personnes atteintes du covid-19.",
   "home.info": "Plus d'informations sur le suivi des personnes atteintes du covid-19",
   "home.login": "Connexion pour le personnel médical",
-  "home.physician": "Informations complémentaires pour les médecins cantonaux sur le processus d'embarquement",
+  "home.physician": "Informations complémentaires pour les médecins cantonaux sur le processus d’onboarding",
   "home.download": "Vous voulez télécharger l’app mobile de proximity tracing ? Vous pouvez le faire via les pages officielles :",
   "notification.401": "Vous n'êtes pas autorisé.",
-  "logout": "Logout",
+  "logout": "Déconnexion",
   "i18n.validation.matDatepickerParse": "Format de date non valide, veuillez utiliser \"jj.mm.aaaa\"",
   "i18n.validation.matDatepickerMax": "La date ne peut pas être dans le futur"
 }
