@@ -1,6 +1,7 @@
 <h2 mat-dialog-title>{{ "code.title" | translate }}</h2>
 <div mat-dialog-content>
-	<div class="highlight">{{ data }}</div>
+	<p class="highlight">{{ data.code }}</p>
+	<p>{{ "generate-code.hint" | translate }}: {{ data.date }}</p>
 </div>
 <div mat-dialog-actions>
 	<button mat-flat-button color="primary" type="button" (click)="close()" id="close_button">

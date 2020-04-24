@@ -44,7 +44,10 @@ export class GenerateCodeComponent implements OnInit {
 					onsetDate: value.onsetDate.format('YYYY-MM-DD')
 				})
 				.subscribe(authorisationCode =>
-					this.dialog.open(CodeComponent, {data: authorisationCode, disableClose: true})
+					this.dialog.open(CodeComponent, {
+						data: {code: authorisationCode, date: value.onsetDate.format('DD.MM.YYYY')},
+						disableClose: true
+					})
 				);
 			this.form.resetForm();
 		}
