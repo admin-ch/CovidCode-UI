@@ -18,7 +18,6 @@
   "home.login": "Accesso per il personale medico",
   "home.physician": "Ulteriori informazioni per i medici cantonali al processo di onboarding",
   "home.download": "Vuoi scaricare la Tracing-App? Potete farlo tramite le pagine ufficiali:",
-  "notification.401": "Non sei autorizzato.",
   "logout": "Esci",
   "i18n.validation.matDatepickerParse": "Formato data non valido, si prega di utilizzare \"gg.mm.aaaa\"",
   "i18n.validation.matDatepickerMax": "La data non può essere nel futuro",

@@ -18,7 +18,6 @@
   "home.login": "Login for medical personnel",
   "home.physician": "Further information for cantonal physicians on the onboarding process",
   "home.download": "You want to download the mobile proximity tracing app? You can do so via the official pages:",
-  "notification.401": "You're not authorized.",
   "logout": "Logout",
   "i18n.validation.matDatepickerParse": "Invalid date format, please use \"dd.mm.yyyy\"",
   "i18n.validation.matDatepickerMax": "Date cannot be in the future",

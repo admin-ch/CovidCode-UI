@@ -18,7 +18,6 @@
   "home.login": "Connexion pour le personnel médical",
   "home.physician": "Informations complémentaires pour les médecins cantonaux sur le processus d’onboarding",
   "home.download": "Vous voulez télécharger l’app mobile de proximity tracing ? Vous pouvez le faire via les pages officielles :",
-  "notification.401": "Vous n'êtes pas autorisé.",
   "logout": "Déconnexion",
   "i18n.validation.matDatepickerParse": "Format de date non valide, veuillez utiliser \"jj.mm.aaaa\"",
   "i18n.validation.matDatepickerMax": "La date ne peut pas être dans le futur",
