@@ -1,6 +1,6 @@
 <form [formGroup]="test" (submit)="save(test.valid, test.value)">
 	<mat-form-field obErrorMessages>
-		<mat-label>{{ "generate-code.onset" | translate }}</mat-label>
+		<mat-label>{{ "generate-code.onset" | translate }} *</mat-label>
 		<input
 			matInput
 			formControlName="onsetDate"
