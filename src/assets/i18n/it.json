@@ -21,5 +21,6 @@
   "notification.401": "Non sei autorizzato.",
   "logout": "Esci",
   "i18n.validation.matDatepickerParse": "Formato data non valido, si prega di utilizzare \"gg.mm.aaaa\"",
-  "i18n.validation.matDatepickerMax": "La data non può essere nel futuro"
+  "i18n.validation.matDatepickerMax": "La data non può essere nel futuro",
+  "i18n.validation.matDatepickerMin": "La data non può essere anteriore al 01.01.2020"
 }

@@ -18,6 +18,7 @@ import {OauthService} from '../authglobal/oauth.service';
 export class GenerateCodeComponent implements OnInit {
 	test: FormGroup;
 	today = moment();
+	startDate = moment('2020-01-01');
 	@ViewChild(FormGroupDirective) form: FormGroupDirective;
 	isAuthenticated$: Observable<boolean>;
 

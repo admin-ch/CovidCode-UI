@@ -21,5 +21,6 @@
   "notification.401": "Sie sind nicht berechtigt.",
   "logout": "Logout",
   "i18n.validation.matDatepickerParse": "Ungültiges Datumsformat, bitte verwenden Sie \"tt.mm.jjjj\"",
-  "i18n.validation.matDatepickerMax": "Datum kann nicht in der Zukunft liegen"
+  "i18n.validation.matDatepickerMax": "Datum kann nicht in der Zukunft liegen",
+  "i18n.validation.matDatepickerMin": "Datum kann nicht vor dem 01.01.2020 liegen"
 }
