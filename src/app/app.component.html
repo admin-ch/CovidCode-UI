@@ -8,25 +8,28 @@
 		<p>{{ "help.text3" | translate }}</p>
 		<p>{{ "help.text4" | translate }}</p>
 	</ng-container>
-	<ng-template #obHeaderControl>
-		<button obOffCanvasToggle [matTooltip]="helpTooltip$ | async | translate" id="help-toggle_button">
-			<span class="fa fa-question-circle"></span>
-		</button>
-	</ng-template>
 	<ng-container *ngIf="isAuthenticated$ | async">
 		<ng-template #obHeaderControl>
 			<button [matTooltip]="'logout' | translate" class="control-link" (click)="logout()">
 				<span class="fa fa-sign-out-alt control-icon"></span>
 			</button>
 		</ng-template>
-		<ng-template #obHeaderControl>
-			<a
-				[matTooltip]="name$ | async"
-				[href]="eIAMSelfAdmin + (currentPage$ | async)"
-				class="control-link"
-			>
-				<span class="fa fa-user control-icon"></span>
-			</a>
-		</ng-template>
+		<ng-container *ngIf="currentPage$ | async as currentPage">
+			<ng-template #obHeaderControl>
+				<a [matTooltip]="name$ | async" [href]="eIAMSelfAdmin + currentPage" class="control-link">
+					<span class="fa fa-user control-icon"></span>
+				</a>
+			</ng-template>
+			<ng-template #obHeaderControl *ngIf="currentPage === '/generate-code'">
+				<button
+					obOffCanvasToggle
+					[matTooltip]="helpTooltip$ | async | translate"
+					id="help-toggle_button"
+					class="control-link"
+				>
+					<span class="fa fa-question-circle control-icon"></span>
+				</button>
+			</ng-template>
+		</ng-container>
 	</ng-container>
 </ob-master-layout>
