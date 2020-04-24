@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, Inject} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {Observable} from 'rxjs';
-import {filter, map, startWith} from 'rxjs/operators';
+import {delay, filter, map, startWith} from 'rxjs/operators';
 import {ObHttpApiInterceptorEvents, ObOffCanvasService} from '@oblique/oblique';
 import {OauthService} from './authglobal/oauth.service';
 
@@ -11,9 +11,9 @@ import {OauthService} from './authglobal/oauth.service';
 })
 export class AppComponent implements AfterViewInit {
 	isAuthenticated$: Observable<boolean>;
-	opened$: Observable<string>;
+	helpTooltip$: Observable<string>;
 	name$: Observable<string>;
-	eIAMSelfAdminRedirect: Observable<string>;
+	currentPage$: Observable<string>;
 
 	constructor(
 		offCanvas: ObOffCanvasService,
@@ -22,18 +22,16 @@ export class AppComponent implements AfterViewInit {
 		interceptor: ObHttpApiInterceptorEvents,
 		router: Router
 	) {
-		this.eIAMSelfAdminRedirect = router.events.pipe(
+		this.name$ = this.oauthService.name$;
+		this.isAuthenticated$ = this.oauthService.isAuthenticated$.pipe(delay(0));
+		this.currentPage$ = router.events.pipe(
 			filter(evt => evt instanceof NavigationEnd),
 			map((evt: NavigationEnd) => evt.url)
 		);
-		this.opened$ = offCanvas.opened.pipe(
+		this.helpTooltip$ = offCanvas.opened.pipe(
 			startWith(false),
 			map(opened => (opened ? 'help.tooltip.in' : 'help.tooltip.out'))
 		);
-		// setTimeout to avoid ExpressionHasBeenChangedAfterItHasBeenCheckedError
-		setTimeout(() => (this.isAuthenticated$ = this.oauthService.isAuthenticated$));
-		this.name$ = this.oauthService.name$;
-
 		interceptor.sessionExpired.subscribe(() => this.logout());
 	}
 

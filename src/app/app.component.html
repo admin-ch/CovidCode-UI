@@ -9,7 +9,7 @@
 		<p>{{ "help.text4" | translate }}</p>
 	</ng-container>
 	<ng-template #obHeaderControl>
-		<button obOffCanvasToggle [matTooltip]="opened$ | async | translate" id="help-toggle_button">
+		<button obOffCanvasToggle [matTooltip]="helpTooltip$ | async | translate" id="help-toggle_button">
 			<span class="fa fa-question-circle"></span>
 		</button>
 	</ng-template>
@@ -22,7 +22,7 @@
 		<ng-template #obHeaderControl>
 			<a
 				[matTooltip]="name$ | async"
-				[href]="eIAMSelfAdmin + (eIAMSelfAdminRedirect | async)"
+				[href]="eIAMSelfAdmin + (currentPage$ | async)"
 				class="control-link"
 			>
 				<span class="fa fa-user control-icon"></span>
