@@ -20,7 +20,6 @@ import {AppComponent} from './app.component';
 import {AuthModule, ConfigResult, OidcConfigService, OidcSecurityService} from 'angular-auth-oidc-client';
 import {OpenIdConfigService} from './authglobal/open-id-config-service';
 import {HttpConfigInterceptor} from './authglobal/http.config.interceptor';
-import {GenerateCodeModule} from './generate-code/generate-code.module';
 
 export function loadConfig(oidcConfigService: OidcConfigService, oidConfigService: OpenIdConfigService) {
 	return () => oidcConfigService.load_using_stsServer(oidConfigService.getStsStagingUrl());
