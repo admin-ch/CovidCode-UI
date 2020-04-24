@@ -4,7 +4,6 @@
 		<input
 			matInput
 			formControlName="onsetDate"
-			#dateControl
 			[matDatepicker]="start"
 			[max]="today"
 			id="onset-date_field"
@@ -13,10 +12,6 @@
 		<mat-datepicker #start></mat-datepicker>
 		<mat-error></mat-error>
 		<mat-hint>{{ "generate-code.hint" | translate }}</mat-hint>
-		<button type="button" role="button" [obInputClear]="dateControl">
-			<span class="fa fa-times-circle"></span>
-			<span class="sr-only">{{ "i18n.common.clear" | translate }}</span>
-		</button>
 	</mat-form-field>
 	<div class="form-actions">
 		<button mat-stroked-button color="primary" type="reset" id="reset_button">

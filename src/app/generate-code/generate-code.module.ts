@@ -9,7 +9,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {DateAdapter} from '@angular/material/core';
 import {TranslateService} from '@ngx-translate/core';
 import {map} from 'rxjs/operators';
-import {ObErrorMessagesModule, ObInputClearModule} from '@oblique/oblique';
+import {ObErrorMessagesModule} from '@oblique/oblique';
 import {SharedModule} from 'shared/shared.module';
 import {GenerateCodeComponent} from './generate-code.component';
 import {CodeComponent} from './code/code.component';
@@ -26,8 +26,7 @@ import {AuthGuardService} from '../authglobal/auth-guard.service';
 		MatFormFieldModule,
 		MatInputModule,
 		MatMomentDateModule,
-		ObErrorMessagesModule,
-		ObInputClearModule
+		ObErrorMessagesModule
 	]
 })
 export class GenerateCodeModule {
