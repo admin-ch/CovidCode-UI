@@ -19,7 +19,11 @@
 			</button>
 		</ng-template>
 		<ng-template #obHeaderControl>
-			<a [matTooltip]="name$ | async" [href]="eIAMSelfAdmin" class="control-link">
+			<a
+				[matTooltip]="name$ | async"
+				[href]="eIAMSelfAdmin + (eIAMSelfAdminRedirect | async)"
+				class="control-link"
+			>
 				<span class="fa fa-user control-icon"></span>
 			</a>
 		</ng-template>

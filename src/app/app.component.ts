@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, Inject} from '@angular/core';
+import {NavigationEnd, Router} from '@angular/router';
 import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
+import {filter, map, startWith} from 'rxjs/operators';
 import {ObHttpApiInterceptorEvents, ObOffCanvasService} from '@oblique/oblique';
 import {OauthService} from './authglobal/oauth.service';
 
@@ -12,13 +13,19 @@ export class AppComponent implements AfterViewInit {
 	isAuthenticated$: Observable<boolean>;
 	opened$: Observable<string>;
 	name$: Observable<string>;
+	eIAMSelfAdminRedirect: Observable<string>;
 
 	constructor(
 		offCanvas: ObOffCanvasService,
 		private readonly oauthService: OauthService,
 		@Inject('EIAM_SELF_ADMIN') public eIAMSelfAdmin: string,
-		interceptor: ObHttpApiInterceptorEvents
+		interceptor: ObHttpApiInterceptorEvents,
+		router: Router
 	) {
+		this.eIAMSelfAdminRedirect = router.events.pipe(
+			filter(evt => evt instanceof NavigationEnd),
+			map((evt: NavigationEnd) => evt.url)
+		);
 		this.opened$ = offCanvas.opened.pipe(
 			startWith(false),
 			map(opened => (opened ? 'help.tooltip.in' : 'help.tooltip.out'))
