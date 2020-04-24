@@ -23,7 +23,7 @@ export interface Claims {
 	sub: string;
 	typ: string;
 	allowedOrigins: string[];
-	roles: string[];
+	userroles: string[];
 	resourceAccess: {
 		account: {
 			roles: string[];
@@ -111,7 +111,7 @@ export class OauthService {
 	}
 
 	hasUserRole(role: string, claims: any): boolean {
-		return claims && claims.roles && claims.roles.includes(role);
+		return claims && claims.userroles && claims.userroles.includes(role);
 	}
 
 	private authenticationSetup() {
