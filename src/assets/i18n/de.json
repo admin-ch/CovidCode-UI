@@ -26,5 +26,7 @@
   "i18n.validation.matDatepickerParse": "Ungültiges Datumsformat, bitte verwenden Sie \"tt.mm.jjjj\"",
   "i18n.validation.matDatepickerMax": "Datum darf nicht in der Zukunft liegen",
   "i18n.validation.matDatepickerMin": "Datum darf nicht älter als 4 Wochen sein",
-  "i18n.validation.required": "Bitte geben Sie ein gültiges Datumsformat ein"
+  "i18n.validation.required": "Bitte geben Sie ein gültiges Datumsformat ein",
+  "footer.built.prefix": "Mit",
+  "footer.built.suffix": "gebaut"
 }

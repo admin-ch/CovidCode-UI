@@ -1,5 +1,6 @@
 @import "~@oblique/oblique/styles/scss/core/variables";
 @import "~@oblique/oblique/styles/scss/core/mixins/typography";
+@import "~@oblique/oblique/styles/scss/core/mixins/layout";
 
 :host {
 	display: flex;
@@ -31,7 +32,7 @@ section + section {
 
 .apps {
 	display: flex;
-	justify-content: space-around;	// fallback for IE
+	justify-content: space-around; // fallback for IE
 	justify-content: space-evenly;
 	// fallback for Edge
 	@supports (-ms-ime-align: auto) {
@@ -41,6 +42,28 @@ section + section {
 
 	img {
 		height: 3 * $spacing-default;
+	}
+}
+
+::ng-deep {
+	.viewport-collapsed {
+		@include layout-collapse-down {
+			display: block;
+		}
+
+		@include layout-collapse-up {
+			display: none;
+		}
+	}
+
+	.viewport-expanded {
+		@include layout-collapse-down {
+			display: none;
+		}
+
+		@include layout-collapse-up {
+			display: inline;
+		}
 	}
 }
 

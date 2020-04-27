@@ -26,5 +26,7 @@
   "i18n.validation.matDatepickerParse": "Invalid date format, please use \"dd.mm.yyyy\"",
   "i18n.validation.matDatepickerMax": "Date cannot be in the future",
   "i18n.validation.matDatepickerMin": "Date cannot be older than 4 weeks",
-  "i18n.validation.required": "Please enter a valid date format"
+  "i18n.validation.required": "Please enter a valid date format",
+  "footer.built.prefix": "Built with",
+  "footer.built.suffix": ""
 }
