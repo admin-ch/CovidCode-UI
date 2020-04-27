@@ -22,5 +22,5 @@
   "logout": "Logout",
   "i18n.validation.matDatepickerParse": "Invalid date format, please use \"dd.mm.yyyy\"",
   "i18n.validation.matDatepickerMax": "Date cannot be in the future",
-  "i18n.validation.matDatepickerMin": "Date cannot be before 01.01.2020"
+  "i18n.validation.matDatepickerMin": "Date cannot be older than 4 weeks"
 }

@@ -21,6 +21,6 @@
   "home.download": "Sie möchten die Tracing-App herunterladen? Das können sie über die offiziellen Seiten:",
   "logout": "Logout",
   "i18n.validation.matDatepickerParse": "Ungültiges Datumsformat, bitte verwenden Sie \"tt.mm.jjjj\"",
-  "i18n.validation.matDatepickerMax": "Datum kann nicht in der Zukunft liegen",
-  "i18n.validation.matDatepickerMin": "Datum kann nicht vor dem 01.01.2020 liegen"
+  "i18n.validation.matDatepickerMax": "Datum darf nicht in der Zukunft liegen",
+  "i18n.validation.matDatepickerMin": "Datum darf nicht älter als 4 Wochen sein"
 }
