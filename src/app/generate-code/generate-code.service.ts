@@ -10,7 +10,7 @@ import {ApiService} from 'shared/api.service';
 export class GenerateCodeService {
 	private readonly api = 'authcode';
 
-	constructor(private http: ApiService) {}
+	constructor(private readonly http: ApiService) {}
 
 	sendData(data: AuthorizationCodeCreateDto): Observable<string> {
 		return this.http.post<AuthorizationCodeResponseDto>(this.api, data).pipe(

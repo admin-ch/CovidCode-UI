@@ -25,7 +25,7 @@ interface HttpOptions {
 export class ApiService {
 	private readonly path: string;
 
-	constructor(@Inject('HOST') host: string, private http: HttpClient) {
+	constructor(@Inject('HOST') host: string, private readonly http: HttpClient) {
 		this.path = `${host}/v1`;
 	}
 

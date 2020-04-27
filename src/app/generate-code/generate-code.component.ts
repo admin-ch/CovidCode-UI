@@ -23,9 +23,9 @@ export class GenerateCodeComponent implements OnInit {
 	isAuthenticated$: Observable<boolean>;
 
 	constructor(
-		private fb: FormBuilder,
-		private dialog: MatDialog,
-		private service: GenerateCodeService,
+		private readonly fb: FormBuilder,
+		private readonly dialog: MatDialog,
+		private readonly service: GenerateCodeService,
 		private readonly oauthService: OauthService
 	) {
 		this.isAuthenticated$ = this.oauthService.isAuthenticated$;

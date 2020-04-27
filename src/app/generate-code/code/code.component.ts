@@ -9,7 +9,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 export class CodeComponent {
 	constructor(
 		@Inject(MAT_DIALOG_DATA) public data: {code: number; date: string},
-		private dialog: MatDialogRef<CodeComponent>
+		private readonly dialog: MatDialogRef<CodeComponent>
 	) {}
 
 	close(): void {

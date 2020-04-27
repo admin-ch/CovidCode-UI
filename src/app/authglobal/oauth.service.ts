@@ -104,7 +104,7 @@ export class OauthService {
 							}
 							// tslint:disable-next-line:no-console
 							console.log('User Data is ', claims);
-							this.claims$.next(claims as Claims);
+							this.claims$.next(claims);
 						});
 				});
 			});
