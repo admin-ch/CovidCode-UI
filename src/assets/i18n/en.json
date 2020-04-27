@@ -11,7 +11,7 @@
   "help.title": "Help",
   "help.text1": "\"Date of infection\" refers to the day the patient became infected. The incubation period is calculated automatically.",
   "help.text2": "Based on the date of infection a single-use authentication code is generated.",
-  "help.text3": "Pass on the code to your patient, leaving out the spaces, so that they can enter it into the tracking app",
+  "help.text3": "Pass on the code to your patient, leaving out the spaces, so that they can enter it into the tracking app. This code is valid for 24 hours.",
   "help.text4": "Authentication codes are not stored locally. This means a new code has to be generated, if the patient requires a new one.",
   "home.text1": "Hello",
   "home.text2": "You are now on the website where medical staff can generate an authorization code to allow tracking of people infected with the new Coronavirus",

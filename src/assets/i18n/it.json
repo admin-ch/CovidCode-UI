@@ -11,7 +11,7 @@
   "help.title": "Aiuto",
   "help.text1": "La \"data di infezione\" è la data in cui il paziente è stato infettato. La finestra infettiva (periodo dove l'infezione può essere avvenuta) viene calcolata automaticamente.",
   "help.text2": "In base alla data di infezione, viene generato un codice di autenticazione univoco.",
-  "help.text3": "Si prega di comunicare questo codice ( senza spazi) al paziente, in modo che possa inserire questo codice nell'applicazione di tracciamento.",
+  "help.text3": "Si prega di comunicare questo codice ( senza spazi) al paziente, in modo che possa inserire questo codice nell'applicazione di tracciamento. Questo codice è valido per 24 ore.",
   "help.text4": "I codici di autenticazione non vengono memorizzati localmente. Qualché il paziente ne abbia nuovamente bisogno, egli deve creare un nuovo codice.",
   "home.text1": "Ciao",
   "home.text2": "Siete ora sul sito web dove il personale medico può accedere al nuovo Coronavirus tracing.",

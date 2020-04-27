@@ -11,7 +11,7 @@
   "help.title": "Hilfe",
   "help.text1": "Das \"Ansteckungsdatum\" ist das Datum, an welchem der Patient angesteckt worden ist. Das Ansteckungsfenster wird dann automatisch berechnet.",
   "help.text2": "Basierend auf dem Ansteckungsdatum wird ein Einmal-Autentisierungscode generiert.",
-  "help.text3": "Bitte teilen Sie diesen Code ohne die Leerzeichen Ihrem Patienten mit, damit er diesen Code in die Tracking-App eingeben kann.",
+  "help.text3": "Bitte teilen Sie diesen Code ohne die Leerzeichen Ihrem Patienten mit, damit er diesen Code in die Tracking-App eingeben kann. Dieser Code ist für 24 Stunden gültig.",
   "help.text4": "Authentisierungscodes werden nicht lokal gespeichert, d.h., es muss ein neuer Code generiert werden, falls der Patient diesen erneut benötigt.",
   "home.text1": "Guten Tag",
   "home.text2": "Sie befinden sich auf der Internetseite, mit deren Hilfe medizinisches Personal Zugang zum neues Coronavirus Tracing erhält.",
