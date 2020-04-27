@@ -36,26 +36,22 @@ describe('HomeComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	describe('bagURL$', () => {
+	describe('lang$', () => {
 		it('should be defined', () => {
-			expect(component.bagURL$).toBeDefined();
+			expect(component.lang$).toBeDefined();
 		});
 
 		it('should emit an url', done => {
-			component.bagURL$.subscribe(url => {
-				expect(url).toBe(
-					`https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov.html`
-				);
+			component.lang$.subscribe(url => {
+				expect(url).toBe('en');
 				done();
 			});
 		});
 
 		it('should use emited language', done => {
 			const translate = TestBed.inject(TranslateService);
-			component.bagURL$.pipe(skip(1)).subscribe(url => {
-				expect(url).toBe(
-					`https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov.html`
-				);
+			component.lang$.pipe(skip(1)).subscribe(url => {
+				expect(url).toBe('de');
 				done();
 			});
 			translate.onLangChange.emit({

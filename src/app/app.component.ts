@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Inject} from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {Observable} from 'rxjs';
 import {delay, filter, map, startWith} from 'rxjs/operators';
@@ -18,7 +18,6 @@ export class AppComponent implements AfterViewInit {
 	constructor(
 		offCanvas: ObOffCanvasService,
 		private readonly oauthService: OauthService,
-		@Inject('EIAM_SELF_ADMIN') public eIAMSelfAdmin: string,
 		interceptor: ObHttpApiInterceptorEvents,
 		router: Router
 	) {

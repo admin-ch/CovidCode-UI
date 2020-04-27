@@ -1,13 +1,13 @@
 import {async, TestBed} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
-import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {Router} from '@angular/router';
+import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
 import {ObliqueTestingModule} from '@oblique/oblique';
 import {OidcSecurityService} from 'angular-auth-oidc-client';
-import {AppComponent} from './app.component';
-import {OauthService} from './authglobal/oauth.service';
 import {of} from 'rxjs';
 import {first, skip} from 'rxjs/operators';
+import {AppComponent} from './app.component';
+import {OauthService} from './authglobal/oauth.service';
 
 describe('AppComponent', () => {
 	let app: AppComponent;
@@ -22,9 +22,8 @@ describe('AppComponent', () => {
 		TestBed.configureTestingModule({
 			imports: [RouterTestingModule.withRoutes([{path: 'test', component: AppComponent}]), ObliqueTestingModule],
 			declarations: [AppComponent],
-			schemas: [NO_ERRORS_SCHEMA],
+			schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 			providers: [
-				{provide: 'EIAM_SELF_ADMIN', useValue: ''},
 				{provide: OidcSecurityService, useValue: {}},
 				{provide: OauthService, useValue: mock}
 			]

@@ -11,16 +11,14 @@ import {Observable} from 'rxjs';
 	host: {class: 'content'}
 })
 export class HomeComponent {
-	bagURL$: Observable<string>;
+	bagURL =
+		'https://www.bag.admin.ch/bag/LANG/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov.html';
+	lang$: Observable<string>;
 
 	constructor(translate: TranslateService) {
-		this.bagURL$ = translate.onLangChange.pipe(
+		this.lang$ = translate.onLangChange.pipe(
 			map(lang => lang.lang),
-			startWith(translate.currentLang),
-			map(
-				lang =>
-					`https://www.bag.admin.ch/bag/${lang}/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov.html`
-			)
+			startWith(translate.currentLang)
 		);
 	}
 }

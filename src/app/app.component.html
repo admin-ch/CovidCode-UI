@@ -16,9 +16,7 @@
 		</ng-template>
 		<ng-container *ngIf="currentPage$ | async as currentPage">
 			<ng-template #obHeaderControl>
-				<a [matTooltip]="name$ | async" [href]="eIAMSelfAdmin + currentPage" class="control-link">
-					<span class="fa fa-user control-icon"></span>
-				</a>
+				<ha-eiam-self-admin [page]="currentPage" [name]="name$ | async"></ha-eiam-self-admin>
 			</ng-template>
 			<ng-template #obHeaderControl *ngIf="currentPage === '/generate-code'">
 				<button

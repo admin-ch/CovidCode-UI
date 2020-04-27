@@ -12,6 +12,7 @@ import {Observable} from 'rxjs';
 import {map, take} from 'rxjs/operators';
 import {WINDOW} from '@oblique/oblique';
 import {Claims, OauthService} from './oauth.service';
+import {TranslateService} from '@ngx-translate/core';
 
 export enum Role {
 	HaUI = 'bag-pts-allow'
@@ -24,6 +25,7 @@ export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad 
 	constructor(
 		private readonly oauthService: OauthService,
 		private readonly router: Router,
+		private readonly translate: TranslateService,
 		@Inject(WINDOW) private readonly window
 	) {}
 
@@ -56,7 +58,7 @@ export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad 
 
 		const hasAccess = this.oauthService.hasUserRole(Role.HaUI, claims);
 		if (!hasAccess && redirect) {
-			this.window.location.href = 'https://www.eiam.admin.ch/403pts';
+			this.window.location.href = `https://www.eiam.admin.ch/?c=f!403pts!pub&l=${this.translate.currentLang}`;
 		}
 		return hasAccess;
 	}
