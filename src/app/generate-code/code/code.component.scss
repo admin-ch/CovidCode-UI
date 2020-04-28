@@ -2,11 +2,16 @@
 @import "~@oblique/oblique/styles/scss/core/variables";
 
 .highlight {
-	@include h1;
-	text-align: center;
+	@include h3;
+}
+
+.mat-dialog-content {
 	margin: $spacing-lg 0;
+	padding: 0;
+	color: $brand-default;
 }
 
 .mat-dialog-actions {
-	justify-content: flex-end;
+	display: block;
+	text-align: right;
 }
