@@ -3,7 +3,7 @@
   "application.organization.name": "Ufficio federale dell'informatica e della telecomunicazione UFIT",
   "generate-code.generate": "Genera codice",
   "generate-code.onset": "Onset date",
-  "generate-code.hint": "Data di evasione del contagio",
+  "generate-code.hint": "Data di evasione del contagio, \"gg.mm.aaaa\"",
   "code.title": "Codice di autenticazione",
   "code.date": "Data di proroga",
   "code.instruction": "Si prega di fornire questo codice di autenticazione alla persona che è risultata positiva.",
@@ -25,5 +25,6 @@
   "logout": "Esci",
   "i18n.validation.matDatepickerParse": "Formato data non valido, si prega di utilizzare \"gg.mm.aaaa\"",
   "i18n.validation.matDatepickerMax": "La data non può essere nel futuro",
-  "i18n.validation.matDatepickerMin": "La data non può essere più vecchia di 4 settimane"
+  "i18n.validation.matDatepickerMin": "La data non può essere più vecchia di 4 settimane",
+  "i18n.validation.required": "Inserire un formato di data valido"
 }

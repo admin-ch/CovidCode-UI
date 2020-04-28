@@ -3,7 +3,7 @@
   "application.organization.name": "Bundesamt für Informatik und Telekommunikation BIT",
   "generate-code.generate": "Code erzeugen",
   "generate-code.onset": "Onset date",
-  "generate-code.hint": "Datum des Ausbruchs der Ansteckung",
+  "generate-code.hint": "Datum des Ausbruchs der Ansteckung, \"tt.mm.jjjj\"",
   "code.title": "Authentisierungscode",
   "code.date": "Datum der Anstreckung",
   "code.instruction": "Bitte teilen Sie diesen Authentisierungscode der positiv getesteten Person mit.",
@@ -25,5 +25,6 @@
   "logout": "Logout",
   "i18n.validation.matDatepickerParse": "Ungültiges Datumsformat, bitte verwenden Sie \"tt.mm.jjjj\"",
   "i18n.validation.matDatepickerMax": "Datum darf nicht in der Zukunft liegen",
-  "i18n.validation.matDatepickerMin": "Datum darf nicht älter als 4 Wochen sein"
+  "i18n.validation.matDatepickerMin": "Datum darf nicht älter als 4 Wochen sein",
+  "i18n.validation.required": "Bitte geben Sie ein gültiges Datumsformat ein"
 }
