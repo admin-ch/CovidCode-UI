@@ -31,8 +31,12 @@ section + section {
 
 .apps {
 	display: flex;
-	justify-content: space-around;
-	justify-content: space-evenly; // not supported by IE
+	justify-content: space-around;	// fallback for IE
+	justify-content: space-evenly;
+	// fallback for Edge
+	@supports (-ms-ime-align: auto) {
+		justify-content: space-around;
+	}
 	margin-top: $spacing-default;
 
 	img {
