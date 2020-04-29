@@ -100,6 +100,7 @@ export class OauthService {
 							if (!login && claims) {
 								// tslint:disable-next-line:no-console
 								console.log('Non empty claims but no login, ignore');
+								this.claims$.next(undefined);
 								return;
 							}
 							// tslint:disable-next-line:no-console
