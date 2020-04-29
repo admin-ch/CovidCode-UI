@@ -1,4 +1,4 @@
-<form [formGroup]="test" (submit)="save(test.valid, test.value)">
+<form [formGroup]="test" (submit)="save(test.valid, test.value)" autocomplete="off">
 	<mat-form-field obErrorMessages>
 		<mat-label>{{ "generate-code.onset" | translate }} *</mat-label>
 		<input
