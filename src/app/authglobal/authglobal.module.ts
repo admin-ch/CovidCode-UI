@@ -1,13 +1,15 @@
 import {NgModule} from '@angular/core';
-import {AutoLoginComponent} from './auto-login/auto-login.component';
+import {RouterModule, Routes} from '@angular/router';
 import {CommonModule} from '@angular/common';
+import {ReactiveFormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
 import {ObliqueModule} from '@oblique/oblique';
-import {ReactiveFormsModule} from '@angular/forms';
-import {AuthglobalRoutingModule} from './authglobal-routing.module';
+import {AutoLoginComponent} from './auto-login.component';
+
+const routes: Routes = [{path: '', component: AutoLoginComponent}];
 
 @NgModule({
 	declarations: [AutoLoginComponent],
-	imports: [CommonModule, AuthglobalRoutingModule, TranslateModule, ObliqueModule, ReactiveFormsModule]
+	imports: [CommonModule, RouterModule.forChild(routes), TranslateModule, ObliqueModule, ReactiveFormsModule]
 })
 export class AuthglobalModule {}
