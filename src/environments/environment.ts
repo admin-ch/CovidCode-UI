@@ -14,7 +14,7 @@ export const environment = {
 		// Path to the login server
 		stsServer: 'http://localhost:8180',
 		// The URL of this application, used e.g. for redirect URLs
-		applicationUrl: 'http://localhost:4200/',
+		applicationUrl: 'http://localhost:4200/auth/login-feedback/',
 		// The URL to go to after a logout, e.g, e-portal
 		post_logout_redirect_uri: 'http://localhost:4200/',
 		// Use silent-renew. In prod this should be used, but with mock server it does not work

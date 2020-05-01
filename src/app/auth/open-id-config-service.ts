@@ -13,7 +13,7 @@ export class OpenIdConfigService {
 			stsServer: environment.oidc.stsServer,
 			redirect_url: environment.oidc.applicationUrl,
 			silent_renew_url: environment.oidc.applicationUrl + 'assets/auth/silent-refresh.html',
-			post_logout_redirect_uri: environment.oidc.applicationUrl,
+			post_logout_redirect_uri: environment.oidc.post_logout_redirect_uri,
 			post_login_route: '/' + environment.oidc.afterLoginPath,
 			log_console_debug_active: environment.oidc.debug,
 			response_type: 'code',

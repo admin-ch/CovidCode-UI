@@ -7,7 +7,7 @@ export const environment = {
 		clientId: 'ha-ui',
 		afterLoginPath: '/generate-code',
 		stsServer: 'https://identity.bit.admin.ch/realms/bag-pts',
-		applicationUrl: 'https://www.covidcode.admin.ch/',
+		applicationUrl: 'https://www.covidcode.admin.ch/auth/login-feedback/',
 		post_logout_redirect_uri: 'https://www.covidcode.admin.ch/',
 		silentRenew: false,
 		useAutoLogin: false,
