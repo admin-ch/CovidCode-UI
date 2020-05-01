@@ -51,7 +51,7 @@ export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad 
 	private checkExpectedRoleAfterAuthentication(claims: Claims, redirect: boolean): boolean {
 		if (!claims) {
 			if (redirect) {
-				this.router.navigate(['autologin']);
+				this.router.navigate(['auth/auto-login']);
 			}
 			return false;
 		}

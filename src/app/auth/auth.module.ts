@@ -6,7 +6,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {ObliqueModule} from '@oblique/oblique';
 import {AutoLoginComponent} from './auto-login.component';
 
-const routes: Routes = [{path: '', component: AutoLoginComponent}];
+const routes: Routes = [{path: 'auto-login', component: AutoLoginComponent}];
 
 @NgModule({
 	declarations: [AutoLoginComponent],
