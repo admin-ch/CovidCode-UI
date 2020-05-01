@@ -23,7 +23,7 @@ import {HttpConfigInterceptor} from './auth/http.config.interceptor';
 import {EiamSelfAdminComponent} from './eiam-self-admin/eiam-self-admin.component';
 
 export function loadConfig(oidcConfigService: OidcConfigService, oidConfigService: OpenIdConfigService) {
-	return () => oidcConfigService.load_using_stsServer(oidConfigService.getStsStagingUrl());
+	return () => oidcConfigService.load_using_stsServer(oidConfigService.stsStagingUrl);
 }
 
 registerLocaleData(localeDECH);
@@ -72,10 +72,8 @@ export class AppModule {
 			{id: 'locale-it_button', locale: 'it'},
 			{id: 'locale-en_button', locale: 'en'}
 		];
-		openIdConfigService.oidConfig().subscribe(openIdConfig => {
-			this.oidcConfigService.onConfigurationLoaded.subscribe((configResult: ConfigResult) => {
-				this.oidcSecurityService.setupModule(openIdConfig, configResult.authWellknownEndpoints);
-			});
+		this.oidcConfigService.onConfigurationLoaded.subscribe((configResult: ConfigResult) => {
+			this.oidcSecurityService.setupModule(openIdConfigService.config, configResult.authWellknownEndpoints);
 		});
 	}
 }
