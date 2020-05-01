@@ -3,7 +3,7 @@ import {NavigationEnd, Router} from '@angular/router';
 import {Observable} from 'rxjs';
 import {delay, filter, map, startWith} from 'rxjs/operators';
 import {ObHttpApiInterceptorEvents, ObOffCanvasService} from '@oblique/oblique';
-import {OauthService} from './authglobal/oauth.service';
+import {OauthService} from './auth/oauth.service';
 
 @Component({
 	selector: 'ha-root',

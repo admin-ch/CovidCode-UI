@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AuthGuardService} from './authglobal/auth-guard.service';
+import {AuthGuardService} from './auth/auth-guard.service';
 
 const routes: Routes = [
 	{
 		path: 'autologin',
-		loadChildren: () => import('./authglobal/authglobal.module').then(m => m.AuthglobalModule)
+		loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
 	},
 	{
 		path: 'home',

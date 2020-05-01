@@ -12,4 +12,4 @@ const routes: Routes = [{path: '', component: AutoLoginComponent}];
 	declarations: [AutoLoginComponent],
 	imports: [CommonModule, RouterModule.forChild(routes), TranslateModule, ObliqueModule, ReactiveFormsModule]
 })
-export class AuthglobalModule {}
+export class AuthModule {}

@@ -13,7 +13,7 @@ import {ObErrorMessagesModule} from '@oblique/oblique';
 import {SharedModule} from 'shared/shared.module';
 import {GenerateCodeComponent} from './generate-code.component';
 import {CodeComponent} from './code/code.component';
-import {AuthGuardService} from '../authglobal/auth-guard.service';
+import {AuthGuardService} from '../auth/auth-guard.service';
 
 @NgModule({
 	declarations: [GenerateCodeComponent, CodeComponent],

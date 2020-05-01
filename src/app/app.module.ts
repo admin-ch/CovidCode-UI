@@ -18,8 +18,8 @@ import localeITCH from '@angular/common/locales/it-CH';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {AuthModule, ConfigResult, OidcConfigService, OidcSecurityService} from 'angular-auth-oidc-client';
-import {OpenIdConfigService} from './authglobal/open-id-config-service';
-import {HttpConfigInterceptor} from './authglobal/http.config.interceptor';
+import {OpenIdConfigService} from './auth/open-id-config-service';
+import {HttpConfigInterceptor} from './auth/http.config.interceptor';
 import {EiamSelfAdminComponent} from './eiam-self-admin/eiam-self-admin.component';
 
 export function loadConfig(oidcConfigService: OidcConfigService, oidConfigService: OpenIdConfigService) {

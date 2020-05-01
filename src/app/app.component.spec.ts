@@ -7,7 +7,7 @@ import {OidcSecurityService} from 'angular-auth-oidc-client';
 import {of} from 'rxjs';
 import {first, skip} from 'rxjs/operators';
 import {AppComponent} from './app.component';
-import {OauthService} from './authglobal/oauth.service';
+import {OauthService} from './auth/oauth.service';
 
 describe('AppComponent', () => {
 	let app: AppComponent;
