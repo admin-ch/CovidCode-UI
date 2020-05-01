@@ -3,7 +3,7 @@ import {OidcSecurityService} from 'angular-auth-oidc-client';
 
 @Component({
 	selector: 'ha-auto-component',
-	templateUrl: './auto-login.component.html'
+	templateUrl: './empty.component.html'
 })
 export class AutoLoginComponent implements OnInit {
 	constructor(private readonly securityService: OidcSecurityService) {
