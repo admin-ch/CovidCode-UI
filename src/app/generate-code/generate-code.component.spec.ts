@@ -7,7 +7,6 @@ import {of} from 'rxjs';
 import {GenerateCodeComponent} from './generate-code.component';
 import {GenerateCodeService} from './generate-code.service';
 import * as moment from 'moment';
-import {OauthService} from '../authglobal/oauth.service';
 
 describe('GenerateCodeComponent', () => {
 	let component: GenerateCodeComponent;
@@ -23,8 +22,7 @@ describe('GenerateCodeComponent', () => {
 			schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 			providers: [
 				{provide: MatDialog, useValue: mockDialog},
-				{provide: GenerateCodeService, useValue: mock},
-				{provide: OauthService, useValue: {}}
+				{provide: GenerateCodeService, useValue: mock}
 			]
 		}).compileComponents();
 	}));

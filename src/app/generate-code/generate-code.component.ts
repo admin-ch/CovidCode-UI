@@ -5,8 +5,6 @@ import {GenerateCodeService} from './generate-code.service';
 import {CodeComponent} from './code/code.component';
 import {Moment} from 'moment';
 import * as moment from 'moment';
-import {Observable} from 'rxjs';
-import {OauthService} from '../authglobal/oauth.service';
 
 @Component({
 	selector: 'ha-generate-code',
@@ -20,16 +18,12 @@ export class GenerateCodeComponent implements OnInit {
 	today = moment();
 	startDate = moment().subtract(4, 'weeks');
 	@ViewChild(FormGroupDirective) form: FormGroupDirective;
-	isAuthenticated$: Observable<boolean>;
 
 	constructor(
 		private readonly fb: FormBuilder,
 		private readonly dialog: MatDialog,
-		private readonly service: GenerateCodeService,
-		private readonly oauthService: OauthService
-	) {
-		this.isAuthenticated$ = this.oauthService.isAuthenticated$;
-	}
+		private readonly service: GenerateCodeService
+	) {}
 
 	ngOnInit(): void {
 		this.test = this.fb.group({
