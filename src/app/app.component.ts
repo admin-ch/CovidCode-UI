@@ -36,7 +36,7 @@ export class AppComponent implements AfterViewInit {
 
 	ngAfterViewInit(): void {
 		this.oauthService.initialize();
-		this.oauthService.pamsLoginStatus();
+		this.oauthService.loadClaims();
 	}
 
 	logout(): void {

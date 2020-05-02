@@ -16,7 +16,7 @@ describe('AppComponent', () => {
 		isAuthenticated$: of(true),
 		logout: jest.fn(),
 		initialize: jest.fn(),
-		pamsLoginStatus: jest.fn()
+		loadClaims: jest.fn()
 	};
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -106,8 +106,8 @@ describe('AppComponent', () => {
 		it('should call initialize', () => {
 			expect(oAuth.initialize).toHaveBeenCalled();
 		});
-		it('should call pamsLoginStatus', () => {
-			expect(oAuth.pamsLoginStatus).toHaveBeenCalled();
+		it('should call loadClaims', () => {
+			expect(oAuth.loadClaims).toHaveBeenCalled();
 		});
 	});
 
