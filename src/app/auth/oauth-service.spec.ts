@@ -1,6 +1,6 @@
 import {TestBed} from '@angular/core/testing';
 import {EMPTY, of} from 'rxjs';
-import {OidcSecurityService} from 'angular-auth-oidc-client';
+import {LoggerService, OidcSecurityService} from 'angular-auth-oidc-client';
 import {OauthService} from './oauth.service';
 import {OpenIdConfigService} from './open-id-config-service';
 
@@ -27,7 +27,8 @@ describe('OauthService', () => {
 									moduleSetup: sync,
 									authorize: jest.fn()
 								}
-							}
+							},
+							{provide: LoggerService, useValue: {logDebug: () => {}}}
 						]
 					}).compileComponents();
 					service = TestBed.inject(OauthService);
@@ -57,7 +58,8 @@ describe('OauthService', () => {
 							getUserData: jest.fn()
 						}
 					},
-					{provide: OpenIdConfigService, useValue: {autoLogin: true}}
+					{provide: OpenIdConfigService, useValue: {autoLogin: true}},
+					{provide: LoggerService, useValue: {logDebug: () => {}}}
 				]
 			}).compileComponents();
 			service = TestBed.inject(OauthService);

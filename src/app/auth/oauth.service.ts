@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {OidcSecurityService} from 'angular-auth-oidc-client';
+import {LoggerService, OidcSecurityService} from 'angular-auth-oidc-client';
 import {merge, Observable, of, ReplaySubject} from 'rxjs';
-import {filter, first, map, switchMap, take, tap} from 'rxjs/operators';
+import {filter, first, map, switchMap, tap} from 'rxjs/operators';
 import {OpenIdConfigService} from './open-id-config-service';
 
 export interface Claims {
@@ -46,7 +46,8 @@ export class OauthService {
 
 	protected constructor(
 		private readonly oidcSecurityService: OidcSecurityService,
-		private readonly config: OpenIdConfigService
+		private readonly config: OpenIdConfigService,
+		private readonly logger: LoggerService
 	) {
 		this.claims$ = this.claims.asObservable();
 		this.isAuthenticated$ = this.isAuthenticated.asObservable();
@@ -81,8 +82,7 @@ export class OauthService {
 				switchMap(isAuthorized => this.getClaims(isAuthorized))
 			)
 			.subscribe(claims => {
-				// tslint:disable-next-line:no-console
-				console.log('Claims are ', claims);
+				this.logger.logDebug('Claims are ' + claims);
 				this.claims.next(claims);
 			});
 	}
@@ -93,33 +93,29 @@ export class OauthService {
 
 	private autoLogin(isAuthorized: boolean): void {
 		if (!isAuthorized && this.config.autoLogin) {
-			// tslint:disable-next-line:no-console
-			console.log('You are not logged in but this site requires login: AutoLogin');
+			this.logger.logDebug('You are not logged in but this site requires login: AutoLogin');
 			this.oidcSecurityService.authorize();
 		}
 	}
 
 	private emitIsAuthorized(isAuthorized: boolean): void {
-		// tslint:disable-next-line:no-console
-		console.log('Authentication Status is:', isAuthorized);
+		this.logger.logDebug('Authentication Status is:' + isAuthorized);
 		this.isAuthenticated.next(isAuthorized);
 	}
 
 	private getClaims(isAuthorized: boolean): Observable<Claims> {
 		return this.oidcSecurityService
 			.getUserData<Claims>()
-			.pipe(map(claims => OauthService.validateClaims(isAuthorized, claims)));
+			.pipe(map(claims => this.validateClaims(isAuthorized, claims)));
 	}
 
-	private static validateClaims(isAuthorized: boolean, claims: Claims): Claims {
+	private validateClaims(isAuthorized: boolean, claims: Claims): Claims {
 		if (isAuthorized && !claims) {
-			// tslint:disable-next-line:no-console
-			console.log('No claims but authorized: empty claims');
+			this.logger.logDebug('No claims but authorized: empty claims');
 			return {} as Claims;
 		}
 		if (!isAuthorized && claims) {
-			// tslint:disable-next-line:no-console
-			console.log('Claims but unauthorized: no claims');
+			this.logger.logDebug('Claims but unauthorized: no claims');
 			return undefined;
 		}
 		return claims;
