@@ -28,5 +28,7 @@
   "i18n.validation.matDatepickerMin": "Datum darf nicht älter als 4 Wochen sein",
   "i18n.validation.required": "Bitte geben Sie ein gültiges Datumsformat ein",
   "footer.built.prefix": "Mit",
-  "footer.built.suffix": "gebaut"
+  "footer.built.suffix": "gebaut",
+  "footer.legal": "Rechtliches",
+  "footer.legal.url": "https://www.admin.ch/gov/de/start/rechtliches.html"
 }

@@ -28,5 +28,7 @@
   "i18n.validation.matDatepickerMin": "Date cannot be older than 4 weeks",
   "i18n.validation.required": "Please enter a valid date format",
   "footer.built.prefix": "Built with",
-  "footer.built.suffix": ""
+  "footer.built.suffix": "",
+  "footer.legal": "Legal framework",
+  "footer.legal.url": "https://www.admin.ch/gov/en/start/terms-and-conditions.html"
 }

@@ -28,5 +28,7 @@
   "i18n.validation.matDatepickerMin": "La date ne peut être antérieure à 4 semaines",
   "i18n.validation.required": "Veuillez entrer un format de date valide",
   "footer.built.prefix": "Fait avec",
-  "footer.built.suffix": ""
+  "footer.built.suffix": "",
+  "footer.legal": "Informations juridiques",
+  "footer.legal.url": "https://www.admin.ch/gov/fr/accueil/conditions-utilisation.html"
 }
