@@ -11,7 +11,7 @@ export const environment = {
 		post_logout_redirect_uri: 'https://www.covidcode.admin.ch/',
 		silentRenew: false,
 		useAutoLogin: false,
-		debug: true,
+		debug: false,
 		token_aware_url_patterns: ['/v1/(authcode).*']
 	}
 };
