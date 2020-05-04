@@ -21,7 +21,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/public",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -33,6 +33,16 @@
                 "glob": "**/*",
                 "input": "node_modules/@oblique/oblique/styles",
                 "output": "assets/styles"
+              },
+              {
+                "glob": "custom_header.conf",
+                "input": "src",
+                "output": "./../nginx/conf/includes"
+              },
+              {
+                "glob": "Staticfile",
+                "input": "src",
+                "output": "./.."
               }
             ],
             "styles": [
@@ -75,6 +85,10 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.abn.ts"
+                },
+                {
+                  "replace": "src/custom_header.conf",
+                  "with": "src/custom_header-abn.conf"
                 }
               ],
               "optimization": true,
@@ -103,6 +117,10 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "src/custom_header.conf",
+                  "with": "src/custom_header-prod.conf"
                 }
               ],
               "optimization": true,
