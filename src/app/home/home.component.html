@@ -1,5 +1,8 @@
 <div class="wrapper">
 	<section *ngIf="lang$ | async as lang">
+		<div class="alert alert-warning" *ngIf="showWarning">
+			{{ "home.warning" | translate }} <a href="htps://www.covidcode.admin.ch">htps://www.covidcode.admin.ch</a>.
+		</div>
 		<p class="lead">{{ "home.text1" | translate }}</p>
 		<p>{{ "home.text2" | translate }}</p>
 		<a [href]="bagURL.replace('LANG', lang)" mat-flat-button color="primary" target="_blank" id="more-info_button">

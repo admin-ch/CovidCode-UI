@@ -16,6 +16,7 @@
   "help.text2": "Basierend auf dem Datum der Erstsymptome wird ein Einmal-Authentisierungscode generiert.",
   "help.text3": "Bitte teilen Sie diesen Code ohne die Leerzeichen Ihrem Patienten mit, damit er diesen Code in die Tracing App eingeben kann. Dieser Code ist für 24 Stunden gültig.",
   "help.text4": "Authentisierungscodes werden nicht lokal gespeichert. D.h. es muss ein neuer Code generiert werden, falls der Patient diesen erneut benötigt.",
+  "home.warning": "Bitte beachten Sie, dass dies eine Testumgebung ist und möglicherweise nicht wie erwartet funktioniert. Sie finden die produktive Umgebung auf: ",
   "home.text1": "Guten Tag",
   "home.text2": "Sie befinden sich auf der Internetseite, mit deren Hilfe Personen des Kontakt Management Zugang zum neuen Coronavirus Tracing erhalten.",
   "home.info": "Weitere Infos zum neuen Coronavirus Tracing",

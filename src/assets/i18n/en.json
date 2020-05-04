@@ -16,6 +16,7 @@
   "help.text2": "Based on the date of infection a single-use authentication code is generated.",
   "help.text3": "Pass on the code to your patient, leaving out the spaces, so that they can enter it into the Tracing App. This code is valid for 24 hours.",
   "help.text4": "Authentication codes are not stored locally. This means a new code has to be generated, if the patient requires a new one.",
+  "home.warning": "Please note this is a test environment and may not work as expected. You'll find the productive environment on: ",
   "home.text1": "Hello",
   "home.text2": "You are now on the website where persons of the contact management can generate an authorization code to allow tracing of people infected with the new Coronavirus",
   "home.info": " More information about tracing people infected with the new Coronavirus",

@@ -1,5 +1,6 @@
 export const environment = {
 	production: true,
+	showWarning: false,
 	host: 'https://codegen-service.bag.admin.ch',
 	eiamSelfAdmin:
 		'https://sts.pts.admin.ch/_pep/myaccount?returnURL=https%3A%2F%2Fwww.covidcode.admin.chCURRENT_PAGE&language=LANGUAGE',

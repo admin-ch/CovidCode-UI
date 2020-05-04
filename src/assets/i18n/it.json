@@ -16,6 +16,7 @@
   "help.text2": "In base alla data di infezione, viene generato un codice di autenticazione univoco.",
   "help.text3": "Si prega di comunicare questo codice (senza spazi) al paziente, in modo che possa inserire questo codice nella Tracing App. Questo codice è valido per 24 ore.",
   "help.text4": "I codici di autenticazione non vengono memorizzati localmente. Qualché il paziente ne abbia nuovamente bisogno, egli deve creare un nuovo codice.",
+  "home.warning": "Si prega di notare che questo è un ambiente di prova e potrebbe non funzionare come previsto. Troverete l'ambiente produttivo acceso: ",
   "home.text1": "Ciao",
   "home.text2": "Siete ora sul sito web dove il persone della Contact Management può accedere al nuovo Coronavirus tracing.",
   "home.info": "Ulteriori informazioni sul nuovo Coronavirus tracing",

@@ -4,6 +4,7 @@
 
 export const environment = {
 	production: false,
+	showWarning: true,
 	host: 'http://localhost:8113',
 	eiamSelfAdmin: 'https://eiam.chCURRENT_PAGE&language=LANGUAGE',
 	oidc: {
