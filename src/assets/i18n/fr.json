@@ -17,7 +17,7 @@
   "help.text3": "Veuillez indiquer ce code sans les espaces à votre patient afin qu'il puisse l'entrer dans la Tracing App. Ce code est valable 24 heures.",
   "help.text4": "Les codes d'authentification ne sont pas enregistrés localement, c'est-à-dire qu'un nouveau code doit être généré si le patient en a à nouveau besoin.",
   "home.text1": "Bonjour",
-  "home.text2": "Vous êtes maintenant sur le site web où les personnes de contact management peuvent générer un code d’autorisation pour permettre le suivi des personnes atteintes du nouveau Coronavirus.",
+  "home.text2": "Vous êtes maintenant sur le site web où les personnes de Contact Management peuvent générer un code d’autorisation pour permettre le suivi des personnes atteintes du nouveau Coronavirus.",
   "home.info": "Plus d'informations sur le suivi des personnes atteintes du nouveau Coronavirus",
   "home.login": "Accès pour les personnes de Contact Management",
   "home.physician": "Informations complémentaires pour les médecins cantonaux sur le processus d’onboarding",
