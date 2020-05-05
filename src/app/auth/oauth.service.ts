@@ -88,7 +88,7 @@ export class OauthService {
 	}
 
 	hasUserRole(role: string, claims: any): boolean {
-		return !!claims && !!claims.userroles && claims.userroles.includes(role);
+		return !!claims && !!claims.userroles && claims.userroles.indexOf(role) > -1;
 	}
 
 	private autoLogin(isAuthorized: boolean): void {
