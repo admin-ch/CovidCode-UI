@@ -13,6 +13,7 @@ module.exports = {
 	},
 	coverageDirectory: '<rootDir>/coverage/sonarQube',
 	testResultsProcessor: 'jest-sonar-reporter',
+	testPathIgnorePatterns: ['/node_modules/', '/src/environments'],
 	collectCoverage: true,
 	forceCoverageMatch: [
 		'**/src/app/**/*.spec.ts'
