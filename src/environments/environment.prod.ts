@@ -10,7 +10,7 @@ export const environment = {
 		stsServer: 'https://identity.bit.admin.ch/realms/bag-pts',
 		applicationUrl: 'https://www.covidcode.admin.ch/auth/login-feedback/',
 		post_logout_redirect_uri: 'https://www.covidcode.admin.ch/',
-		silentRenew: false,
+		silentRenew: true,
 		useAutoLogin: false,
 		debug: false,
 		token_aware_url_patterns: ['/v1/(authcode).*']

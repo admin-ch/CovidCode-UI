@@ -19,7 +19,7 @@ export const environment = {
 		// The URL to go to after a logout, e.g, e-portal
 		post_logout_redirect_uri: 'http://localhost:4200/',
 		// Use silent-renew. In prod this should be used, but with mock server it does not work
-		silentRenew: false,
+		silentRenew: true,
 		// Is the user always required to log in?
 		useAutoLogin: false,
 		// Enable debug output of the oidc library
