@@ -17,7 +17,8 @@ export class OpenIdConfigService {
 		response_type: 'code',
 		start_checksession: false,
 		silent_renew: environment.oidc.silentRenew,
-		auto_userinfo: true
+		auto_userinfo: true,
+		isauthorizedrace_timeout_in_seconds: 2
 	};
 
 	get stsStagingUrl(): string {
