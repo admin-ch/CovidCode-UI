@@ -30,3 +30,7 @@ main {
 	}
 }
 
+// Oblique fix
+.alert-warning::before {
+	line-height: 1;
+}
