@@ -24,7 +24,7 @@ describe('AppComponent', () => {
 			declarations: [AppComponent],
 			schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 			providers: [
-				{provide: OidcSecurityService, useValue: {}},
+				{provide: OidcSecurityService, useValue: {getIsAuthorized: () => of(false)}},
 				{provide: OauthService, useValue: mock}
 			]
 		}).compileComponents();

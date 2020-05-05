@@ -9,7 +9,8 @@ import {
 	ObHttpApiInterceptor,
 	ObMasterLayoutConfig,
 	ObMasterLayoutModule,
-	ObOffCanvasModule
+	ObOffCanvasModule,
+	ObSpinnerModule
 } from '@oblique/oblique';
 import {registerLocaleData} from '@angular/common';
 import localeDECH from '@angular/common/locales/de-CH';
@@ -41,7 +42,8 @@ registerLocaleData(localeITCH);
 		AuthModule.forRoot(),
 		ObMasterLayoutModule,
 		ObOffCanvasModule,
-		MatTooltipModule
+		MatTooltipModule,
+		ObSpinnerModule
 	],
 	providers: [
 		{provide: LOCALE_ID, useValue: 'de-CH'},
