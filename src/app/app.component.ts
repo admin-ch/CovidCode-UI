@@ -5,6 +5,7 @@ import {delay, filter, map, startWith, tap, timeout} from 'rxjs/operators';
 import {OidcSecurityService} from 'angular-auth-oidc-client';
 import {ObHttpApiInterceptorEvents, ObOffCanvasService, ObSpinnerService} from '@oblique/oblique';
 import {OauthService} from './auth/oauth.service';
+import {OpenIdConfigService} from './auth/open-id-config-service';
 
 @Component({
 	selector: 'ha-root',
@@ -22,9 +23,8 @@ export class AppComponent implements AfterViewInit {
 		interceptor: ObHttpApiInterceptorEvents,
 		router: Router,
 		private readonly spinner: ObSpinnerService,
-		auth: OidcSecurityService
+		private readonly auth: OidcSecurityService
 	) {
-		auth.getIsAuthorized().subscribe(() => spinner.deactivate('auth'));
 		this.name$ = this.oauthService.name$;
 		this.isAuthenticated$ = this.oauthService.isAuthenticated$.pipe(delay(0));
 		this.currentPage$ = router.events.pipe(
@@ -42,6 +42,8 @@ export class AppComponent implements AfterViewInit {
 		this.oauthService.initialize();
 		this.oauthService.loadClaims();
 		this.spinner.activate('auth');
+		this.auth.getIsAuthorized().subscribe(() => this.spinner.deactivate('auth'));
+		setTimeout(() => this.spinner.deactivate('auth'), OpenIdConfigService.isAuthorizedTimeout * 1000);
 	}
 
 	logout(): void {

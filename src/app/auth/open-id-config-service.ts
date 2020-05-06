@@ -6,6 +6,7 @@ import {environment} from '../../environments/environment';
 	providedIn: 'root'
 })
 export class OpenIdConfigService {
+	static readonly isAuthorizedTimeout = 2;
 	readonly config: OpenIdConfiguration = {
 		client_id: environment.oidc.clientId,
 		stsServer: environment.oidc.stsServer,
@@ -18,7 +19,7 @@ export class OpenIdConfigService {
 		start_checksession: false,
 		silent_renew: environment.oidc.silentRenew,
 		auto_userinfo: true,
-		isauthorizedrace_timeout_in_seconds: 2
+		isauthorizedrace_timeout_in_seconds: OpenIdConfigService.isAuthorizedTimeout
 	};
 
 	get stsStagingUrl(): string {
