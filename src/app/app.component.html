@@ -22,10 +22,7 @@
 	</ng-container>
 	<ng-container obOffCanvasTitle>{{ "help.title" | translate }}</ng-container>
 	<ng-container obOffCanvasContent>
-		<p>{{ "help.text1" | translate }}</p>
-		<p>{{ "help.text2" | translate }}</p>
-		<p>{{ "help.text3" | translate }}</p>
-		<p>{{ "help.text4" | translate }}</p>
+		<ha-help></ha-help>
 	</ng-container>
 	<ng-container *ngIf="isAuthenticated$ | async">
 		<ng-template #obHeaderControl>

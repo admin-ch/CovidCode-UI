@@ -22,6 +22,7 @@ import {AuthModule, ConfigResult, OidcConfigService, OidcSecurityService} from '
 import {OpenIdConfigService} from './auth/open-id-config-service';
 import {HttpConfigInterceptor} from './auth/http.config.interceptor';
 import {EiamSelfAdminComponent} from './eiam-self-admin/eiam-self-admin.component';
+import {HelpComponent} from './help/help.component';
 
 export function loadConfig(oidcConfigService: OidcConfigService, oidConfigService: OpenIdConfigService) {
 	return () => oidcConfigService.load_using_stsServer(oidConfigService.stsStagingUrl);
@@ -32,7 +33,7 @@ registerLocaleData(localeFRCH);
 registerLocaleData(localeITCH);
 
 @NgModule({
-	declarations: [AppComponent, EiamSelfAdminComponent],
+	declarations: [AppComponent, EiamSelfAdminComponent, HelpComponent],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
