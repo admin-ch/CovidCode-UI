@@ -34,3 +34,15 @@ main {
 .alert-warning::before {
 	line-height: 1;
 }
+
+a:not([disabled]),
+button:not(.mat-button-base):not([disabled]) {
+	&:focus {
+		outline: none;
+	}
+
+	.outline &:focus {
+		outline: 2px solid $brand-primary;
+		box-shadow: 0 0 6px 0 $brand-default;
+	}
+}
