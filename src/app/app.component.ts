@@ -1,9 +1,9 @@
 import {AfterViewInit, Component} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {Observable} from 'rxjs';
-import {delay, filter, map, startWith, tap, timeout} from 'rxjs/operators';
+import {delay, filter, map, startWith, takeUntil} from 'rxjs/operators';
 import {OidcSecurityService} from 'angular-auth-oidc-client';
-import {ObHttpApiInterceptorEvents, ObOffCanvasService, ObSpinnerService} from '@oblique/oblique';
+import {ObHttpApiInterceptorEvents, ObOffCanvasService, ObSpinnerService, ObUnsubscribable} from '@oblique/oblique';
 import {OauthService} from './auth/oauth.service';
 import {OpenIdConfigService} from './auth/open-id-config-service';
 
@@ -11,11 +11,11 @@ import {OpenIdConfigService} from './auth/open-id-config-service';
 	selector: 'ha-root',
 	templateUrl: './app.component.html'
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent extends ObUnsubscribable implements AfterViewInit {
 	isAuthenticated$: Observable<boolean>;
 	helpTooltip$: Observable<string>;
 	name$: Observable<string>;
-	currentPage$: Observable<string>;
+	currentPage: string;
 
 	constructor(
 		offCanvas: ObOffCanvasService,
@@ -25,12 +25,17 @@ export class AppComponent implements AfterViewInit {
 		private readonly spinner: ObSpinnerService,
 		private readonly auth: OidcSecurityService
 	) {
+		super();
 		this.name$ = this.oauthService.name$;
 		this.isAuthenticated$ = this.oauthService.isAuthenticated$.pipe(delay(0));
-		this.currentPage$ = router.events.pipe(
-			filter(evt => evt instanceof NavigationEnd),
-			map((evt: NavigationEnd) => evt.url)
-		);
+		// no observable because of IE
+		router.events
+			.pipe(
+				filter(evt => evt instanceof NavigationEnd),
+				map((evt: NavigationEnd) => evt.url),
+				takeUntil(this.unsubscribe)
+			)
+			.subscribe(url => (this.currentPage = url));
 		this.helpTooltip$ = offCanvas.opened.pipe(
 			startWith(false),
 			map(opened => (opened ? 'help.tooltip.in' : 'help.tooltip.out'))

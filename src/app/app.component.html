@@ -30,7 +30,7 @@
 				<span class="fa fa-sign-out-alt control-icon"></span>
 			</button>
 		</ng-template>
-		<ng-container *ngIf="currentPage$ | async as currentPage">
+		<ng-container *ngIf="currentPage">
 			<ng-template #obHeaderControl>
 				<ha-eiam-self-admin [page]="currentPage" [name]="name$ | async"></ha-eiam-self-admin>
 			</ng-template>
