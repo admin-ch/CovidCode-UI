@@ -15,7 +15,7 @@
   "help.text2": "En fonction de la date d'apparition des premiers symptômes, un Covidcode unique est généré.",
   "help.text3": "Veuillez indiquer ce Covidcode sans les espaces à votre patient afin qu'il puisse l'entrer dans la Swiss PT-App. Ce code est valable 24 heures.",
   "help.text4": "Les Covidcodes ne sont pas enregistrés localement, c'est-à-dire qu'un nouveau Covidcode doit être généré si le patient en a à nouveau besoin.",
-  "home.warning": "Veuillez noter qu'il s'agit d'un environnement de test et qu'il se peut qu'il ne fonctionne pas comme prévu. Vous trouverez l'environnement productif sur : ",
+  "home.warning": "Veuillez noter qu'il s'agit d'un environnement de test et qu'il se peut qu'il ne fonctionne pas comme prévu. Vous trouverez l'environnement productif sur : ",
   "home.text1": "Bonjour",
   "home.text2": "Vous êtes maintenant sur le site web où les personnes de Contact Management peuvent générer un code d’autorisation pour permettre le suivi des personnes atteintes du nouveau Coronavirus.",
   "home.info": "Plus d'informations sur le suivi des personnes atteintes du nouveau Coronavirus",
