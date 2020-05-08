@@ -62,20 +62,20 @@ describe('AppComponent', () => {
 		});
 	});
 
-	describe('currentPage$', () => {
-		it('should be defined', () => {
-			expect(app.currentPage$).toBeDefined();
-		});
-
-		it('should output a page', done => {
-			const router = TestBed.inject(Router);
-			app.currentPage$.subscribe(tooltip => {
-				expect(tooltip).toBe('/test');
-				done();
-			});
-			router.navigate(['test']);
-		});
-	});
+	// describe('currentPage$', () => {
+	// 	it('should be defined', () => {
+	// 		expect(app.currentPage$).toBeDefined();
+	// 	});
+	//
+	// 	it('should output a page', done => {
+	// 		const router = TestBed.inject(Router);
+	// 		app.currentPage$.subscribe(tooltip => {
+	// 			expect(tooltip).toBe('/test');
+	// 			done();
+	// 		});
+	// 		router.navigate(['test']);
+	// 	});
+	// });
 
 	describe('helpTooltip$', () => {
 		it('should be defined', () => {
