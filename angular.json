@@ -35,13 +35,13 @@
                 "output": "assets/styles"
               },
               {
-                "glob": "custom_header.conf",
-                "input": "src",
+                "glob": "*.conf",
+                "input": "src/nginx",
                 "output": "./../nginx/conf/includes"
               },
               {
                 "glob": "Staticfile",
-                "input": "src",
+                "input": "src/nginx",
                 "output": "./.."
               }
             ],
@@ -87,8 +87,8 @@
                   "with": "src/environments/environment.test.ts"
                 },
                 {
-                  "replace": "src/custom_header.conf",
-                  "with": "src/custom_header-test.conf"
+                  "replace": "src/nginx/security_headers.conf",
+                  "with": "src/nginx/security_headers-test.conf"
                 }
               ],
               "optimization": true,
@@ -119,8 +119,8 @@
                   "with": "src/environments/environment.abn.ts"
                 },
                 {
-                  "replace": "src/custom_header.conf",
-                  "with": "src/custom_header-abn.conf"
+                  "replace": "src/nginx/security_headers.conf",
+                  "with": "src/nginx/security_headers-abn.conf"
                 }
               ],
               "optimization": true,
@@ -151,8 +151,8 @@
                   "with": "src/environments/environment.prod.ts"
                 },
                 {
-                  "replace": "src/custom_header.conf",
-                  "with": "src/custom_header-prod.conf"
+                  "replace": "src/nginx/security_headers.conf",
+                  "with": "src/nginx/security_headers-prod.conf"
                 }
               ],
               "optimization": true,
