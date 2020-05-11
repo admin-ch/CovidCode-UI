@@ -12,8 +12,6 @@ import {environment} from '../../environments/environment';
 	host: {class: 'content'}
 })
 export class HomeComponent {
-	bagURL =
-		'https://www.bag.admin.ch/bag/LANG/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov.html';
 	lang$: Observable<string>;
 	showWarning = environment.showWarning;
 

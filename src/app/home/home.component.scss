@@ -15,55 +15,29 @@ p.lead {
 	@include h4;
 }
 
-.actions {
+.mat-card {
+	margin: $spacing-lg 0;
+}
+
+.mat-card > .mat-card-actions.actions {
+	padding-top: $spacing-lg;
+	margin-bottom: 0;
+	margin-right: 0;
+}
+
+.mat-card-avatar {
+	font-size: 30px;
+	line-height: 40px;
 	text-align: center;
-	margin-top: $spacing-default;
+	background-color: $brand-primary;
+	color: $white;
 }
 
-.mat-button-base {
-	display: block;
-	width: 100%;
-	margin-bottom: $spacing-lg;
+.links {
+	list-style-type: none;
 }
 
-section + section {
-	margin-top: 3 * $spacing-lg;
+.icon-link {
+	text-decoration: none;
+	margin-right: $spacing-sm;
 }
-
-.apps {
-	display: flex;
-	justify-content: space-around; // fallback for IE
-	justify-content: space-evenly;
-	// fallback for Edge
-	@supports (-ms-ime-align: auto) {
-		justify-content: space-around;
-	}
-	margin-top: $spacing-default;
-
-	img {
-		height: 3 * $spacing-default;
-	}
-}
-
-::ng-deep {
-	.viewport-collapsed {
-		@include layout-collapse-down {
-			display: block;
-		}
-
-		@include layout-collapse-up {
-			display: none;
-		}
-	}
-
-	.viewport-expanded {
-		@include layout-collapse-down {
-			display: none;
-		}
-
-		@include layout-collapse-up {
-			display: inline;
-		}
-	}
-}
-

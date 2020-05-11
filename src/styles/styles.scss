@@ -46,3 +46,23 @@ button:not(.mat-button-base):not([disabled]) {
 		box-shadow: 0 0 6px 0 $brand-default;
 	}
 }
+
+.viewport-collapsed {
+	@include layout-collapse-down {
+		display: block;
+	}
+
+	@include layout-collapse-up {
+		display: none;
+	}
+}
+
+.viewport-expanded {
+	@include layout-collapse-down {
+		display: none;
+	}
+
+	@include layout-collapse-up {
+		display: inline;
+	}
+}
