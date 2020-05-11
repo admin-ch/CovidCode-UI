@@ -1,6 +1,15 @@
 @import "~@oblique/oblique/styles/scss/core/variables";
 @import "~@oblique/oblique/styles/scss/core/mixins/layout";
 
+body {
+	min-width: 248px;
+}
+
+.application-footer .info {
+	white-space: nowrap;
+	overflow: hidden;
+}
+
 .form-actions {
 	margin-top: $spacing-default;
 
