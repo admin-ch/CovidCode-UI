@@ -29,6 +29,7 @@
             "aot": true,
             "assets": [
               "src/assets",
+              "src/robots.txt",
               {
                 "glob": "**/*",
                 "input": "node_modules/@oblique/oblique/styles",
