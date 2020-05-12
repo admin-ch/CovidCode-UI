@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {FormBuilder, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, FormGroupDirective, ValidationErrors} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {GenerateCodeService} from './generate-code.service';
 import {CodeComponent} from './code/code.component';
@@ -27,7 +27,7 @@ export class GenerateCodeComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.test = this.fb.group({
-			onsetDate: [undefined, [Validators.required]]
+			onsetDate: [undefined, [this.customValidation]]
 		});
 	}
 
@@ -45,5 +45,9 @@ export class GenerateCodeComponent implements OnInit {
 				);
 			this.form.resetForm();
 		}
+	}
+
+	customValidation(control: AbstractControl): ValidationErrors {
+		return control.value ? null : {matDatepickerParse: true};
 	}
 }
