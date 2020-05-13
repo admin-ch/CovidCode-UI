@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-	production: false,
+	production: true,
 	showWarning: true,
 	host: 'https://codegen-service-d.bag.admin.ch',
 	eiamSelfAdmin:
