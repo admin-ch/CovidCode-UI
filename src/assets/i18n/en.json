@@ -17,7 +17,7 @@
   "help.text4": "Covidcodes are not stored locally. This means a new Covidcode has to be generated, if the patient requires a new one.",
   "home.warning": "Please note this is a test environment and may not work as expected. You'll find the productive environment on: ",
   "home.text1": "Hello",
-  "home.text2": "You are on the website that gives persons of contact management access to create Covidcodes.",
+  "home.text2": "You are on the website that gives persons of the contact management access to create Covidcodes.",
   "home.login.title": "Creating Covidcodes",
   "home.login.subtitle": "Access for persons of the contact management",
   "home.login.button": "Login",
