@@ -103,8 +103,8 @@
                   "with": "src/environments/environment.test.ts"
                 },
                 {
-                  "replace": "src/nginx/security_headers.conf",
-                  "with": "src/nginx/security_headers-test.conf"
+                  "replace": "src/nginx/csp_headers.conf",
+                  "with": "src/nginx/csp_headers-test.conf"
                 }
               ],
               "optimization": true,
@@ -135,8 +135,8 @@
                   "with": "src/environments/environment.abn.ts"
                 },
                 {
-                  "replace": "src/nginx/security_headers.conf",
-                  "with": "src/nginx/security_headers-abn.conf"
+                  "replace": "src/nginx/csp_headers.conf",
+                  "with": "src/nginx/csp_headers-abn.conf"
                 }
               ],
               "optimization": true,
@@ -167,8 +167,8 @@
                   "with": "src/environments/environment.prod.ts"
                 },
                 {
-                  "replace": "src/nginx/security_headers.conf",
-                  "with": "src/nginx/security_headers-prod.conf"
+                  "replace": "src/nginx/csp_headers.conf",
+                  "with": "src/nginx/csp_headers-prod.conf"
                 }
               ],
               "optimization": true,
