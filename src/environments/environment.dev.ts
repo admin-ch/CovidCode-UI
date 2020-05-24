@@ -5,15 +5,15 @@
 export const environment = {
 	production: true,
 	showWarning: true,
-	host: 'https://codegen-service-d.bag.admin.ch',
+	host: 'http://172.18.50.35:84',
 	eiamSelfAdmin:
-		'https://sts-r.pts.admin.ch/_pep/myaccount?returnURL=https%3A%2F%2Fwww.covidcode-d.admin.chCURRENT_PAGE&language=LANGUAGE',
+		'http://172.18.50.35:8080',
 	oidc: {
 		clientId: 'ha-ui',
 		afterLoginPath: '/generate-code',
-		stsServer: 'https://identity-r.bit.admin.ch/realms/bag-pts',
-		applicationUrl: 'https://www.covidcode-d.admin.ch/auth/login-feedback/',
-		post_logout_redirect_uri: 'https://www.covidcode-d.admin.ch/',
+		stsServer: 'http://172.18.50.35:8080/realms/cv-covid-code',
+		applicationUrl: 'http://172.18.50.35:4200/auth/login-feedback/',
+		post_logout_redirect_uri: 'http://172.18.50.35:4200',
 		silentRenew: true,
 		useAutoLogin: false,
 		debug: true,
