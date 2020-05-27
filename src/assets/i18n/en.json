@@ -13,7 +13,7 @@
   "help.title": "Help",
   "help.text1": "If the person who tested positive hasn’t shown any symptoms, please type in the date of testing. The incubation period is calculated automatically.",
   "help.text2": "Based on the date of infection a onetime Covidcode is generated.",
-  "help.text3": "Pass on the Covidcode to your patient, leaving out the spaces, so that they can enter it into the Swiss PT-App. This code is valid for 24 hours.",
+  "help.text3": "Pass on the Covidcode to your patient, leaving out the spaces, so that they can enter it into the SwissCovid app. This code is valid for 24 hours.",
   "help.text4": "Covidcodes are not stored locally. This means a new Covidcode has to be generated, if the patient requires a new one.",
   "home.warning": "Please note this is a test environment and may not work as expected. You'll find the productive environment on: ",
   "home.text1": "Hello",

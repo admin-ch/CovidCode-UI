@@ -13,7 +13,7 @@
   "help.title": "Aiuto",
   "help.text1": "In caso di mancati sintomi della persona risultata positiva, inserire la data dell’effettuazione del test. La finestra infettiva (periodo dove l'infezione può essere avvenuta) viene calcolata automaticamente.",
   "help.text2": "In base alla data di infezione, viene generato un Covidcode univoco.",
-  "help.text3": "Si prega di comunicare questo Covidcode (senza spazi) al paziente, in modo che possa inserire questo codice nella Swiss PT-App. Questo codice è valido per 24 ore.",
+  "help.text3": "Si prega di comunicare questo Covidcode (senza spazi) al paziente, in modo che possa inserire questo codice nella l'app SwissCovid. Questo codice è valido per 24 ore.",
   "help.text4": "I Covidcodes non vengono memorizzati localmente. Qualché il paziente ne abbia nuovamente bisogno, egli deve creare un nuovo Covidcode.",
   "home.warning": "Si prega di notare che questo è un ambiente di prova e potrebbe non funzionare come previsto. Troverete l'ambiente produttivo acceso: ",
   "home.text1": "Ciao",
