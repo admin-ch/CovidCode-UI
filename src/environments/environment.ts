@@ -1,6 +1,4 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+import {OIdC} from '../app/auth/open-id-config-service';
 
 export const environment = {
 	production: false,
@@ -8,26 +6,16 @@ export const environment = {
 	host: 'http://localhost:8113',
 	eiamSelfAdmin: 'https://eiam.chCURRENT_PAGE&language=LANGUAGE',
 	oidc: {
-		// The clientID as used in keycloak or mock server
 		clientId: 'ha-ui-web-client',
-		// Site to open after successful login
 		afterLoginPath: 'generate-code',
-		// Path to the login server
 		stsServer: 'http://localhost:8180',
-		// The URL of this application, used e.g. for redirect URLs
-		applicationUrl: 'http://localhost:4200/auth/login-feedback/',
-		// The URL to go to after a logout, e.g, e-portal
-		post_logout_redirect_uri: 'http://localhost:4200/',
-		// Use silent-renew. In prod this should be used, but with mock server it does not work
+		applicationUrl: 'http://localhost:4200/',
+		loginFeedback: 'auth/login-feedback/',
 		silentRenew: true,
-		// Is the user always required to log in?
 		useAutoLogin: false,
-		// Enable debug output of the oidc library
 		debug: true,
-		// URL that will get the JWT.
-		// NOTE: NEVER send this token to other backends than your own!
-		token_aware_url_patterns: ['/v1/(authcode).*']
-	}
+		tokenAwareUrlPatterns: ['/v1/(authcode).*']
+	} as OIdC
 };
 
 /*
