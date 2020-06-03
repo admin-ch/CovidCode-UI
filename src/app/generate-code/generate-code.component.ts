@@ -27,7 +27,7 @@ export class GenerateCodeComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.test = this.fb.group({
-			onsetDate: [undefined, [this.customValidation]]
+			onsetDate: [undefined, [GenerateCodeComponent.customValidation]]
 		});
 	}
 
@@ -47,7 +47,7 @@ export class GenerateCodeComponent implements OnInit {
 		}
 	}
 
-	customValidation(control: AbstractControl): ValidationErrors {
+	private static customValidation(control: AbstractControl): ValidationErrors {
 		return control.value ? null : {matDatepickerParse: true};
 	}
 }

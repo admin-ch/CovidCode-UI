@@ -41,7 +41,7 @@ describe('GenerateCodeComponent', () => {
 		expect(component.test instanceof FormGroup).toBeTruthy();
 	});
 
-	describe('save with valid data', () => {
+	describe('save', () => {
 		let service: GenerateCodeService;
 		let dialog: MatDialog;
 		let spy;
