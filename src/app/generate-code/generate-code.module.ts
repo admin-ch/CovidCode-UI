@@ -8,7 +8,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import {DateAdapter} from '@angular/material/core';
 import {TranslateService} from '@ngx-translate/core';
-import {map} from 'rxjs/operators';
+import {map, startWith} from 'rxjs/operators';
 import {ObErrorMessagesModule} from '@oblique/oblique';
 import {SharedModule} from 'shared/shared.module';
 import {GenerateCodeComponent} from './generate-code.component';
@@ -34,6 +34,7 @@ export class GenerateCodeModule {
 		translate.onLangChange
 			.pipe(
 				map(lang => lang.lang),
+				startWith(translate.currentLang),
 				map(lang => `${lang}-CH`)
 			)
 			.subscribe(locale => adapter.setLocale(locale));
