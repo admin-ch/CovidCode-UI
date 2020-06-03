@@ -2,6 +2,18 @@ import {Injectable} from '@angular/core';
 import {OpenIdConfiguration} from 'angular-auth-oidc-client';
 import {environment} from '../../environments/environment';
 
+export interface OIdC {
+	clientId: string;
+	stsServer: string;
+	applicationUrl: string;
+	loginFeedback: string;
+	afterLoginPath: string;
+	silentRenew: boolean;
+	useAutoLogin: boolean;
+	debug: boolean;
+	tokenAwareUrlPatterns: string[];
+}
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -10,9 +22,9 @@ export class OpenIdConfigService {
 	readonly config: OpenIdConfiguration = {
 		client_id: environment.oidc.clientId,
 		stsServer: environment.oidc.stsServer,
-		redirect_url: environment.oidc.applicationUrl,
+		redirect_url: environment.oidc.applicationUrl + environment.oidc.loginFeedback,
 		silent_renew_url: environment.oidc.applicationUrl + 'assets/auth/silent-refresh.html',
-		post_logout_redirect_uri: environment.oidc.post_logout_redirect_uri,
+		post_logout_redirect_uri: environment.oidc.applicationUrl,
 		post_login_route: '/' + environment.oidc.afterLoginPath,
 		log_console_debug_active: environment.oidc.debug,
 		response_type: 'code',
@@ -31,6 +43,6 @@ export class OpenIdConfigService {
 	}
 
 	get urlPattern(): string[] {
-		return environment.oidc.token_aware_url_patterns;
+		return environment.oidc.tokenAwareUrlPatterns;
 	}
 }

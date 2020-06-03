@@ -1,6 +1,4 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+import {OIdC} from '../app/auth/open-id-config-service';
 
 export const environment = {
 	production: true,
@@ -10,13 +8,13 @@ export const environment = {
 		'https://sts-a.pts.admin.ch/_pep/myaccount?returnURL=https%3A%2F%2Fwww.covidcode-a.admin.chCURRENT_PAGE&language=LANGUAGE',
 	oidc: {
 		clientId: 'ha-ui',
-		afterLoginPath: '/generate-code',
+		afterLoginPath: 'generate-code',
 		stsServer: 'https://identity-a.bit.admin.ch/realms/bag-pts',
-		applicationUrl: 'https://www.covidcode-a.admin.ch/auth/login-feedback/',
-		post_logout_redirect_uri: 'https://www.covidcode-a.admin.ch/',
+		applicationUrl: 'https://www.covidcode-a.admin.ch/',
+		loginFeedback: 'auth/login-feedback/',
 		silentRenew: true,
 		useAutoLogin: false,
 		debug: false,
-		token_aware_url_patterns: ['/v1/(authcode).*']
-	}
+		tokenAwareUrlPatterns: ['/v1/(authcode).*']
+	} as OIdC
 };
