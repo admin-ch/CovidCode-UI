@@ -39,7 +39,7 @@ export class GenerateCodeComponent implements OnInit {
 				})
 				.subscribe(authorisationCode =>
 					this.dialog.open(CodeComponent, {
-						data: {code: authorisationCode, date: value.onsetDate.format('DD.MM.YYYY')},
+						data: {code: authorisationCode, date: value.onsetDate.format('L')},
 						disableClose: true
 					})
 				);
