@@ -7,6 +7,7 @@ import {registerLocaleData} from '@angular/common';
 import localeDECH from '@angular/common/locales/de-CH';
 import localeFRCH from '@angular/common/locales/fr-CH';
 import localeITCH from '@angular/common/locales/it-CH';
+import localeENGB from '@angular/common/locales/en-GB';
 import {TranslateModule} from '@ngx-translate/core';
 import {
 	multiTranslateLoader,
@@ -32,6 +33,7 @@ export function loadConfig(oidcConfigService: OidcConfigService, oidConfigServic
 registerLocaleData(localeDECH);
 registerLocaleData(localeFRCH);
 registerLocaleData(localeITCH);
+registerLocaleData(localeENGB);
 
 @NgModule({
 	declarations: [AppComponent, EiamSelfAdminComponent, HelpComponent],

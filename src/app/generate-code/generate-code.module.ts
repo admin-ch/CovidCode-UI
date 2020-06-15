@@ -35,7 +35,7 @@ export class GenerateCodeModule {
 			.pipe(
 				map(lang => lang.lang),
 				startWith(translate.currentLang),
-				map(lang => `${lang}-CH`)
+				map(lang => (lang === 'en' ? 'en-GB' : `${lang}-CH`))
 			)
 			.subscribe(locale => adapter.setLocale(locale));
 	}
