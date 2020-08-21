@@ -82,7 +82,7 @@ export class OauthService {
 				switchMap(isAuthorized => this.getClaims(isAuthorized))
 			)
 			.subscribe(claims => {
-				this.logger.logDebug('Claims are ' + claims);
+				this.logger.logDebug(`Claims are ${claims}`);
 				this.claims.next(claims);
 			});
 	}
@@ -99,7 +99,7 @@ export class OauthService {
 	}
 
 	private emitIsAuthorized(isAuthorized: boolean): void {
-		this.logger.logDebug('Authentication Status is:' + isAuthorized);
+		this.logger.logDebug(`Authentication Status is: ${isAuthorized}`);
 		this.isAuthenticated.next(isAuthorized);
 	}
 
