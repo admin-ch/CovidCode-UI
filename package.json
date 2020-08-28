@@ -36,7 +36,7 @@
     "@angular/router": "~9.1.4",
     "@ngx-translate/core": "^12.1.2",
     "@oblique/oblique": "^5.0.5",
-    "angular-auth-oidc-client": "^10.0.10",
+    "angular-auth-oidc-client": "^11.2.0",
     "moment": "^2.25.3",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
