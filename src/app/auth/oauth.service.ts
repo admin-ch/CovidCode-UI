@@ -67,8 +67,7 @@ export class OauthService {
 
 	loadClaims(): void {
 		// In case of each login event your authentication status has to be checked
-		this.oidcSecurityService
-			.isAuthenticated$
+		this.oidcSecurityService.isAuthenticated$
 			.pipe(
 				// take(1),
 				tap(isAuthorized => this.autoLogin(isAuthorized)),
@@ -99,9 +98,7 @@ export class OauthService {
 	}
 
 	private getClaims(isAuthorized: boolean): Observable<Claims> {
-		return this.oidcSecurityService
-			.userData$
-			.pipe(map(claims => this.validateClaims(isAuthorized, claims)));
+		return this.oidcSecurityService.userData$.pipe(map(claims => this.validateClaims(isAuthorized, claims)));
 	}
 
 	private validateClaims(isAuthorized: boolean, claims: Claims): Claims {

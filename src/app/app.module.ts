@@ -65,10 +65,7 @@ registerLocaleData(localeENGB);
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
-	constructor(
-		private readonly config: ObMasterLayoutConfig,
-		meta: ObDocumentMetaService
-	) {
+	constructor(private readonly config: ObMasterLayoutConfig, meta: ObDocumentMetaService) {
 		meta.titleSuffix = 'application.title';
 		meta.description = 'home.text1';
 		config.layout.hasMainNavigation = false;

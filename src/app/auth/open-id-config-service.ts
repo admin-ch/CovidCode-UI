@@ -26,12 +26,12 @@ export class OpenIdConfigService {
 		silentRenewUrl: `${environment.oidc.applicationUrl}assets/auth/silent-refresh.html`,
 		postLogoutRedirectUri: environment.oidc.applicationUrl,
 		postLoginRoute: `/${environment.oidc.afterLoginPath}`,
-		//log_console_debug_active: environment.oidc.debug,
+		// log_console_debug_active: environment.oidc.debug,
 		responseType: 'code',
 		startCheckSession: false,
 		silentRenew: environment.oidc.silentRenew,
-		autoUserinfo: true,
-		//isauthorizedrace_timeout_in_seconds: OpenIdConfigService.isAuthorizedTimeout
+		autoUserinfo: true
+		// isauthorizedrace_timeout_in_seconds: OpenIdConfigService.isAuthorizedTimeout
 	};
 
 	get stsStagingUrl(): string {
