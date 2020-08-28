@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {LoggerService, OidcSecurityService} from 'angular-auth-oidc-client';
-import {merge, Observable, of, ReplaySubject} from 'rxjs';
-import {filter, first, map, switchMap, tap} from 'rxjs/operators';
+import {Observable, ReplaySubject} from 'rxjs';
+import {filter, map, switchMap, tap} from 'rxjs/operators';
 import {OpenIdConfigService} from './open-id-config-service';
 
 export interface Claims {
@@ -40,7 +40,6 @@ export class OauthService {
 	readonly name$: Observable<string>;
 	readonly claims$: Observable<Claims>;
 	readonly isAuthenticated$: Observable<boolean>;
-	readonly setup$: Observable<boolean>;
 	private readonly isAuthenticated = new ReplaySubject<boolean>(1);
 	private readonly claims = new ReplaySubject<Claims>(1);
 
@@ -52,10 +51,6 @@ export class OauthService {
 		this.claims$ = this.claims.asObservable();
 		this.isAuthenticated$ = this.isAuthenticated.asObservable();
 		this.name$ = this.claims$.pipe(map(claims => claims.displayName || claims.name));
-		this.setup$ = merge(of(oidcSecurityService.moduleSetup), oidcSecurityService.onModuleSetup).pipe(
-			filter(isSetup => isSetup),
-			first()
-		);
 	}
 
 	logout(): void {
@@ -67,13 +62,13 @@ export class OauthService {
 	}
 
 	initialize(): void {
-		this.setup$.subscribe(() => this.oidcSecurityService.authorizedCallbackWithCode(window.location.toString()));
+		this.oidcSecurityService.checkAuth(window.location.toString()).subscribe(auth => {});
 	}
 
 	loadClaims(): void {
 		// In case of each login event your authentication status has to be checked
 		this.oidcSecurityService
-			.getIsAuthorized()
+			.isAuthenticated$
 			.pipe(
 				// take(1),
 				tap(isAuthorized => this.autoLogin(isAuthorized)),
@@ -105,7 +100,7 @@ export class OauthService {
 
 	private getClaims(isAuthorized: boolean): Observable<Claims> {
 		return this.oidcSecurityService
-			.getUserData<Claims>()
+			.userData$
 			.pipe(map(claims => this.validateClaims(isAuthorized, claims)));
 	}
 

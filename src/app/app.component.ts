@@ -47,7 +47,7 @@ export class AppComponent extends ObUnsubscribable implements AfterViewInit {
 		this.oauthService.initialize();
 		this.oauthService.loadClaims();
 		this.spinner.activate('auth');
-		this.auth.getIsAuthorized().subscribe(() => this.spinner.deactivate('auth'));
+		this.auth.isAuthenticated$.subscribe(() => this.spinner.deactivate('auth'));
 		setTimeout(() => this.spinner.deactivate('auth'), OpenIdConfigService.isAuthorizedTimeout * 1000);
 	}
 
