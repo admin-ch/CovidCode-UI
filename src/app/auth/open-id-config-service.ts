@@ -22,7 +22,7 @@ export class OpenIdConfigService {
 	readonly config: OpenIdConfiguration = {
 		client_id: environment.oidc.clientId,
 		stsServer: environment.oidc.stsServer,
-		redirect_url: `${environment.oidc.applicationUrl}environment.oidc.loginFeedback`,
+		redirect_url: `${environment.oidc.applicationUrl}${environment.oidc.loginFeedback}`,
 		silent_renew_url: `${environment.oidc.applicationUrl}assets/auth/silent-refresh.html`,
 		post_logout_redirect_uri: environment.oidc.applicationUrl,
 		post_login_route: `/${environment.oidc.afterLoginPath}`,
