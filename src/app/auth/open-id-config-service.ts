@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {OpenIdConfiguration} from 'angular-auth-oidc-client';
+import {LogLevel, OpenIdConfiguration} from 'angular-auth-oidc-client';
 import {environment} from '../../environments/environment';
 
 export interface OIdC {
@@ -10,7 +10,7 @@ export interface OIdC {
 	afterLoginPath: string;
 	silentRenew: boolean;
 	useAutoLogin: boolean;
-	debug: boolean;
+	debug: LogLevel;
 	tokenAwareUrlPatterns: string[];
 }
 
@@ -26,12 +26,11 @@ export class OpenIdConfigService {
 		silentRenewUrl: `${environment.oidc.applicationUrl}assets/auth/silent-refresh.html`,
 		postLogoutRedirectUri: environment.oidc.applicationUrl,
 		postLoginRoute: `/${environment.oidc.afterLoginPath}`,
-		// log_console_debug_active: environment.oidc.debug,
+		logLevel: environment.oidc.debug,
 		responseType: 'code',
 		startCheckSession: false,
 		silentRenew: environment.oidc.silentRenew,
 		autoUserinfo: true
-		// isauthorizedrace_timeout_in_seconds: OpenIdConfigService.isAuthorizedTimeout
 	};
 
 	get stsStagingUrl(): string {
