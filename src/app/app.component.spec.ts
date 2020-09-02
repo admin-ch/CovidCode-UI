@@ -1,6 +1,5 @@
 import {async, TestBed} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
-import {Router} from '@angular/router';
 import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
 import {ObliqueTestingModule} from '@oblique/oblique';
 import {OidcSecurityService} from 'angular-auth-oidc-client';
@@ -24,7 +23,7 @@ describe('AppComponent', () => {
 			declarations: [AppComponent],
 			schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 			providers: [
-				{provide: OidcSecurityService, useValue: {getIsAuthorized: () => of(false)}},
+				{provide: OidcSecurityService, useValue: {isAuthenticated$: of(false)}},
 				{provide: OauthService, useValue: mock}
 			]
 		}).compileComponents();
