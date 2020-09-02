@@ -18,7 +18,6 @@ export interface OIdC {
 	providedIn: 'root'
 })
 export class OpenIdConfigService {
-	static readonly isAuthorizedTimeout = 2;
 	readonly config: OpenIdConfiguration = {
 		clientId: environment.oidc.clientId,
 		stsServer: environment.oidc.stsServer,

@@ -15,8 +15,7 @@ import {
 	ObHttpApiInterceptor,
 	ObMasterLayoutConfig,
 	ObMasterLayoutModule,
-	ObOffCanvasModule,
-	ObSpinnerModule
+	ObOffCanvasModule
 } from '@oblique/oblique';
 import {AuthModule, OidcConfigService} from 'angular-auth-oidc-client';
 import {AppRoutingModule} from './app-routing.module';
@@ -46,8 +45,7 @@ registerLocaleData(localeENGB);
 		AuthModule.forRoot(),
 		ObMasterLayoutModule,
 		ObOffCanvasModule,
-		MatTooltipModule,
-		ObSpinnerModule
+		MatTooltipModule
 	],
 	providers: [
 		{provide: LOCALE_ID, useValue: 'de-CH'},
