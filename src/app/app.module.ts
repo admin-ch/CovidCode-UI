@@ -15,10 +15,9 @@ import {
 	ObHttpApiInterceptor,
 	ObMasterLayoutConfig,
 	ObMasterLayoutModule,
-	ObOffCanvasModule,
-	ObSpinnerModule
+	ObOffCanvasModule
 } from '@oblique/oblique';
-import {AuthModule, ConfigResult, OidcConfigService, OidcSecurityService} from 'angular-auth-oidc-client';
+import {AuthModule, OidcConfigService} from 'angular-auth-oidc-client';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {OpenIdConfigService} from './auth/open-id-config-service';
@@ -26,8 +25,8 @@ import {HttpConfigInterceptor} from './auth/http.config.interceptor';
 import {EiamSelfAdminComponent} from './eiam-self-admin/eiam-self-admin.component';
 import {HelpComponent} from './help/help.component';
 
-export function loadConfig(oidcConfigService: OidcConfigService, oidConfigService: OpenIdConfigService) {
-	return () => oidcConfigService.load_using_stsServer(oidConfigService.stsStagingUrl);
+export function loadConfig(oidcConfigService: OidcConfigService, openIdConfigService: OpenIdConfigService) {
+	return () => oidcConfigService.withConfig(openIdConfigService.config);
 }
 
 registerLocaleData(localeDECH);
@@ -46,8 +45,7 @@ registerLocaleData(localeENGB);
 		AuthModule.forRoot(),
 		ObMasterLayoutModule,
 		ObOffCanvasModule,
-		MatTooltipModule,
-		ObSpinnerModule
+		MatTooltipModule
 	],
 	providers: [
 		{provide: LOCALE_ID, useValue: 'de-CH'},
@@ -65,13 +63,7 @@ registerLocaleData(localeENGB);
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
-	constructor(
-		private readonly config: ObMasterLayoutConfig,
-		private readonly oidcSecurityService: OidcSecurityService,
-		private readonly oidcConfigService: OidcConfigService,
-		private readonly openIdConfigService: OpenIdConfigService,
-		meta: ObDocumentMetaService
-	) {
+	constructor(private readonly config: ObMasterLayoutConfig, meta: ObDocumentMetaService) {
 		meta.titleSuffix = 'application.title';
 		meta.description = 'home.text1';
 		config.layout.hasMainNavigation = false;
@@ -81,8 +73,5 @@ export class AppModule {
 			{id: 'locale-it_button', locale: 'it'},
 			{id: 'locale-en_button', locale: 'en'}
 		];
-		this.oidcConfigService.onConfigurationLoaded.subscribe((configResult: ConfigResult) => {
-			this.oidcSecurityService.setupModule(openIdConfigService.config, configResult.authWellknownEndpoints);
-		});
 	}
 }

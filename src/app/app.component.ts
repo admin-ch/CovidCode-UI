@@ -21,9 +21,7 @@ export class AppComponent extends ObUnsubscribable implements AfterViewInit {
 		offCanvas: ObOffCanvasService,
 		private readonly oauthService: OauthService,
 		interceptor: ObHttpApiInterceptorEvents,
-		router: Router,
-		private readonly spinner: ObSpinnerService,
-		private readonly auth: OidcSecurityService
+		router: Router
 	) {
 		super();
 		this.name$ = this.oauthService.name$;
@@ -46,9 +44,6 @@ export class AppComponent extends ObUnsubscribable implements AfterViewInit {
 	ngAfterViewInit(): void {
 		this.oauthService.initialize();
 		this.oauthService.loadClaims();
-		this.spinner.activate('auth');
-		this.auth.getIsAuthorized().subscribe(() => this.spinner.deactivate('auth'));
-		setTimeout(() => this.spinner.deactivate('auth'), OpenIdConfigService.isAuthorizedTimeout * 1000);
 	}
 
 	logout(): void {

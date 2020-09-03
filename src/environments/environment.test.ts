@@ -1,4 +1,5 @@
 import {OIdC} from '../app/auth/open-id-config-service';
+import {LogLevel} from 'angular-auth-oidc-client';
 
 export const environment = {
 	production: true,
@@ -14,7 +15,7 @@ export const environment = {
 		loginFeedback: 'auth/login-feedback/',
 		silentRenew: true,
 		useAutoLogin: false,
-		debug: false,
+		debug: LogLevel.None,
 		tokenAwareUrlPatterns: ['/v1/(authcode).*']
 	} as OIdC
 };

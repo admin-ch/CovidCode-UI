@@ -43,12 +43,12 @@
               {
                 "glob": "images/favicon.png",
                 "input": "node_modules/@oblique/oblique/styles",
-                "output": "assets/styles"
+                "output": "assets/styles/images"
               },
               {
                 "glob": "images/logo.svg",
                 "input": "node_modules/@oblique/oblique/styles",
-                "output": "assets/styles"
+                "output": "assets/styles/images"
               },
               {
                 "glob": "*headers.conf",
