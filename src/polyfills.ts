@@ -2,6 +2,7 @@
  * Load `$localize` onto the global scope - used if i18n tags appear in Angular templates.
  */
 import 'core-js/features/array/includes';
+import 'core-js/features/object/entries';
 import '@angular/localize/init';
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
