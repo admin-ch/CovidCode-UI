@@ -24,6 +24,7 @@
   "home.more": "Istruzioni per",
   "home.physician": "Medici cantonali per l'amministrazione degli utenti",
   "home.contactManagement": "Personale di gestione dei contatti per la creazione del Covidcode",
+  "home.hospital": "Medici e ospedali per la creazione del Covidcode",
   "logout": "Esci",
   "i18n.validation.matDatepickerParse": "Formato data non valido, si prega di utilizzare \"gg.mm.aaaa\"",
   "i18n.validation.matDatepickerMax": "La data non può essere nel futuro",
