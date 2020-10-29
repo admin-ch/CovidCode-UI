@@ -4,6 +4,7 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
+    "postbuild": "node scripts/postBuild.js",
     "test": "ng test",
     "lint": "ng lint",
     "format": "npm run lint -- --fix && node_modules/prettier/bin-prettier.js --write 'src/**/{*.ts,*.html}'"
