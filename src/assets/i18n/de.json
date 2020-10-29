@@ -24,6 +24,7 @@
   "home.more": "Anleitung für",
   "home.physician": "Kantonsärzte zur Benutzerverwaltung",
   "home.contactManagement": "Personen des Kontakt-Managements zur Erstellung des Covidcodes",
+  "home.hospital": "Ärztinnen und Ärzte und Spitäler zur Erstellung des Covidcodes",
   "logout": "Logout",
   "i18n.validation.matDatepickerParse": "Ungültiges Datumsformat, bitte verwenden Sie \"tt.mm.jjjj\"",
   "i18n.validation.matDatepickerMax": "Datum darf nicht in der Zukunft liegen",

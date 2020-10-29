@@ -24,6 +24,7 @@
   "home.more": "Instructions for",
   "home.physician": "Cantonal physicians for user administration",
   "home.contactManagement": "Persons of the contact management for the creation of the Covidcode",
+  "home.hospital": "Physicians and hospitals for the creation of the Covidcode",
   "logout": "Logout",
   "i18n.validation.matDatepickerParse": "Invalid date format, please use \"dd/mm/yyyy\"",
   "i18n.validation.matDatepickerMax": "Date cannot be in the future",
