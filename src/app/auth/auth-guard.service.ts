@@ -58,6 +58,10 @@ export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad 
 		if (!hasAccess) {
 			this.window.location.href = `https://www.eiam.admin.ch/?c=f!403pts!pub&l=${this.translate.currentLang}`;
 		}
+
+		if (claims.homeName === 'E-ID CH-LOGIN' && claims.unitName?.indexOf('HIN') === 0) {
+			this.window.location.href = `https://www.eiam.admin.ch/chloginforbidden?l=${this.translate.currentLang}`;
+		}
 		return hasAccess;
 	}
 }

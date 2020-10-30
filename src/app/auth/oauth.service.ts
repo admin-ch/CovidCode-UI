@@ -31,6 +31,8 @@ export interface Claims {
 	};
 	scope: string;
 	ctx: string;
+	homeName?: string;
+	unitName?: string;
 }
 
 @Injectable({
