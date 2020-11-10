@@ -1,5 +1,6 @@
 ﻿{
   "application.title": "Covidcode BAG",
+  "application.description": "Die Fachperson gibt den Covidcode der infizierten Person bekannt. Diese kann den Covidcode in ihre SwissCovid-App eingeben.",
   "application.organization.name": "Bundesamt für Informatik und Telekommunikation BIT",
   "generate-code.generate": "Covidcode erzeugen",
   "generate-code.onset": "Datum Erstsymptome",
