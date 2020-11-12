@@ -65,7 +65,7 @@ registerLocaleData(localeENGB);
 export class AppModule {
 	constructor(private readonly config: ObMasterLayoutConfig, meta: ObDocumentMetaService) {
 		meta.titleSuffix = 'application.title';
-		meta.description = 'home.text1';
+		meta.description = 'application.description';
 		config.layout.hasMainNavigation = false;
 		config.locale.locales = [
 			{id: 'locale-de_button', locale: 'de'},

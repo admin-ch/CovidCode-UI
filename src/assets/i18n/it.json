@@ -1,5 +1,6 @@
 ﻿{
   "application.title": "Covidcode UFSP",
+  "application.description": "Lo specialista comunica il codice Covid alla persona infetta. Quest’ultima lo può immettere nella sua app SwissCovid.",
   "application.organization.name": "Ufficio federale dell'informatica e della telecomunicazione UFIT",
   "generate-code.generate": "Genera Covidcode",
   "generate-code.onset": "Data di primi sintomi",

@@ -1,5 +1,6 @@
 ﻿{
   "application.title": "Covidcode OFSP",
+  "application.description": "Le professionnel communique le code COVID à la personne infectée. Celle-ci peut saisir le code COVID dans son application SwissCovid.",
   "application.organization.name": "Office fédéral de l'informatique et de la télécommunication OFIT",
   "generate-code.generate": "Générer Covidcode",
   "generate-code.onset": "Date des premiers symptômes",

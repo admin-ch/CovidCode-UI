@@ -1,5 +1,6 @@
 ﻿{
   "application.title": "Covidcode FOPH",
+  "application.description": "The specialist gives the Covidcode to the infected person. The infected person may choose to enter the Covidcode into their SwissCovid app.",
   "application.organization.name": "Federal Office of Information Technology, Systems and Telecommunication FOITT",
   "generate-code.generate": "Generate Covidcode",
   "generate-code.onset": "Date of first symptoms",
