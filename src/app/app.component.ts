@@ -2,7 +2,7 @@ import {AfterViewInit, Component} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {Observable} from 'rxjs';
 import {delay, filter, map, startWith, takeUntil} from 'rxjs/operators';
-import {ObHttpApiInterceptorEvents, ObOffCanvasService,  ObUnsubscribable} from '@oblique/oblique';
+import {ObHttpApiInterceptorEvents, ObOffCanvasService, ObUnsubscribable} from '@oblique/oblique';
 import {OauthService} from './auth/oauth.service';
 
 @Component({
