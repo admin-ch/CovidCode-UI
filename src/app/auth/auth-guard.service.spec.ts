@@ -99,6 +99,35 @@ describe('AuthGuardService', () => {
 			});
 		});
 
+		describe('With HIN & CH-Login', () => {
+			beforeEach(() => {
+				mock.claims$.next({homeName: 'E-ID CH-LOGIN', unitName: 'HIN'});
+				jest.spyOn(auth, 'hasUserRole').mockReturnValue(true);
+			});
+
+			it('should return false', done => {
+				service[fn](null).subscribe(a => {
+					expect(a).toBe(false);
+					done();
+				});
+			});
+
+			it('should not navigate', done => {
+				jest.spyOn(router, 'navigate');
+				service[fn](null).subscribe(a => {
+					expect(router.navigate).not.toHaveBeenCalled();
+					done();
+				});
+			});
+
+			it('should redirect to auto-login', done => {
+				service.canLoad(null).subscribe(a => {
+					expect(window.location.href).toEqual('https://www.eiam.admin.ch/chloginforbidden?l=en');
+					done();
+				});
+			});
+		});
+
 		describe('Authorized', () => {
 			beforeEach(() => {
 				mock.claims$.next({});
