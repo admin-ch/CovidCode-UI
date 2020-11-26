@@ -4,6 +4,7 @@ import {LogLevel} from 'angular-auth-oidc-client';
 export const environment = {
 	production: true,
 	showWarning: true,
+	stage: 'a',
 	host: 'https://codegen-service-a.bag.admin.ch',
 	eiamSelfAdmin:
 		'https://sts-a.pts.admin.ch/_pep/myaccount?returnURL=https%3A%2F%2Fwww.covidcode-a.admin.chCURRENT_PAGE&language=LANGUAGE',
