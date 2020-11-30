@@ -52,7 +52,10 @@ export class OauthService {
 	) {
 		this.claims$ = this.claims.asObservable();
 		this.isAuthenticated$ = this.isAuthenticated.asObservable();
-		this.name$ = this.claims$.pipe(map(claims => claims.displayName || claims.name));
+		this.name$ = this.claims$.pipe(
+			filter(claims => !!claims),
+			map(claims => claims.displayName || claims.name)
+		);
 	}
 
 	logout(): void {
