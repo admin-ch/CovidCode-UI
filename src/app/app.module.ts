@@ -13,6 +13,7 @@ import {
 	multiTranslateLoader,
 	ObDocumentMetaService,
 	ObHttpApiInterceptor,
+	ObHttpApiInterceptorConfig,
 	ObMasterLayoutConfig,
 	ObMasterLayoutModule,
 	ObOffCanvasModule
@@ -63,7 +64,12 @@ registerLocaleData(localeENGB);
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
-	constructor(private readonly config: ObMasterLayoutConfig, meta: ObDocumentMetaService) {
+	constructor(
+		private readonly config: ObMasterLayoutConfig,
+		meta: ObDocumentMetaService,
+		interceptor: ObHttpApiInterceptorConfig
+	) {
+		interceptor.api.url = '/v1/authcode';
 		meta.titleSuffix = 'application.title';
 		meta.description = 'application.description';
 		config.layout.hasMainNavigation = false;
