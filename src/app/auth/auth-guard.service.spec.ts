@@ -93,7 +93,7 @@ describe('AuthGuardService', () => {
 
 			it('should redirect to auto-login', done => {
 				service.canLoad(null).subscribe(a => {
-					expect(window.location.href).toEqual('https://www.eiam.admin.ch/?c=f!403pts!pub&l=en');
+					expect(window.location.href).toEqual('https://www.eiam.admin.ch/403pts?l=en&stage=');
 					done();
 				});
 			});
@@ -122,7 +122,7 @@ describe('AuthGuardService', () => {
 
 			it('should redirect to auto-login', done => {
 				service.canLoad(null).subscribe(a => {
-					expect(window.location.href).toEqual('https://www.eiam.admin.ch/chloginforbidden?l=en');
+					expect(window.location.href).toEqual('https://www.eiam.admin.ch/chloginforbidden?l=en&stage=');
 					done();
 				});
 			});

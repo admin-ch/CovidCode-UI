@@ -1,5 +1,6 @@
-import {TestBed} from '@angular/core/testing';
+import {fakeAsync, TestBed} from '@angular/core/testing';
 import {EMPTY, of} from 'rxjs';
+import {skip} from 'rxjs/operators';
 import {LoggerService, OidcSecurityService} from 'angular-auth-oidc-client';
 import {OauthService} from './oauth.service';
 import {OpenIdConfigService} from './open-id-config-service';
@@ -49,6 +50,15 @@ describe('OauthService', () => {
 		it('should be defined', () => {
 			expect(service.name$).toBeDefined();
 		});
+
+		it('should not emit if no claims', fakeAsync(() => {
+			let name;
+			// @ts-ignore
+			service.claims.next(undefined);
+			service.name$.subscribe(n => (name = n));
+			skip(1000);
+			expect(name).toBeUndefined();
+		}));
 
 		it('should emit name if present', done => {
 			// @ts-ignore

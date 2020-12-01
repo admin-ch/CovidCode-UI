@@ -4,6 +4,7 @@ import {LogLevel} from 'angular-auth-oidc-client';
 export const environment = {
 	production: false,
 	showWarning: true,
+	stage: '',
 	host: 'http://localhost:8113',
 	eiamSelfAdmin: 'https://eiam.chCURRENT_PAGE&language=LANGUAGE',
 	oidc: {

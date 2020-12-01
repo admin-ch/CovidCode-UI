@@ -25,7 +25,7 @@ describe('HomeComponent', () => {
 							currentLang: 'en'
 						}
 					},
-					{provide: OauthService, useValue: {logout: jest.fn()}}
+					{provide: OauthService, useValue: {logout: jest.fn(), isAuthenticated$: of(false)}}
 				],
 				schemas: [NO_ERRORS_SCHEMA],
 				declarations: [HomeComponent]
@@ -73,7 +73,7 @@ describe('HomeComponent', () => {
 		});
 	});
 
-	describe('logout access', () => {
+	describe('logout access while authenticated', () => {
 		beforeEach(async(() => {
 			TestBed.configureTestingModule({
 				imports: [ObliqueTestingModule],
@@ -85,7 +85,43 @@ describe('HomeComponent', () => {
 							currentLang: 'en'
 						}
 					},
-					{provide: OauthService, useValue: {logout: jest.fn()}},
+					{provide: OauthService, useValue: {logout: jest.fn(), isAuthenticated$: of(true)}},
+					{provide: ActivatedRoute, useValue: {data: of({logout: true})}}
+				],
+				schemas: [NO_ERRORS_SCHEMA],
+				declarations: [HomeComponent]
+			}).compileComponents();
+		}));
+
+		beforeEach(() => {
+			fixture = TestBed.createComponent(HomeComponent);
+			component = fixture.componentInstance;
+			fixture.detectChanges();
+		});
+
+		it('should create', () => {
+			expect(component).toBeTruthy();
+		});
+
+		it('should not logout', () => {
+			const oauth = TestBed.inject(OauthService);
+			expect(oauth.logout).toHaveBeenCalled();
+		});
+	});
+
+	describe('logout access while not authenticated', () => {
+		beforeEach(async(() => {
+			TestBed.configureTestingModule({
+				imports: [ObliqueTestingModule],
+				providers: [
+					{
+						provide: TranslateService,
+						useValue: {
+							onLangChange: new EventEmitter<LangChangeEvent>(),
+							currentLang: 'en'
+						}
+					},
+					{provide: OauthService, useValue: {logout: jest.fn(), isAuthenticated$: of(false)}},
 					{provide: ActivatedRoute, useValue: {data: of({logout: true})}}
 				],
 				schemas: [NO_ERRORS_SCHEMA],
@@ -105,7 +141,7 @@ describe('HomeComponent', () => {
 
 		it('should logout', () => {
 			const oauth = TestBed.inject(OauthService);
-			expect(oauth.logout).toHaveBeenCalled();
+			expect(oauth.logout).not.toHaveBeenCalled();
 		});
 	});
 });

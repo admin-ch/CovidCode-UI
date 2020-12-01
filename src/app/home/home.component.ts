@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute} from '@angular/router';
-import {filter, map, startWith} from 'rxjs/operators';
+import {filter, map, startWith, switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {OauthService} from '../auth/oauth.service';
 import {environment} from '../../environments/environment';
@@ -18,7 +18,13 @@ export class HomeComponent {
 	showWarning = environment.showWarning;
 
 	constructor(translate: TranslateService, route: ActivatedRoute, oauthService: OauthService) {
-		route.data.pipe(filter(data => data.logout)).subscribe(() => oauthService.logout());
+		oauthService.isAuthenticated$
+			.pipe(
+				filter(isAuthenticated => isAuthenticated),
+				switchMap(() => route.data),
+				filter(data => data.logout)
+			)
+			.subscribe(() => oauthService.logout());
 		this.lang$ = translate.onLangChange.pipe(
 			map(lang => lang.lang),
 			startWith(translate.currentLang)
