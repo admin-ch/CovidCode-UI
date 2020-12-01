@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
-import {first, map, switchMap} from 'rxjs/operators';
+import {first, map, startWith, switchMap, tap} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 
 @Component({
@@ -8,14 +8,15 @@ import {Observable} from 'rxjs';
 	templateUrl: './help.component.html'
 })
 export class HelpComponent {
-	paragraph$: Observable<string[]>;
+	bullets$: Observable<string[]>;
 
 	constructor(translate: TranslateService) {
-		this.paragraph$ = translate.onLangChange.pipe(
+		this.bullets$ = translate.onLangChange.pipe(
 			first(),
+			startWith(translate.currentLang),
 			switchMap(() => translate.getTranslation(translate.currentLang)),
 			map(data => Object.keys(data)),
-			map(keys => keys.filter(key => key.indexOf('help.text') === 0))
+			map(keys => keys.filter(key => key.indexOf('generate-code.help.info') === 0))
 		);
 	}
 }

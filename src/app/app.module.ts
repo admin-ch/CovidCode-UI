@@ -24,7 +24,6 @@ import {AppComponent} from './app.component';
 import {OpenIdConfigService} from './auth/open-id-config-service';
 import {HttpConfigInterceptor} from './auth/http.config.interceptor';
 import {EiamSelfAdminComponent} from './eiam-self-admin/eiam-self-admin.component';
-import {HelpComponent} from './help/help.component';
 
 export function loadConfig(oidcConfigService: OidcConfigService, openIdConfigService: OpenIdConfigService) {
 	return () => oidcConfigService.withConfig(openIdConfigService.config);
@@ -36,7 +35,7 @@ registerLocaleData(localeITCH);
 registerLocaleData(localeENGB);
 
 @NgModule({
-	declarations: [AppComponent, EiamSelfAdminComponent, HelpComponent],
+	declarations: [AppComponent, EiamSelfAdminComponent],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
@@ -72,6 +71,7 @@ export class AppModule {
 		interceptor.api.url = '/v1/authcode';
 		meta.titleSuffix = 'application.title';
 		meta.description = 'application.description';
+		config.layout.hasOffCanvas = false;
 		config.layout.hasMainNavigation = false;
 		config.locale.locales = [
 			{id: 'locale-de_button', locale: 'de'},

@@ -7,6 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import {DateAdapter} from '@angular/material/core';
+import {MatCardModule} from '@angular/material/card';
 import {TranslateService} from '@ngx-translate/core';
 import {map, startWith} from 'rxjs/operators';
 import {ObErrorMessagesModule} from '@oblique/oblique';
@@ -14,9 +15,10 @@ import {SharedModule} from 'shared/shared.module';
 import {GenerateCodeComponent} from './generate-code.component';
 import {CodeComponent} from './code/code.component';
 import {AuthGuardService} from '../auth/auth-guard.service';
+import {HelpComponent} from './help/help.component';
 
 @NgModule({
-	declarations: [GenerateCodeComponent, CodeComponent],
+	declarations: [GenerateCodeComponent, CodeComponent, HelpComponent],
 	imports: [
 		SharedModule,
 		RouterModule.forChild([{path: '', component: GenerateCodeComponent, canActivate: [AuthGuardService]}]),
@@ -26,7 +28,8 @@ import {AuthGuardService} from '../auth/auth-guard.service';
 		MatFormFieldModule,
 		MatInputModule,
 		MatMomentDateModule,
-		ObErrorMessagesModule
+		ObErrorMessagesModule,
+		MatCardModule
 	]
 })
 export class GenerateCodeModule {

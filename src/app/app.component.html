@@ -20,10 +20,6 @@
 			{{ "footer.built.suffix" | translate }}
 		</p>
 	</ng-container>
-	<ng-container obOffCanvasTitle>{{ "help.title" | translate }}</ng-container>
-	<ng-container obOffCanvasContent>
-		<ha-help></ha-help>
-	</ng-container>
 	<ng-container *ngIf="isAuthenticated$ | async">
 		<ng-template #obHeaderControl>
 			<button [matTooltip]="'logout' | translate" class="control-link" (click)="logout()">
@@ -33,16 +29,6 @@
 		<ng-container *ngIf="currentPage">
 			<ng-template #obHeaderControl>
 				<ha-eiam-self-admin [page]="currentPage" [name]="name$ | async"></ha-eiam-self-admin>
-			</ng-template>
-			<ng-template #obHeaderControl *ngIf="currentPage === '/generate-code'">
-				<button
-					obOffCanvasToggle
-					[matTooltip]="helpTooltip$ | async | translate"
-					id="help-toggle_button"
-					class="control-link"
-				>
-					<span class="fa fa-question-circle control-icon"></span>
-				</button>
 			</ng-template>
 		</ng-container>
 	</ng-container>

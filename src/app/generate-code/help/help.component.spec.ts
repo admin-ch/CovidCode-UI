@@ -16,7 +16,8 @@ describe('HelpComponent', () => {
 					provide: TranslateService,
 					useValue: {
 						onLangChange: of({}),
-						getTranslation: () => of({a: 0, b: 0, help: 0, 'help.text1': 0, 'help.text2': 0})
+						getTranslation: () =>
+							of({a: 0, b: 0, help: 0, 'generate-code.help.info.1': 0, 'generate-code.help.info.2': 0})
 					}
 				}
 			],
@@ -34,14 +35,14 @@ describe('HelpComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	describe('paragraph$', () => {
+	describe('bullets$', () => {
 		it('should be defined', () => {
-			expect(component.paragraph$).toBeTruthy();
+			expect(component.bullets$).toBeTruthy();
 		});
 
 		it('should', done => {
-			component.paragraph$.subscribe(data => {
-				expect(data).toEqual(['help.text1', 'help.text2']);
+			component.bullets$.subscribe(data => {
+				expect(data).toEqual(['generate-code.help.info.1', 'generate-code.help.info.2']);
 				done();
 			});
 		});
