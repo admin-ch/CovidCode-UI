@@ -4,7 +4,6 @@ import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
 import {ObliqueTestingModule} from '@oblique/oblique';
 import {OidcSecurityService} from 'angular-auth-oidc-client';
 import {of} from 'rxjs';
-import {first, skip} from 'rxjs/operators';
 import {AppComponent} from './app.component';
 import {OauthService} from './auth/oauth.service';
 
@@ -75,26 +74,6 @@ describe('AppComponent', () => {
 	// 		router.navigate(['test']);
 	// 	});
 	// });
-
-	describe('helpTooltip$', () => {
-		it('should be defined', () => {
-			expect(app.helpTooltip$).toBeDefined();
-		});
-
-		it('should output a tooltip with default value', done => {
-			app.helpTooltip$.pipe(first()).subscribe(tooltip => {
-				expect(tooltip).toBe('help.tooltip.out');
-				done();
-			});
-		});
-
-		it('should output a tooltip with an event', done => {
-			app.helpTooltip$.pipe(skip(1)).subscribe(tooltip => {
-				expect(tooltip).toBe('help.tooltip.in');
-				done();
-			});
-		});
-	});
 
 	describe('ngAfterViewInit', () => {
 		let oAuth: OauthService;

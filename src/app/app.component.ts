@@ -1,7 +1,7 @@
 import {AfterViewInit, Component} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {Observable} from 'rxjs';
-import {delay, filter, map, startWith, takeUntil} from 'rxjs/operators';
+import {delay, filter, map, takeUntil} from 'rxjs/operators';
 import {ObHttpApiInterceptorEvents, ObOffCanvasService, ObUnsubscribable} from '@oblique/oblique';
 import {OauthService} from './auth/oauth.service';
 
@@ -32,10 +32,6 @@ export class AppComponent extends ObUnsubscribable implements AfterViewInit {
 				takeUntil(this.unsubscribe)
 			)
 			.subscribe(url => (this.currentPage = url));
-		this.helpTooltip$ = offCanvas.opened.pipe(
-			startWith(false),
-			map(opened => (opened ? 'help.tooltip.in' : 'help.tooltip.out'))
-		);
 		interceptor.sessionExpired.subscribe(() => this.logout());
 	}
 

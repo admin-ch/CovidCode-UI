@@ -1,3 +1,12 @@
+<mat-card>
+	<mat-card-header>
+		<mat-card-title>{{ "generate-code.help.title" | translate }}</mat-card-title>
+	</mat-card-header>
+	<mat-card-content>
+		<ha-help></ha-help>
+	</mat-card-content>
+</mat-card>
+
 <form [formGroup]="test" (submit)="save(test.valid, test.value)" autocomplete="off">
 	<mat-form-field obErrorMessages>
 		<mat-label>{{ "generate-code.onset" | translate }} *</mat-label>
