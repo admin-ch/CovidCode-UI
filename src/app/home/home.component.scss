@@ -41,16 +41,3 @@ p.lead {
 	text-decoration: none;
 	margin-right: $spacing-sm;
 }
-
-@include media-breakpoint-down(sm) {
-	.alert {
-		padding-left: $spacing-default;
-		word-break: break-word;
-
-		&::before {
-			content: '';
-			width: $spacing-xs;
-			padding: 0;
-		}
-	}
-}

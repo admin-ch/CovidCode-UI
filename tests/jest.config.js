@@ -16,7 +16,7 @@ module.exports = {
 	testPathIgnorePatterns: ['/node_modules/', '/src/environments'],
 	collectCoverage: true,
 	forceCoverageMatch: [
-		'**/src/app/**/*.spec.ts'
+		'**/src/app/**/*.ts'
 	],
 	transform: {
 		'^.+\\.js$': 'babel-jest'
