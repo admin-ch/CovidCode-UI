@@ -22,8 +22,8 @@
 	</ng-container>
 	<ng-container *ngIf="isAuthenticated$ | async">
 		<ng-template #obHeaderControl>
-			<button [matTooltip]="'logout' | translate" class="control-link" (click)="logout()">
-				<span class="fa fa-sign-out-alt control-icon"></span>
+			<button [matTooltip]="'logout' | translate" class="ob-control-link" (click)="logout()">
+				<span class="fa fa-sign-out-alt ob-control-icon"></span>
 			</button>
 		</ng-template>
 		<ng-container *ngIf="currentPage">

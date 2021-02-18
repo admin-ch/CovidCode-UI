@@ -28,27 +28,15 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/assets",
-              "src/robots.txt",
+              {
+                "glob": "**/*",
+                "input": "node_modules/@oblique/oblique/assets",
+                "output": "assets"
+              },
               {
                 "glob": "**/frutiger.css",
                 "input": "node_modules/@oblique/oblique/styles",
                 "output": "assets/styles"
-              },
-              {
-                "glob": "**/*.json",
-                "input": "node_modules/@oblique/oblique/styles",
-                "output": "assets/styles"
-              },
-              {
-                "glob": "images/favicon.png",
-                "input": "node_modules/@oblique/oblique/styles",
-                "output": "assets/styles/images"
-              },
-              {
-                "glob": "images/logo.svg",
-                "input": "node_modules/@oblique/oblique/styles",
-                "output": "assets/styles/images"
               },
               {
                 "glob": "*headers.conf",
@@ -59,14 +47,18 @@
                 "glob": "Staticfile",
                 "input": "src/nginx",
                 "output": "./.."
-              }
+              },
+              "src/assets",
+              "src/robots.txt"
             ],
             "styles": [
               "node_modules/@oblique/oblique/styles/css/oblique-core.css",
               "node_modules/@oblique/oblique/styles/css/oblique-material.css",
               "src/styles/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@oblique/oblique/ob-features.js"
+            ]
           },
           "configurations": {
             "dev": {
@@ -79,11 +71,33 @@
               "optimization": false,
               "outputHashing": "all",
               "sourceMap": true,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
+              "buildOptimizer": true,            "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "node_modules/@oblique/oblique/assets",
+                  "output": "assets"
+                },
+                {
+                  "glob": "**/frutiger.css",
+                  "input": "node_modules/@oblique/oblique/styles",
+                  "output": "assets/styles"
+                },
+                {
+                  "glob": "*headers.conf",
+                  "input": "src/nginx",
+                  "output": "./../nginx/conf/includes"
+                },
+                {
+                  "glob": "Staticfile",
+                  "input": "src/nginx",
+                  "output": "./.."
+                },
+                "src/assets",
+                "src/robots.txt"
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -101,20 +115,44 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.test.ts"
-                },
-                {
-                  "replace": "src/nginx/csp_headers.conf",
-                  "with": "src/nginx/csp_headers-test.conf"
                 }
               ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "node_modules/@oblique/oblique/assets",
+                  "output": "assets"
+                },
+                {
+                  "glob": "**/frutiger.css",
+                  "input": "node_modules/@oblique/oblique/styles",
+                  "output": "assets/styles"
+                },
+                {
+                  "glob": "*headers.conf",
+                  "input": "src/nginx",
+                  "output": "./../nginx/conf/includes"
+                },
+                {
+                  "glob": "csp_headers.conf",
+                  "input": "src/nginx/test",
+                  "output": "./../nginx/conf/includes"
+                },
+                {
+                  "glob": "Staticfile",
+                  "input": "src/nginx",
+                  "output": "./.."
+                },
+                "src/assets",
+                "src/robots.txt"
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -133,20 +171,44 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.abn.ts"
-                },
-                {
-                  "replace": "src/nginx/csp_headers.conf",
-                  "with": "src/nginx/csp_headers-abn.conf"
                 }
               ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "node_modules/@oblique/oblique/assets",
+                  "output": "assets"
+                },
+                {
+                  "glob": "**/frutiger.css",
+                  "input": "node_modules/@oblique/oblique/styles",
+                  "output": "assets/styles"
+                },
+                {
+                  "glob": "*headers.conf",
+                  "input": "src/nginx",
+                  "output": "./../nginx/conf/includes"
+                },
+                {
+                  "glob": "csp_headers.conf",
+                  "input": "src/nginx/abn",
+                  "output": "./../nginx/conf/includes"
+                },
+                {
+                  "glob": "Staticfile",
+                  "input": "src/nginx",
+                  "output": "./.."
+                },
+                "src/assets",
+                "src/robots.txt"
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -165,20 +227,44 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
-                },
-                {
-                  "replace": "src/nginx/csp_headers.conf",
-                  "with": "src/nginx/csp_headers-prod.conf"
                 }
               ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "node_modules/@oblique/oblique/assets",
+                  "output": "assets"
+                },
+                {
+                  "glob": "**/frutiger.css",
+                  "input": "node_modules/@oblique/oblique/styles",
+                  "output": "assets/styles"
+                },
+                {
+                  "glob": "*headers.conf",
+                  "input": "src/nginx",
+                  "output": "./../nginx/conf/includes"
+                },
+                {
+                  "glob": "csp_headers.conf",
+                  "input": "src/nginx/prod",
+                  "output": "./../nginx/conf/includes"
+                },
+                {
+                  "glob": "Staticfile",
+                  "input": "src/nginx",
+                  "output": "./.."
+                },
+                "src/assets",
+                "src/robots.txt"
+              ],
               "budgets": [
                 {
                   "type": "initial",

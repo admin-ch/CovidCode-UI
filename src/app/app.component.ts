@@ -1,19 +1,20 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {AfterViewInit, Component, OnDestroy} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {delay, filter, map, takeUntil} from 'rxjs/operators';
-import {ObHttpApiInterceptorEvents, ObOffCanvasService, ObUnsubscribable} from '@oblique/oblique';
+import {ObHttpApiInterceptorEvents, ObOffCanvasService} from '@oblique/oblique';
 import {OauthService} from './auth/oauth.service';
 
 @Component({
 	selector: 'ha-root',
 	templateUrl: './app.component.html'
 })
-export class AppComponent extends ObUnsubscribable implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnDestroy {
 	isAuthenticated$: Observable<boolean>;
 	helpTooltip$: Observable<string>;
 	name$: Observable<string>;
 	currentPage: string;
+	private readonly unsubscribe = new Subject();
 
 	constructor(
 		offCanvas: ObOffCanvasService,
@@ -21,7 +22,6 @@ export class AppComponent extends ObUnsubscribable implements AfterViewInit {
 		interceptor: ObHttpApiInterceptorEvents,
 		router: Router
 	) {
-		super();
 		this.name$ = this.oauthService.name$;
 		this.isAuthenticated$ = this.oauthService.isAuthenticated$.pipe(delay(0));
 		// no observable because of IE
@@ -38,6 +38,11 @@ export class AppComponent extends ObUnsubscribable implements AfterViewInit {
 	ngAfterViewInit(): void {
 		this.oauthService.initialize();
 		this.oauthService.loadClaims();
+	}
+
+	ngOnDestroy() {
+		this.unsubscribe.next();
+		this.unsubscribe.complete();
 	}
 
 	logout(): void {

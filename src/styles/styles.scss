@@ -1,11 +1,7 @@
 @import "~@oblique/oblique/styles/scss/core/variables";
 @import "~@oblique/oblique/styles/scss/core/mixins/layout";
 
-body {
-	min-width: 248px;
-}
-
-.application-footer .info {
+.ob-master-layout-footer .info {
 	white-space: nowrap;
 	overflow: hidden;
 }
@@ -36,23 +32,6 @@ main {
 		@include media-breakpoint-up('md') {
 			flex-basis: 66%;
 		}
-	}
-}
-
-// Oblique fix
-.alert-warning::before {
-	line-height: 1;
-}
-
-a:not([disabled]),
-button:not(.mat-button-base):not([disabled]) {
-	&:focus {
-		outline: none;
-	}
-
-	.outline &:focus {
-		outline: 2px solid $brand-primary;
-		box-shadow: 0 0 6px 0 $brand-default;
 	}
 }
 
