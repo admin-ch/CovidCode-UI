@@ -74,7 +74,8 @@
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,            "assets": [
+              "buildOptimizer": true,
+              "assets": [
                 {
                   "glob": "**/*",
                   "input": "node_modules/@oblique/oblique/assets",
